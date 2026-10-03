@@ -1,0 +1,456 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Services | Palanart</title>
+  <link rel="stylesheet" href="marketplace.css">
+</head>
+<body class="page-client">
+  <div class="music-atmosphere" aria-hidden="true">
+    <span class="music-beam music-beam--left"></span>
+    <span class="music-beam music-beam--right"></span>
+    <span class="music-vinyl"></span>
+    <span class="music-wave"></span>
+    <span class="music-piano"></span>
+    <span class="music-staff"></span>
+    <span class="music-silhouette music-silhouette--headphones"></span>
+    <span class="music-silhouette music-silhouette--keys"></span>
+    <span class="music-trails music-trails--primary"></span>
+    <span class="music-trails music-trails--secondary"></span>
+    <span class="music-eq">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </span>
+    <span class="music-particles">
+      <i></i><i></i><i></i><i></i><i></i><i></i>
+    </span>
+    <span class="music-note music-note--a">♪</span>
+    <span class="music-note music-note--b">♬</span>
+    <span class="music-note music-note--c">♫</span>
+  </div>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand">
+        <strong>Palanart</strong>
+        <span>Кабинет заказчика</span>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Открыть меню">☰</button>
+      <nav class="nav">
+        <a href="index.html">Витрина</a>
+        <a href="artist.html">Исполнитель</a>
+        <a href="partner.html">Партнёр</a>
+        <button id="theme-toggle" class="ghost-btn theme-toggle" type="button">Светлая тема</button>
+      </nav>
+    </div>
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  </header>
+
+  <main class="shell auth-wrap">
+    <section class="people-showcase" data-scene="hero">
+      <article class="people-card people-card--tall people-card--client-main">
+        <img class="people-image people-image--client-main" src="assets/client-services-team.png" alt="Клиент, артист и команда в студийной встрече">
+        <div class="people-card-copy">
+          <div class="eyebrow">Client Services</div>
+          <h3>Живая встреча клиента, артиста и команды прямо в музыкальной среде</h3>
+          <p>Теперь у client services свой отдельный human-scene: реальная коммуникация, студийная атмосфера и обсуждение проекта в кадре.</p>
+        </div>
+      </article>
+      <div class="people-showcase-stack">
+        <article class="people-card people-card--live-energy">
+          <img class="people-image people-image--live-energy" src="assets/hero-people-anime-stage.png" alt="Живые артисты на сцене">
+          <div class="people-card-copy">
+            <div class="eyebrow">Live Energy</div>
+            <h3>Выступления и человеческая энергия</h3>
+            <p>Показываем, ради чего клиент вообще приходит в платформу.</p>
+          </div>
+        </article>
+        <article class="people-card people-card--platform-team">
+          <img class="people-image people-image--platform-team" src="assets/partner-release-desk-scene.png" alt="Команда платформы">
+          <div class="people-card-copy">
+            <div class="eyebrow">Platform Team</div>
+            <h3>За платформой стоят реальные люди</h3>
+            <p>Команда, координация и поддержка считываются с первого экрана.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="auth-box">
+      <div id="cab-message"></div>
+
+      <section id="auth-view" class="auth-grid">
+        <div class="service-hero">
+          <article class="service-panel">
+            <div class="highlight">Кабинет заказчика</div>
+            <h1>Ищите исполнителей, сохраняйте варианты и получайте предложения</h1>
+            <p class="muted">После входа доступны избранное, сравнение, история заявок, предложения исполнителей и отзывы.</p>
+          </article>
+          <aside class="service-panel">
+            <h3>Рабочий режим</h3>
+            <div class="info-list">
+              <div class="info-item">Регистрируйте service client и сразу тестируйте запросы, предложения и чат.</div>
+              <div class="info-item">Избранное, сравнение и история сделок сохраняются в браузере как рабочая база теста.</div>
+            </div>
+          </aside>
+        </div>
+        <div class="split">
+          <form id="register-form" class="service-panel">
+            <h2>Регистрация</h2>
+            <div id="user-auth-mode" class="muted auth-mode-note"></div>
+              <div class="form-grid one">
+                <label>Имя<input name="name" type="text" required></label>
+                <label>E-mail<input name="email" type="email" required></label>
+                <label>Телефон<input name="phone" type="tel" required></label>
+                <label>Город<input name="city" type="text" placeholder="Чебоксары"></label>
+                <div class="geo-inline-action">
+                  <button id="detect-user-city" class="ghost-btn mini-chip" type="button">Определить город по геолокации</button>
+                </div>
+                <label>Пароль<input name="password" type="password" required></label>
+              </div>
+            <button class="primary-btn" type="submit">Создать аккаунт</button>
+            <div class="auth-socials">
+              <button class="ghost-btn auth-social-btn" type="button" data-user-social="google">Войти через Google</button>
+              <button class="ghost-btn auth-social-btn" type="button" data-user-social="vk">Войти через VK ID</button>
+              <button class="ghost-btn auth-social-btn" type="button" data-user-social="telegram">Войти через Telegram</button>
+            </div>
+          </form>
+          <form id="login-form" class="service-panel">
+            <h2>Вход</h2>
+            <div class="form-grid one">
+              <label>E-mail<input name="email" type="email" required></label>
+              <label>Пароль<input name="password" type="password" required></label>
+            </div>
+            <button class="ghost-btn" type="submit">Войти</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="cabinet-view" style="display:none;" class="service-shell">
+        <div class="service-hero">
+          <article class="service-panel">
+            <div class="section-head">
+              <div>
+                <h1>Client Services Cabinet</h1>
+                <p id="user-summary" class="muted"></p>
+              </div>
+              <button id="logout-user" class="ghost-btn" type="button">Выйти</button>
+            </div>
+            <div id="user-kpis" class="service-kpis"></div>
+          </article>
+          <aside class="service-panel">
+            <h3>Что доступно</h3>
+            <div class="info-list">
+              <div class="info-item">Сохраняйте карточки в избранное и собирайте shortlist.</div>
+              <div class="info-item">Отправляйте запросы на артистов, релизные сервисы и студийные услуги.</div>
+              <div class="info-item">Получайте предложения и согласовывайте детали в чате.</div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="panel">
+          <div class="section-head">
+            <div>
+              <h2>Мои запросы</h2>
+              <p class="muted">Все запросы по артистам, сервисам и их текущие статусы.</p>
+            </div>
+          </div>
+          <div id="user-leads" class="table-list"></div>
+        </div>
+
+        <div class="split">
+          <div class="panel">
+            <div class="section-head">
+              <div>
+                <h2>Полученные предложения</h2>
+                <p class="muted">Персональные предложения от артистов и команды платформы с ценой и условиями.</p>
+              </div>
+            </div>
+            <div id="user-quotes" class="table-list"></div>
+          </div>
+          <div class="panel">
+            <div class="section-head">
+              <div>
+                <h2>Избранное и сравнение</h2>
+                <p class="muted">Карточки, которые вы сохранили из каталога.</p>
+              </div>
+            </div>
+            <div id="user-favorites" class="table-list"></div>
+            <div id="user-compare" class="comparison-table" style="margin-top:14px;"></div>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="panel">
+            <div class="section-head">
+              <div>
+                <h2>Чаты и кейсы</h2>
+                <p class="muted">Каждый диалог привязан к конкретному запросу или сервисному кейсу.</p>
+              </div>
+            </div>
+            <div id="user-deals" class="table-list"></div>
+          </div>
+          <div id="chat-box" class="panel">
+            <div class="empty">Выберите кейс слева, чтобы открыть чат и продолжить согласование.</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="section-head">
+            <div>
+              <h2>Мои объявления на доске</h2>
+              <p class="muted">Открытые запросы и отклики по ним.</p>
+            </div>
+          </div>
+          <div id="user-board" class="table-list"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="auth-config.js"></script>
+  <script src="marketplace-core.js"></script>
+  <script src="auth-bridge.js"></script>
+  <script src="visual-motion.js"></script>
+  <script>
+    (function () {
+      const key = "palan_theme_mode";
+      const saved = localStorage.getItem(key) || "dark";
+      document.body.setAttribute("data-theme", saved);
+      const button = document.getElementById("theme-toggle");
+      const menuToggle = document.getElementById("menu-toggle");
+      const backdrop = document.getElementById("mobile-nav-backdrop");
+      const nav = document.querySelector(".nav");
+      function sync() {
+        const theme = document.body.getAttribute("data-theme") || "dark";
+        button.textContent = theme === "dark" ? "Светлая тема" : "Тёмная тема";
+      }
+      function closeNav() { document.body.classList.remove("nav-open"); }
+      button.addEventListener("click", function () {
+        const next = (document.body.getAttribute("data-theme") || "dark") === "dark" ? "light" : "dark";
+        document.body.setAttribute("data-theme", next);
+        localStorage.setItem(key, next);
+        sync();
+      });
+      menuToggle.addEventListener("click", function () { document.body.classList.toggle("nav-open"); });
+      backdrop.addEventListener("click", closeNav);
+      nav.querySelectorAll("a, button").forEach(function (node) {
+        node.addEventListener("click", function () {
+          if (window.innerWidth <= 720 && node !== menuToggle) closeNav();
+        });
+      });
+      sync();
+    })();
+
+    function byId(id) { return document.getElementById(id); }
+    function escapeHtml(value) {
+      return String(value || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    }
+    function showMessage(text, kind) {
+      byId("cab-message").innerHTML = text ? '<div class="message ' + kind + '">' + text + '</div>' : "";
+    }
+    function renderKpis(user) {
+      const leads = MarketplaceStore.getLeadsForUser(user.id);
+      const quotes = MarketplaceStore.getQuotesForUser(user.id);
+      const favorites = MarketplaceStore.getFavoriteProfiles(user.id);
+      byId("user-kpis").innerHTML = [
+        ["Заявки", leads.length, "активные и завершенные"],
+        ["Квоты", quotes.length, "полученные предложения"],
+        ["Избранное", favorites.length, "сохраненные профили"]
+      ].map(function (item) {
+        return '<div class="service-kpi"><span>' + item[0] + '</span><strong>' + item[1] + '</strong><span class="muted">' + item[2] + '</span></div>';
+      }).join("");
+    }
+    function renderLeads(user) {
+      const leads = MarketplaceStore.getLeadsForUser(user.id);
+      byId("user-leads").innerHTML = leads.length ? leads.map(function (lead) {
+        return '<div class="table-row"><div><strong>' + escapeHtml(lead.profileName || "Общий запрос") + '</strong><div class="muted">' + escapeHtml(lead.eventType || "Событие") + ' · ' + escapeHtml(lead.city || "Город не указан") + '</div></div><div>' + escapeHtml(lead.eventDate || "Дата не указана") + '</div><div>' + (lead.budget ? Number(lead.budget).toLocaleString("ru-RU") + ' ₽' : 'Бюджет не указан') + '</div><div><span class="badge accent">' + escapeHtml(lead.status) + '</span></div><div><a class="ghost-btn" href="index.html">Каталог</a></div></div>';
+      }).join("") : '<div class="empty">Здесь появятся все ваши сервисные запросы. Начните с главной витрины и отправьте первый запрос артисту или команде платформы.</div>';
+    }
+    function renderQuotes(user) {
+      const quotes = MarketplaceStore.getQuotesForUser(user.id);
+      byId("user-quotes").innerHTML = quotes.length ? quotes.map(function (quote) {
+        const lead = MarketplaceStore.getLeadById(quote.leadId);
+        const profile = MarketplaceStore.getProfileById(quote.profileId);
+        return '<div class="detail-box"><div class="section-head"><div><strong>' + escapeHtml(profile ? profile.name : "Исполнитель") + '</strong><div class="muted">' + escapeHtml(quote.packageName || "Персональный пакет") + '</div></div><span class="badge gold">' + Number(quote.amount || 0).toLocaleString("ru-RU") + ' ₽</span></div><div>' + escapeHtml(quote.includes || "") + '</div><div class="muted" style="margin-top:8px;">' + escapeHtml(quote.comment || "") + '</div><div class="inline-actions" style="margin-top:12px;"><button class="primary-btn" type="button" onclick="acceptQuote(\'' + quote.id + '\')">Подтвердить</button><button class="ghost-btn" type="button" onclick="openLeadChatByLead(\'' + quote.leadId + '\')">Открыть чат</button><span class="summary-pill">Статус заявки: ' + escapeHtml(lead ? lead.status : "") + '</span></div></div>';
+      }).join("") : '<div class="empty">Когда артист или команда платформы ответят на ваш запрос, здесь появится персональное предложение с ценой, scope и условиями.</div>';
+    }
+    function renderFavorites(user) {
+      const favorites = MarketplaceStore.getFavoriteProfiles(user.id);
+      byId("user-favorites").innerHTML = favorites.length ? favorites.map(function (profile) {
+        return '<div class="table-row"><div><strong>' + escapeHtml(profile.name) + '</strong><div class="muted">' + escapeHtml(profile.city) + ' · ' + escapeHtml(profile.title) + '</div></div><div>' + Number(profile.priceFrom || 0).toLocaleString("ru-RU") + ' ₽</div><div>' + MarketplaceStore.getProfileRating(profile.id).average.toFixed(1) + ' / 5</div><div>' + escapeHtml(profile.categories.map(MarketplaceStore.categoryLabel).join(", ")) + '</div><div><a class="ghost-btn" href="index.html#catalog">Открыть</a></div></div>';
+      }).join("") : '<div class="empty">Избранное пока пусто. Сохраняйте сильные карточки с витрины, чтобы собрать shortlist по сервисному кейсу.</div>';
+      const compare = MarketplaceStore.getCompareProfiles(user.id);
+      byId("user-compare").innerHTML = compare.length ? '<table><thead><tr><th>Параметр</th>' + compare.map(function (profile) { return '<th>' + escapeHtml(profile.name) + '</th>'; }).join("") + '</tr></thead><tbody>' + [["Цена от", function (profile) { return Number(profile.priceFrom || 0).toLocaleString("ru-RU") + " ₽"; }], ["Город", function (profile) { return profile.city; }], ["Языки", function (profile) { return profile.languages.join(", "); }], ["Сценарии работы", function (profile) { return profile.eventFormats.join(", "); }]].map(function (row) { return '<tr><th>' + row[0] + '</th>' + compare.map(function (profile) { return '<td>' + escapeHtml(row[1](profile) || "Не указано") + '</td>'; }).join("") + '</tr>'; }).join("") + '</tbody></table>' : '<div class="empty">Сравнение пока пустое. Добавьте 2-3 профиля и быстро сверьте цену, языки и сценарии работы.</div>';
+    }
+    function renderDeals(user) {
+      const deals = MarketplaceStore.getDealsForUser(user);
+      byId("user-deals").innerHTML = deals.length ? deals.map(function (deal) {
+        return '<div class="table-row"><div><strong>' + escapeHtml(deal.profileName) + '</strong><div class="muted">' + escapeHtml(deal.clientName) + '</div></div><div>' + (deal.agreedAmount ? Number(deal.agreedAmount).toLocaleString("ru-RU") + ' ₽' : 'Сумма не согласована') + '</div><div><span class="badge accent">' + escapeHtml(deal.status) + '</span></div><div>Диалог активен</div><div><button class="primary-btn" type="button" onclick="openClientChat(\'' + deal.id + '\')">Открыть</button></div></div>';
+      }).join("") : '<div class="empty">После первого ответа артиста здесь появятся кейс и чат по конкретному запросу.</div>';
+    }
+    function renderBoard(user) {
+      const posts = MarketplaceStore.getBoardPostsForOwner("client", user.id);
+      byId("user-board").innerHTML = posts.length ? posts.map(function (post) {
+        return '<div class="detail-box"><strong>' + escapeHtml(post.title) + '</strong><div class="muted">' + escapeHtml(post.city) + ' · ' + escapeHtml(post.category || "") + '</div><div style="margin-top:8px;">' + escapeHtml(post.description) + '</div><div class="detail-stack" style="margin-top:12px;">' + ((post.replies || []).length ? post.replies.map(function (reply) { return '<div class="hero-point"><strong>' + escapeHtml(reply.authorName) + '</strong><div class="muted">' + escapeHtml(reply.contactInfo) + '</div><div>' + escapeHtml(reply.message) + '</div></div>'; }).join("") : '<div class="empty">Пока нет откликов.</div>') + '</div></div>';
+      }).join("") : '<div class="empty">Вы еще не публиковали объявления на доске. Это удобно, если хотите собрать отклики без выбора конкретной карточки.</div>';
+    }
+    window.openClientChat = function (dealId) {
+      const chat = MarketplaceStore.getChatByDealId(dealId);
+      const deal = MarketplaceStore.getDb().deals.find(function (item) { return item.id === dealId; });
+      if (!chat || !deal) return byId("chat-box").innerHTML = '<div class="empty">Чат не найден.</div>';
+      byId("chat-box").innerHTML = '<div class="section-head"><div><h2>Чат по кейсу</h2><p class="muted">' + escapeHtml(deal.profileName) + ' · ' + escapeHtml(deal.status) + '</p></div></div><div class="table-list">' + chat.messages.map(function (message) { return '<div class="hero-point"><strong>' + escapeHtml(message.sender) + '</strong><div class="muted">' + escapeHtml(message.createdAt.slice(0, 16).replace("T", " ")) + '</div><div>' + escapeHtml(message.text) + '</div></div>'; }).join("") + '</div><form id="chat-form" class="form-grid one" style="margin-top:12px;"><label>Новое сообщение<textarea name="text" required></textarea></label><button class="primary-btn" type="submit">Отправить</button></form>' + ((deal.status === "done" || deal.status === "booked") ? '<form id="review-form" class="form-grid" style="margin-top:12px;"><label>Коммуникация<input name="communication" type="number" min="1" max="5" value="5"></label><label>Пунктуальность<input name="punctuality" type="number" min="1" max="5" value="5"></label><label>Качество<input name="quality" type="number" min="1" max="5" value="5"></label><label>Цена/ценность<input name="value" type="number" min="1" max="5" value="5"></label><label style="grid-column:1/-1;">Отзыв<textarea name="text" required></textarea></label><button class="ghost-btn" type="submit">Оставить отзыв</button></form>' : '');
+      byId("chat-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        MarketplaceStore.addChatMessage(dealId, "client", new FormData(event.target).get("text"));
+        openClientChat(dealId);
+      });
+      const reviewForm = byId("review-form");
+      if (reviewForm) {
+        reviewForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          const data = Object.fromEntries(new FormData(event.target).entries());
+          MarketplaceStore.createReview({ profileId: deal.profileId, authorName: MarketplaceStore.getCurrentUser().name, text: data.text, criteria: { communication: Number(data.communication), punctuality: Number(data.punctuality), quality: Number(data.quality), value: Number(data.value) } });
+          showMessage("Отзыв сохранен.", "success");
+          openClientChat(dealId);
+        });
+      }
+    };
+    window.openLeadChatByLead = function (leadId) {
+      const deal = MarketplaceStore.ensureDealForLead(MarketplaceStore.getLeadById(leadId));
+      openClientChat(deal.id);
+    };
+    window.acceptQuote = function (quoteId) {
+      MarketplaceStore.updateQuoteStatus(quoteId, "accepted");
+      showMessage("Предложение подтверждено. Кейс переведён в booked.", "success");
+      renderCabinet();
+    };
+    function maybeOpenDealFromUrl() {
+      const params = new URLSearchParams(location.search);
+      const dealId = params.get("deal");
+      if (!dealId) return;
+      openClientChat(dealId);
+      params.delete("deal");
+      const nextUrl = location.pathname + (params.toString() ? "?" + params.toString() : "") + location.hash;
+      history.replaceState({}, "", nextUrl);
+    }
+    function formatCabinetIdentity(email, fallbackLabel) {
+      const raw = String(email || "").trim();
+      if (!raw) return fallbackLabel || "";
+      if (/@auth\.(palanart|dvizhart)\.local$/i.test(raw)) {
+        if (/^telegram_/i.test(raw)) return "Telegram user";
+        if (/^vk_/i.test(raw)) return "VK user";
+        if (/^google_/i.test(raw)) return "Google user";
+        return fallbackLabel || "Соцвход";
+      }
+      return raw;
+    }
+    function renderCabinet() {
+      const user = MarketplaceStore.getCurrentUser();
+      byId("auth-view").style.display = user ? "none" : "grid";
+      byId("cabinet-view").style.display = user ? "grid" : "none";
+      if (!user) return;
+      byId("user-summary").textContent = user.name + " · " + formatCabinetIdentity(user.email, "Service Client") + " · " + (user.city || "город не указан");
+      renderKpis(user); renderLeads(user); renderQuotes(user); renderFavorites(user); renderDeals(user); renderBoard(user);
+      byId("chat-box").innerHTML = '<div class="empty">Выберите кейс слева, чтобы открыть чат и продолжить согласование.</div>';
+      maybeOpenDealFromUrl();
+    }
+      function renderAuthMode() {
+        const mode = window.PalanartAuthBridge ? window.PalanartAuthBridge.getMode() : "local";
+        byId("user-auth-mode").innerHTML = mode === "supabase"
+          ? "Сервисный вход включён. Рабочий способ входа сейчас: e-mail и пароль через Supabase. Google можно добить внешней OAuth-настройкой, VK ID и Telegram подключаются через отдельный auth-слой."
+          : "Работает локальный режим. E-mail вход доступен сразу, а Google, VK ID и Telegram создают локальный соцаккаунт внутри платформы без внешнего редиректа.";
+        document.querySelectorAll("[data-user-social]").forEach(function (button) {
+          const available = window.PalanartAuthBridge && window.PalanartAuthBridge.canUseProvider(button.dataset.userSocial);
+          button.disabled = !available;
+          button.hidden = !available;
+          button.classList.toggle("is-unavailable", !available);
+          button.title = available ? "" : "Этот соцвход сейчас недоступен.";
+        });
+      }
+      async function reverseLookupCity(latitude, longitude) {
+        const endpoint = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=" + encodeURIComponent(latitude) + "&lon=" + encodeURIComponent(longitude) + "&accept-language=ru";
+        const response = await fetch(endpoint, { headers: { "Accept": "application/json" } });
+        if (!response.ok) throw new Error("Сервис геолокации не ответил.");
+        const data = await response.json();
+        const address = data.address || {};
+        return {
+          city: address.city || address.town || address.village || address.municipality || address.state || "",
+          region: address.state || address.region || address.county || ""
+        };
+      }
+      async function detectUserCity() {
+        if (!navigator.geolocation) return showMessage("Ваш браузер не поддерживает геолокацию.", "error");
+        const button = byId("detect-user-city");
+        button.disabled = true;
+        button.textContent = "Определяем...";
+        navigator.geolocation.getCurrentPosition(async function (position) {
+          try {
+            const result = await reverseLookupCity(position.coords.latitude, position.coords.longitude);
+            if (byId("register-form").city && result.city) {
+              byId("register-form").city.value = result.city;
+            }
+            showMessage(result.city ? "Город определён: " + result.city : "Координаты получены, но город не распознан. Можно вписать вручную.", result.city ? "success" : "error");
+          } catch (error) {
+            showMessage(error.message || "Не удалось определить город.", "error");
+          } finally {
+            button.disabled = false;
+            button.textContent = "Определить город по геолокации";
+          }
+        }, function () {
+          button.disabled = false;
+          button.textContent = "Определить город по геолокации";
+          showMessage("Не удалось получить геолокацию. Проверьте разрешение браузера.", "error");
+        }, { enableHighAccuracy: true, timeout: 12000, maximumAge: 0 });
+      }
+      byId("register-form").addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const payload = Object.fromEntries(new FormData(event.target).entries());
+        const result = window.PalanartAuthBridge && window.PalanartAuthBridge.getMode() === "supabase"
+        ? await window.PalanartAuthBridge.signUpWithEmail("client", payload)
+        : MarketplaceStore.registerUser(payload);
+      if (!result.ok) return showMessage(result.message, "error");
+      renderCabinet();
+    });
+    byId("login-form").addEventListener("submit", async function (event) {
+      event.preventDefault();
+      const payload = Object.fromEntries(new FormData(event.target).entries());
+      const result = window.PalanartAuthBridge && window.PalanartAuthBridge.getMode() === "supabase"
+        ? await window.PalanartAuthBridge.signInWithEmail("client", payload)
+        : MarketplaceStore.loginUser(payload.email, payload.password);
+      if (!result.ok) return showMessage(result.message, "error");
+      renderCabinet();
+    });
+    byId("logout-user").addEventListener("click", async function () {
+      if (window.PalanartAuthBridge) {
+        await window.PalanartAuthBridge.logout();
+      } else {
+        MarketplaceStore.logout();
+      }
+      renderCabinet();
+    });
+      document.querySelectorAll("[data-user-social]").forEach(function (button) {
+        button.addEventListener("click", async function () {
+          if (!window.PalanartAuthBridge) return;
+          const result = await window.PalanartAuthBridge.signInWithSocial("client", button.dataset.userSocial);
+          if (!result.ok) showMessage(result.message, "error");
+        });
+      });
+      byId("detect-user-city").addEventListener("click", detectUserCity);
+      renderAuthMode();
+    if (window.PalanartAuthBridge) {
+      window.PalanartAuthBridge.init({
+        role: "client",
+        onSession: function () {
+          renderCabinet();
+        }
+      }).then(function () {
+        renderAuthMode();
+        renderCabinet();
+      });
+    } else {
+      renderCabinet();
+    }
+  </script>
+</body>
+</html>
+

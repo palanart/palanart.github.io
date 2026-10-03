@@ -1,0 +1,1893 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artist Portal | Palanart</title>
+  <link rel="stylesheet" href="marketplace.css">
+</head>
+<body class="page-artist">
+  <div class="music-atmosphere" aria-hidden="true">
+    <span class="music-beam music-beam--left"></span>
+    <span class="music-beam music-beam--right"></span>
+    <span class="music-vinyl"></span>
+    <span class="music-wave"></span>
+    <span class="music-piano"></span>
+    <span class="music-staff"></span>
+    <span class="music-silhouette music-silhouette--mic"></span>
+    <span class="music-silhouette music-silhouette--headphones"></span>
+    <span class="music-trails music-trails--primary"></span>
+    <span class="music-trails music-trails--secondary"></span>
+    <span class="music-eq">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </span>
+    <span class="music-particles">
+      <i></i><i></i><i></i><i></i><i></i><i></i>
+    </span>
+    <span class="music-note music-note--a">♪</span>
+    <span class="music-note music-note--b">♬</span>
+    <span class="music-note music-note--c">♫</span>
+  </div>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand">
+        <strong>Palanart</strong>
+        <span>Кабинет исполнителя</span>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Открыть меню">☰</button>
+      <nav class="nav">
+        <a href="index.html">Витрина</a>
+        <a href="user.html">Клиент</a>
+        <a href="partner.html">Партнёр</a>
+        <button id="theme-toggle" class="ghost-btn theme-toggle" type="button">Светлая тема</button>
+      </nav>
+    </div>
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  </header>
+
+  <main class="shell section service-shell">
+    <div id="artist-message"></div>
+
+    <section class="page-masthead portal-tone-artist" data-scene="hero">
+      <div class="page-masthead-grid">
+        <div class="page-masthead-copy">
+          <div class="highlight">Кабинет исполнителя</div>
+          <h2>Ваш профиль, портфолио и новые заявки в одном месте</h2>
+          <p>Добавляйте услуги, город, цену, фото и видео, редактируйте условия работы и отвечайте на запросы заказчиков.</p>
+          <div class="page-masthead-actions">
+            <a class="primary-btn" href="#artist-profile-form">Редактировать профиль</a>
+            <a class="ghost-btn" href="index.html#catalog">Открыть каталог</a>
+            <a class="ghost-btn" href="#artist-deals">Мои заявки</a>
+          </div>
+        </div>
+        <div class="page-masthead-rail">
+          <article class="masthead-people-card masthead-people-card--artist">
+            <img class="people-image people-image--artist-hero" src="assets/artist-portal-banner.png" alt="Артист в пространстве Artist Portal">
+            <div class="masthead-people-copy">
+              <div class="eyebrow">Live Artist Presence</div>
+              <h3>Живой артист внутри интерфейса, а не абстрактный SaaS-экран</h3>
+              <p>Сцена, лицо артиста, студийный свет и человеческое присутствие делают первый экран ближе к реальному музыкальному продукту.</p>
+            </div>
+          </article>
+          <div class="page-rail-card">
+            <span>Identity Layer</span>
+            <strong>Профиль, медиа, соцсети, сервисные пакеты и публичное позиционирование.</strong>
+          </div>
+          <div class="page-rail-card">
+            <span>Release Layer</span>
+            <strong>Релизы, readiness, таймлайн, статусы и логика подготовки материалов.</strong>
+          </div>
+          <div class="page-rail-card">
+            <span>Finance Layer</span>
+            <strong>Royalty, balance, payout requests, документы и поддержка по операциям.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="people-showcase" data-scene="studio">
+      <article class="people-card people-card--tall people-card--artist-main">
+        <img class="people-image people-image--artist-main" src="assets/artist-portal-banner.png" alt="Артист в личном кабинете">
+        <div class="people-card-copy">
+          <div class="eyebrow">Artist Identity</div>
+          <h3>Больше живых лиц и личного бренда в кабинете артиста</h3>
+          <p>Мы усиливаем ощущение, что это рабочее пространство для реального артиста, а не безликая CRM-панель.</p>
+        </div>
+      </article>
+      <div class="people-showcase-stack">
+        <article class="people-card people-card--artist-studio">
+          <img class="people-image people-image--artist-studio" src="assets/studio-artist-scene.png" alt="Артист в студии">
+          <div class="people-card-copy">
+            <div class="eyebrow">Studio Mood</div>
+            <h3>Студийная атмосфера в кадре</h3>
+            <p>Запись, микрофон, наушники и production-жизнь усиливают доверие к платформе.</p>
+          </div>
+        </article>
+        <article class="people-card people-card--artist-live">
+          <img class="people-image people-image--artist-live" src="assets/hero-people-anime-stage.png" alt="Выступление на сцене">
+          <div class="people-card-copy">
+            <div class="eyebrow">Live Presence</div>
+            <h3>Сцена и выступления как часть профиля</h3>
+            <p>Артистический контур теперь чувствуется уже до просмотра самих форм и KPI.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="artist-auth-view" class="split auth-onboarding" data-scene="hero">
+      <div class="service-panel auth-welcome-card">
+        <div class="eyebrow">Palanart Artist Portal</div>
+        <h1>Быстрый старт артиста без перегруженной анкеты</h1>
+        <p class="muted">Сначала создаём кабинет артиста за минуту, потом уже спокойно заполняем профиль, релизы, медиа, условия работы и сервисные блоки.</p>
+        <div class="section-head compact">
+          <div>
+            <div class="eyebrow">Регистрация</div>
+            <h2>Создать artist account</h2>
+          </div>
+          <span class="pill-badge">1 минута</span>
+        </div>
+        <div class="auth-preset-block">
+          <strong>Кто вы?</strong>
+          <div class="quick-options register-role-options">
+            <button class="quick-option" type="button" data-register-role="host">Ведущий</button>
+            <button class="quick-option" type="button" data-register-role="dj">DJ</button>
+            <button class="quick-option" type="button" data-register-role="photographer">Фотограф</button>
+            <button class="quick-option" type="button" data-register-role="band">Музыканты</button>
+          </div>
+        </div>
+        <div class="auth-socials auth-socials-stack">
+          <button class="ghost-btn auth-social-btn auth-social-btn--google" type="button" data-artist-social="google">Войти через Google</button>
+          <button class="ghost-btn auth-social-btn" type="button" data-artist-social="vk">Войти через VK ID</button>
+          <button class="ghost-btn auth-social-btn" type="button" data-artist-social="telegram">Войти через Telegram</button>
+        </div>
+        <div class="auth-benefits">
+          <div class="auth-benefit-card">
+            <strong>Быстрый account setup</strong>
+            <span>Роль, имя проекта, город и контакты.</span>
+          </div>
+          <div class="auth-benefit-card">
+            <strong>Профиль по шаблонам</strong>
+            <span>Пакеты, FAQ и занятость можно вставить кнопками уже после входа.</span>
+          </div>
+          <div class="auth-benefit-card">
+            <strong>Сразу в тест</strong>
+            <span>Можно идти по сценарию профиль → запрос → чат → релиз → отчётность.</span>
+          </div>
+        </div>
+      </div>
+      <form id="artist-register-form" class="service-panel auth-register-card">
+        <h1>Регистрация артиста</h1>
+        <div class="section-head compact">
+          <div>
+            <div class="eyebrow">Регистрация</div>
+            <h2>Создать artist account</h2>
+          </div>
+          <span class="pill-badge">1 минута</span>
+        </div>
+        <div class="auth-preset-block">
+          <strong>Кто вы?</strong>
+          <div class="quick-options register-role-options">
+            <button class="quick-option" type="button" data-register-role="host">Ведущий</button>
+            <button class="quick-option" type="button" data-register-role="dj">DJ</button>
+            <button class="quick-option" type="button" data-register-role="photographer">Фотограф</button>
+            <button class="quick-option" type="button" data-register-role="band">Музыканты</button>
+          </div>
+        </div>
+        <div class="form-grid">
+          <label>Роль в платформе
+            <select name="role" id="artist-register-role">
+              <option value="host">Артист / Front Person</option>
+              <option value="dj">DJ</option>
+              <option value="photographer">Visual Creator</option>
+              <option value="band">Музыкальный проект</option>
+              <option value="videographer">Video Production</option>
+              <option value="decorator">Scenography</option>
+            </select>
+          </label>
+          <label>Город<input name="city" type="text" list="artist-city-options" required></label>
+          <div class="geo-inline-action">
+            <button id="detect-artist-register-city" class="ghost-btn mini-chip" type="button">Определить город по геолокации</button>
+          </div>
+          <label>Имя или проект<input name="name" type="text" required></label>
+          <label>E-mail<input name="email" type="email" required></label>
+          <label>Телефон<input name="phone" type="tel" required></label>
+          <label>Пароль<input name="password" type="password" required></label>
+          <label>Telegram<input name="telegram" type="text"></label>
+          <label>Фото профиля из загрузок<input id="artist-register-photo-file" type="file" accept="image/*"></label>
+        </div>
+        <div id="artist-register-photo-preview" class="register-photo-preview">
+          <div class="empty">Загрузите фото, если хотите сразу собрать аккуратный публичный профиль.</div>
+        </div>
+        <button class="primary-btn" type="submit">Создать кабинет</button>
+        <div class="auth-socials">
+          <button class="ghost-btn auth-social-btn" type="button" data-artist-social="google">Войти через Google</button>
+          <button class="ghost-btn auth-social-btn" type="button" data-artist-social="vk">Войти через VK ID</button>
+          <button class="ghost-btn auth-social-btn" type="button" data-artist-social="telegram">Войти через Telegram</button>
+        </div>
+        <div class="auth-inline-hints">
+          <button class="ghost-btn mini-chip" type="button" data-fill-register="city" data-fill-value="Чебоксары">Чебоксары</button>
+          <button class="ghost-btn mini-chip" type="button" data-fill-register="city" data-fill-value="Казань">Казань</button>
+          <button class="ghost-btn mini-chip" type="button" data-fill-register="city" data-fill-value="Москва">Москва</button>
+          <button class="ghost-btn mini-chip" type="button" data-fill-register="telegram" data-fill-value="@dvizhart_bot">Шаблон Telegram</button>
+        </div>
+        <p class="muted auth-form-footnote">Пакеты, цены, календарь, медиа и FAQ добавите уже после входа. На старте не нужно тратить полчаса на форму.</p>
+      </form>
+
+      <form id="artist-login-form" class="service-panel auth-login-card">
+        <h2>Вход</h2>
+        <div class="form-grid one">
+            <label>E-mail<input name="email" type="email" required></label>
+            <label>Пароль<input name="password" type="password" required></label>
+        </div>
+        <button class="ghost-btn" type="submit">Войти</button>
+      </form>
+    </section>
+
+    <section id="artist-cabinet-view" style="display:none;" class="service-shell" data-scene="hero">
+      <div class="scene-banner">
+        <img src="assets/artist-portal-banner.png" alt="Артист в portal banner">
+        <div class="scene-banner-copy">
+          <div class="eyebrow">Performer Identity</div>
+          <h2>Artist Portal с живым лицом артиста</h2>
+          <p>Личный кабинет теперь ощущается как реальный музыкальный продукт: артист, сцена, микрофон и персональный бренд внутри сервисной системы.</p>
+        </div>
+      </div>
+      <div class="portal-spotlight">
+        <div class="portal-spotlight-copy">
+          <div class="eyebrow">Artist Workspace</div>
+          <h3>Профиль артиста, релизы, royalty и сервисные задачи в одном понятном контуре</h3>
+          <p>Artist Portal строится как рабочее пространство, а не просто анкета. Здесь артист ведёт публичный образ, получает release flow, видит payout queue, документы и поддержку лейбла.</p>
+          <ul>
+            <li><strong>Identity layer</strong> профиль, медиа, соцсети, пакеты и публичное позиционирование.</li>
+            <li><strong>Release layer</strong> релизы, статусы, timeline, задачи по материалам и readiness.</li>
+            <li><strong>Finance layer</strong> royalty, balance, payout requests, документы и support desk.</li>
+          </ul>
+        </div>
+        <div class="portal-spotlight-stats">
+          <div class="portal-spotlight-stat"><span>Profile Engine</span><strong>Media + socials + packages</strong></div>
+          <div class="portal-spotlight-stat"><span>Release Desk</span><strong>Workflow + readiness + reports</strong></div>
+          <div class="portal-spotlight-stat"><span>Finance Desk</span><strong>Ledger + payouts + documents</strong></div>
+        </div>
+      </div>
+      <div class="page-shell-grid">
+      <div class="page-shell-main">
+      <div class="service-panel">
+        <div class="section-head">
+          <div>
+            <h1>Профиль артиста</h1>
+            <p id="artist-summary" class="muted"></p>
+          </div>
+          <button id="artist-logout" class="ghost-btn" type="button">Выйти</button>
+        </div>
+        <div id="artist-kpis" class="service-kpis"></div>
+        <div id="artist-executive-grid" class="portal-summary-grid" style="margin-top:14px;"></div>
+        <div id="artist-status-rail" class="status-rail" style="margin-top:14px;"></div>
+        <nav class="portal-nav" aria-label="Artist portal navigation">
+          <a href="#artist-profile-form">Profile Builder</a>
+          <a href="#artist-ops-hub">Commercial Ops</a>
+          <a href="#artist-release-hub">Release Flow</a>
+          <a href="#artist-finance-hub">Finance</a>
+          <a href="#artist-studio-hub">Studio</a>
+          <a href="#artist-support-hub">Docs & Support</a>
+        </nav>
+        <div class="ops-board">
+          <section class="ops-card">
+            <div class="section-head compact">
+              <div>
+                <div class="eyebrow">Control Center</div>
+                <h2>Priority queue</h2>
+              </div>
+            </div>
+            <div id="artist-command-center" class="ops-card-list"></div>
+          </section>
+          <section class="ops-card">
+            <div class="section-head compact">
+              <div>
+                <div class="eyebrow">Activity Feed</div>
+                <h2>Последние движения</h2>
+              </div>
+            </div>
+            <div id="artist-activity-feed" class="activity-feed"></div>
+          </section>
+        </div>
+        <div id="artist-focus-strip" class="signal-strip"></div>
+        <div class="cabinet-action-row">
+          <button id="artist-edit-card" class="primary-btn" type="button" onclick="window.artistScrollProfileForm && window.artistScrollProfileForm()">Редактировать карточку</button>
+          <button id="artist-preview-card" class="ghost-btn" type="button" onclick="window.artistPreviewProfile && window.artistPreviewProfile()">Предпросмотр карточки</button>
+          <a id="artist-open-storefront" class="ghost-btn" href="index.html#catalog" onclick="return window.artistOpenStorefront ? window.artistOpenStorefront(event) : true;">Открыть витрину</a>
+          <button id="artist-delete-card" class="danger-btn" type="button" onclick="window.artistOpenDeletePanel && window.artistOpenDeletePanel()">Удалить карточку</button>
+        </div>
+        <div id="artist-delete-panel" class="inline-confirm-panel" hidden>
+          <strong id="artist-delete-title">Удаление карточки</strong>
+          <p id="artist-delete-text" class="muted">Публичный профиль, запросы, предложения, кейсы и чаты будут удалены. Сам artist account останется, и новый профиль можно будет собрать заново.</p>
+          <div class="inline-actions">
+            <button id="artist-delete-confirm" class="danger-btn" type="button">Подтвердить удаление</button>
+            <button id="artist-delete-cancel" class="ghost-btn" type="button">Отмена</button>
+          </div>
+        </div>
+      </div>
+      <form id="artist-profile-form" class="service-panel" data-scene="catalog">
+        <div class="preset-box" style="margin-bottom:16px;">
+          <strong>Быстрый старт профиля</strong>
+          <div class="quick-options">
+            <button class="quick-option" type="button" data-profile-preset="host">Артист</button>
+            <button class="quick-option" type="button" data-profile-preset="dj">DJ</button>
+            <button class="quick-option" type="button" data-profile-preset="photographer">Visual Creator</button>
+            <button class="quick-option" type="button" data-profile-preset="band">Музыкальный проект</button>
+          </div>
+        </div>
+        <div class="form-grid">
+          <label>Основная категория<select name="role" id="artist-role"></select></label>
+          <label>Дополнительные категории<input name="categories" type="text" placeholder="host, planner"></label>
+          <label>Тариф<select name="planId" id="artist-plan"></select></label>
+          <label>Название профиля<input name="name" type="text" list="artist-name-options" required></label>
+          <label>Заголовок<input name="title" type="text" list="artist-title-options"></label>
+          <label>Город<input name="city" type="text" list="artist-city-options" required></label>
+          <label>Регион<input name="region" type="text" list="artist-region-options"></label>
+          <label>Радиус выезда, км
+            <select name="travelRadiusKm">
+              <option value="20">20</option>
+              <option value="50">50</option>
+              <option value="120">120</option>
+              <option value="250">250</option>
+              <option value="1000">По всей стране</option>
+            </select>
+          </label>
+          <label>Цена от
+            <select name="priceFrom">
+              <option value="15000">15 000 ₽</option>
+              <option value="25000">25 000 ₽</option>
+              <option value="45000">45 000 ₽</option>
+              <option value="70000">70 000 ₽</option>
+              <option value="120000">120 000 ₽</option>
+            </select>
+          </label>
+          <label>Короткое позиционирование<input name="tagline" type="text" list="artist-tagline-options" required></label>
+          <label>E-mail<input name="email" type="email" required></label>
+          <label>Телефон<input name="phone" type="tel" required></label>
+          <label>Telegram<input name="telegram" type="text"></label>
+          <label>Instagram<input name="instagram" type="url"></label>
+          <label>YouTube<input name="youtube" type="url"></label>
+            <label>VK<input name="vk" type="url"></label>
+            <label>Сайт<input name="website" type="url"></label>
+          <label>Фото профиля по ссылке<input name="photo" type="text" placeholder="Ссылка на фото, если не загружаете файл"></label>
+            <label>Фото профиля файлом<input id="artist-photo-file" type="file" accept="image/*"></label>
+            <label>Галерея по ссылкам<input name="galleryRaw" type="text" placeholder="https://img1, https://img2"></label>
+            <label>Галерея файлами<input id="artist-gallery-files" type="file" accept="image/*" multiple></label>
+            <label>Видео по ссылкам<input name="videoRaw" type="text" placeholder="https://video1, https://video2"></label>
+            <label>Видео файлами<input id="artist-video-files" type="file" accept="video/*" multiple></label>
+            <label>Аудио по ссылкам<input name="audioRaw" type="text" placeholder="https://audio1, https://audio2"></label>
+            <label>Аудио файлами<input id="artist-audio-files" type="file" accept="audio/*" multiple></label>
+          </div>
+          <div class="detail-box media-source-box">
+            <strong>Фото профиля из галереи</strong>
+            <p class="muted">Загрузите изображения в галерею и выберите любое из них как основное фото профиля.</p>
+            <div id="artist-photo-source-picker" class="photo-source-picker">
+              <div class="empty">Сначала добавьте изображения в галерею, тогда здесь появится быстрый выбор.</div>
+            </div>
+          </div>
+          <div class="form-grid one">
+            <label>Языки<input name="languages" type="text" list="artist-language-options"></label>
+            <div class="quick-options" data-chip-target="languages">
+              <button class="quick-option" type="button" data-chip-value="Русский">Русский</button>
+              <button class="quick-option" type="button" data-chip-value="Английский">Английский</button>
+            <button class="quick-option" type="button" data-chip-value="Чувашский">Чувашский</button>
+          </div>
+          <label>Сценарии работы<input name="eventFormats" type="text" list="artist-format-options"></label>
+          <div class="quick-options" data-chip-target="eventFormats">
+            <button class="quick-option" type="button" data-chip-value="Релизные кампании">Релизные кампании</button>
+            <button class="quick-option" type="button" data-chip-value="Live-сеты">Live-сеты</button>
+            <button class="quick-option" type="button" data-chip-value="Студийные сессии">Студийные сессии</button>
+            <button class="quick-option" type="button" data-chip-value="Бренд-контент">Бренд-контент</button>
+          </div>
+          <label>Особенности сервиса<input name="serviceFeatures" type="text" list="artist-feature-options"></label>
+          <div class="quick-options" data-chip-target="serviceFeatures">
+            <button class="quick-option" type="button" data-chip-value="Creative kickoff">Creative kickoff</button>
+            <button class="quick-option" type="button" data-chip-value="Production roadmap">Production roadmap</button>
+            <button class="quick-option" type="button" data-chip-value="Own technical setup">Own technical setup</button>
+            <button class="quick-option" type="button" data-chip-value="Cross-team coordination">Cross-team coordination</button>
+          </div>
+          <label>Сервисные пакеты<textarea name="packagesText"></textarea></label>
+          <div class="quick-options">
+            <button class="quick-option" type="button" data-fill-textarea="packagesText" data-fill-block="Profile Launch|14 дней|45000|Позиционирование, упаковка профиля и базовый roadmap&#10;Release Support|30 дней|70000|Контент, координация материалов и сервисное сопровождение">Шаблон пакетов</button>
+          </div>
+          <label>Дополнительные сервисы<textarea name="addOnsText"></textarea></label>
+          <div class="quick-options">
+            <button class="quick-option" type="button" data-fill-textarea="addOnsText" data-fill-block="Дополнительная итерация||7000|Дополнительный цикл согласований или правок&#10;Выездная сессия||10000|Логистика и выезд на внешнюю площадку">Шаблон опций</button>
+          </div>
+          <label>Календарь занятости<textarea name="availabilityText"></textarea></label>
+          <div class="quick-options">
+            <button class="quick-option" type="button" data-fill-textarea="availabilityText" data-fill-block="2026-05-20|busy&#10;2026-05-27|available&#10;2026-06-03|busy">Пример занятости</button>
+          </div>
+          <label>FAQ<textarea name="faqText"></textarea></label>
+          <div class="quick-options">
+            <button class="quick-option" type="button" data-fill-textarea="faqText" data-fill-block="Что входит в цену?|Ведение, созвон, тайминг и базовая координация.&#10;Нужен ли депозит?|Да, чтобы зафиксировать дату.">Шаблон FAQ</button>
+          </div>
+          <label>Депозит<input name="depositPolicy" type="text" list="artist-deposit-options"></label>
+          <label>Отмена<input name="cancellationPolicy" type="text" list="artist-cancel-options"></label>
+          <label>Технические требования<input name="technicalPolicy" type="text" list="artist-tech-options"></label>
+          <label>Подробное описание<textarea name="description" required></textarea></label>
+          <label>Стиль работы<textarea name="workStyle"></textarea></label>
+        </div>
+        <div class="detail-box">
+          <div class="section-head">
+            <div>
+              <strong>Медиа артиста</strong>
+              <p class="muted">Загрузка, удаление и сортировка фото, видео и аудио.</p>
+            </div>
+          </div>
+          <div id="artist-media-preview" class="media-grid" style="margin-top:12px;"></div>
+        </div>
+        <button class="primary-btn" type="submit">Сохранить профиль</button>
+      </form>
+
+      <div class="split" id="artist-ops-hub" data-scene="board">
+        <div class="panel"><h2>Лиды</h2><div id="artist-leads" class="table-list"></div></div>
+        <div class="panel"><h2>Предложения</h2><div id="artist-quotes" class="table-list"></div></div>
+      </div>
+      <div class="split">
+        <div class="panel"><h2>Чаты и кейсы</h2><div id="artist-chats" class="table-list"></div></div>
+        <div id="artist-chat-box" class="panel"><div class="empty">Выберите кейс, чтобы открыть переписку.</div></div>
+      </div>
+      <div class="panel"><h2>Аналитика</h2><div id="artist-analytics" class="metrics-grid"></div></div>
+      <div class="panel"><h2>Мои объявления</h2><div id="artist-board" class="table-list"></div></div>
+      <div class="split">
+        <div class="panel" id="artist-release-hub" data-scene="release">
+          <div class="section-head">
+            <div>
+              <h2>Релизы и каталог лейбла</h2>
+              <p class="muted">Собирайте релизы в кабинете артиста, переводите их по статусам и готовьте выпуск без отдельной CRM.</p>
+            </div>
+          </div>
+          <div id="artist-release-timeline" class="timeline-list" style="margin-bottom:14px;"></div>
+          <form id="artist-release-form" class="form-grid">
+            <label>Название релиза<input name="title" type="text" required></label>
+            <label>Формат
+              <select name="type">
+                <option value="single">Single</option>
+                <option value="ep">EP</option>
+                <option value="album">Album</option>
+              </select>
+            </label>
+            <label>Жанр<input name="genre" type="text"></label>
+            <label>Дата релиза<input name="releaseDate" type="date"></label>
+            <label>Язык<input name="language" type="text" placeholder="Русский, English"></label>
+            <label>Треков<input name="trackCount" type="number" min="1" max="40" value="1"></label>
+            <label style="grid-column:1/-1;">Описание<textarea name="description"></textarea></label>
+            <button class="primary-btn" type="submit">Добавить релиз</button>
+          </form>
+          <div id="artist-release-list" class="table-list" style="margin-top:14px;"></div>
+        </div>
+        <div class="panel" id="artist-finance-hub" data-scene="trust">
+          <div class="section-head">
+            <div>
+              <h2>Royalty и вывод средств</h2>
+              <p class="muted">Журнал начислений, отчёты по периодам, баланс и заявки на вывод уже встроены в кабинет.</p>
+            </div>
+          </div>
+          <div id="artist-royalty-summary" class="metrics-grid"></div>
+          <div id="artist-finance-widgets" class="finance-widget-grid" style="margin-top:14px;"></div>
+          <div id="artist-royalty-list" class="table-list" style="margin-top:14px;"></div>
+          <div id="artist-ledger-list" class="table-list" style="margin-top:14px;"></div>
+          <form id="artist-payout-form" class="form-grid" style="margin-top:14px;">
+            <label>Сумма вывода<input name="amount" type="number" min="1" step="100" required></label>
+            <label>Валюта
+              <select name="currency">
+                <option value="RUB">RUB</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+              </select>
+            </label>
+            <label style="grid-column:1/-1;">Комментарий<textarea name="note" placeholder="Реквизиты, договор, пожелания по выплате"></textarea></label>
+            <button class="primary-btn" type="submit">Запросить вывод</button>
+          </form>
+          <div id="artist-payouts" class="table-list" style="margin-top:14px;"></div>
+        </div>
+      </div>
+      <div class="panel" id="artist-studio-hub" data-scene="studio">
+        <div class="section-head">
+          <div>
+            <h2>Студийные услуги и бронирования</h2>
+            <p class="muted">Запись, сведение, мастеринг и собственные слоты студийного комплекса в одном сервисном окне.</p>
+          </div>
+        </div>
+        <div id="artist-studio-services" class="table-list"></div>
+        <div id="artist-studio-bookings" class="table-list" style="margin-top:14px;"></div>
+      </div>
+      <div class="split" id="artist-support-hub" data-scene="partner">
+        <div class="panel">
+          <div class="section-head">
+            <div>
+              <h2>Document Center</h2>
+              <p class="muted">Здесь собираются royalty-отчёты, payout requests и связанные документы артиста.</p>
+            </div>
+          </div>
+          <div id="artist-documents" class="table-list"></div>
+        </div>
+        <div class="panel">
+          <div class="section-head">
+            <div>
+              <h2>Support Tickets</h2>
+              <p class="muted">Быстрые тикеты в ops-команду по релизам, выплатам, документам и студийным задачам.</p>
+            </div>
+          </div>
+          <form id="artist-ticket-form" class="form-grid">
+            <label>Тема<input name="subject" type="text" required></label>
+            <label>Категория
+              <select name="category">
+                <option value="release">Release</option>
+                <option value="finance">Finance</option>
+                <option value="documents">Documents</option>
+                <option value="studio">Studio</option>
+              </select>
+            </label>
+            <label>Приоритет
+              <select name="priority">
+                <option value="normal">Normal</option>
+                <option value="high">High</option>
+                <option value="critical">Critical</option>
+              </select>
+            </label>
+            <label style="grid-column:1/-1;">Сообщение<textarea name="message" required></textarea></label>
+            <button class="primary-btn" type="submit">Создать тикет</button>
+          </form>
+          <div id="artist-tickets" class="table-list" style="margin-top:14px;"></div>
+        </div>
+      </div>
+      </div>
+      <aside class="page-shell-aside">
+        <div class="floating-panel">
+          <div class="eyebrow">Artist Signals</div>
+          <h3>Что видит артист в одном боковом слое</h3>
+          <ul>
+            <li>Переход от публичного профиля к release workflow без отдельной CRM.</li>
+            <li>Быстрый доступ к payout, документам и support без потери контекста.</li>
+            <li>Более дорогой premium-интерфейс, который продаёт уровень платформы.</li>
+          </ul>
+        </div>
+        <div class="floating-panel">
+          <div class="eyebrow">Portal Shape</div>
+          <h3>Новый визуальный каркас</h3>
+          <p class="muted">Мы переводим кабинет в продуктовый формат: masthead, main shell, sticky insight rail и модульные рабочие зоны.</p>
+        </div>
+      </aside>
+      </div>
+    </section>
+  </main>
+
+  <div class="app-modal" id="artist-action-modal">
+    <div class="app-modal-card">
+      <div class="app-modal-head">
+        <div>
+          <h3 id="artist-action-title">Действие по заявке</h3>
+          <p id="artist-action-subtitle" class="muted">Быстрое действие без системных окон.</p>
+        </div>
+        <button class="app-modal-close" id="artist-action-close" type="button">×</button>
+      </div>
+      <form id="artist-action-form" class="section-stack">
+        <input type="hidden" name="leadId">
+        <input type="hidden" name="mode">
+        <label id="artist-action-message-field">Сообщение<textarea name="text" required></textarea></label>
+        <div id="artist-quote-fields" class="form-grid" style="display:none;">
+          <label>Пакет<input name="packageName" type="text" list="artist-quote-package-options"></label>
+          <label>Сумма
+            <select name="amount">
+              <option value="25000">25 000 ₽</option>
+              <option value="45000">45 000 ₽</option>
+              <option value="70000">70 000 ₽</option>
+              <option value="100000">100 000 ₽</option>
+            </select>
+          </label>
+        </div>
+        <div class="quick-options" id="artist-action-quick"></div>
+        <div class="inline-actions">
+          <button class="primary-btn" type="submit">Готово</button>
+          <button class="ghost-btn" id="artist-action-cancel" type="button">Отмена</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <datalist id="artist-name-options"><option value="Palanart Artist"></option><option value="Palanart Live"></option><option value="Palanart Studio"></option></datalist>
+  <datalist id="artist-title-options"><option value="Артист с фокусом на live и release support"></option><option value="DJ и музыкальный куратор"></option><option value="Visual creator для артистов и релизов"></option><option value="Музыкальный проект для live и branded content"></option></datalist>
+  <datalist id="artist-city-options"><option value="Чебоксары"></option><option value="Новочебоксарск"></option><option value="Казань"></option><option value="Москва"></option></datalist>
+  <datalist id="artist-region-options"><option value="Чувашия"></option><option value="Татарстан"></option><option value="Москва"></option><option value="Россия"></option></datalist>
+  <datalist id="artist-tagline-options"><option value="Артист с аккуратной упаковкой, live-подачей и релизным фокусом"></option><option value="Современный звук, уверенная сцена и production-мышление"></option><option value="Визуальный автор с аккуратной коммуникацией и сильной подачей"></option></datalist>
+  <datalist id="artist-language-options"><option value="Русский"></option><option value="Русский, Английский"></option><option value="Русский, Чувашский"></option></datalist>
+  <datalist id="artist-format-options"><option value="Релизные кампании, Live-сеты"></option><option value="Студийные сессии, Контент production"></option><option value="Бренд-проекты, Публичные выступления"></option></datalist>
+  <datalist id="artist-feature-options"><option value="Creative kickoff, Production roadmap"></option><option value="Cross-team coordination, Own technical setup"></option></datalist>
+  <datalist id="artist-deposit-options"><option value="30% для фиксации production-слота"></option><option value="20% для старта сервиса"></option><option value="Безналичный депозит по договорённости"></option></datalist>
+  <datalist id="artist-cancel-options"><option value="Бесплатная отмена более чем за 21 день"></option><option value="Перенос слота по согласованию"></option><option value="Удержание депозита при позднем переносе"></option></datalist>
+  <datalist id="artist-tech-options"><option value="Нужен доступ к сцене, звуку или студийному сетапу"></option><option value="Нужна гримёрка, питание и контакт production lead"></option><option value="Нужен ранний монтаж и согласованный call sheet"></option></datalist>
+  <datalist id="artist-quote-package-options"><option value="Profile Launch"></option><option value="Release Support"></option><option value="Custom Scope"></option></datalist>
+
+  <script src="auth-config.js"></script>
+  <script src="marketplace-core.js"></script>
+  <script src="auth-bridge.js"></script>
+  <script src="visual-motion.js"></script>
+  <script>
+    (function () {
+      const key = "palan_theme_mode";
+      const saved = localStorage.getItem(key) || "dark";
+      document.body.setAttribute("data-theme", saved);
+      const button = document.getElementById("theme-toggle");
+      const menuToggle = document.getElementById("menu-toggle");
+      const backdrop = document.getElementById("mobile-nav-backdrop");
+      const nav = document.querySelector(".nav");
+      function sync() { button.textContent = (document.body.getAttribute("data-theme") || "dark") === "dark" ? "Светлая тема" : "Тёмная тема"; }
+      function closeNav() { document.body.classList.remove("nav-open"); }
+      button.addEventListener("click", function () {
+        const next = (document.body.getAttribute("data-theme") || "dark") === "dark" ? "light" : "dark";
+        document.body.setAttribute("data-theme", next);
+        localStorage.setItem(key, next);
+        sync();
+      });
+      menuToggle.addEventListener("click", function () { document.body.classList.toggle("nav-open"); });
+      backdrop.addEventListener("click", closeNav);
+      nav.querySelectorAll("a, button").forEach(function (node) {
+        node.addEventListener("click", function () {
+          if (window.innerWidth <= 720 && node !== menuToggle) closeNav();
+        });
+      });
+      sync();
+    })();
+
+    const artistMediaState = { photo: "", galleryFiles: [], videoFiles: [], audioFiles: [], drag: null };
+    function byId(id) { return document.getElementById(id); }
+    function escapeHtml(value) { return String(value || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+    function parseList(value) { return String(value || "").split(",").map(function (item) { return item.trim(); }).filter(Boolean); }
+    function readFileAsDataUrl(file) {
+      return new Promise(function (resolve, reject) {
+        const reader = new FileReader();
+        reader.onload = function () { resolve(reader.result); };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+    async function collectFiles(input) {
+      const files = Array.from(input.files || []);
+      return Promise.all(files.map(readFileAsDataUrl));
+    }
+    function createMediaEntry(kind, src, extra) {
+      return Object.assign({
+        id: kind + "-" + Date.now() + "-" + Math.random().toString(16).slice(2),
+        src: String(src || "").trim(),
+        caption: "",
+        poster: ""
+      }, extra || {});
+    }
+    function normalizeMediaEntry(entry, kind, index) {
+      if (!entry) return null;
+      if (typeof entry === "string") return createMediaEntry(kind, entry);
+      return {
+        id: entry.id || (kind + "-" + index),
+        src: String(entry.src || "").trim(),
+        caption: String(entry.caption || "").trim(),
+        poster: String(entry.poster || "").trim()
+      };
+    }
+    function parseMediaList(value, kind) {
+      return parseList(value).map(function (src, index) { return normalizeMediaEntry({ src: src }, kind, index); }).filter(function (item) { return item && item.src; });
+    }
+    function mediaSrc(item) { return item && item.src ? item.src : ""; }
+    function mediaCaption(item, fallback) { return item && item.caption ? item.caption : fallback; }
+    function parseRows(value, mode) {
+      return String(value || "").split(/\r?\n/).map(function (line) { return line.trim(); }).filter(Boolean).map(function (line) {
+        const parts = line.split("|").map(function (item) { return item.trim(); });
+        if (mode === "package") return { name: parts[0] || "", duration: parts[1] || "", price: Number(parts[2] || 0), description: parts[3] || "" };
+        if (mode === "availability") return { date: parts[0] || "", status: parts[1] || "available" };
+        if (mode === "faq") return { q: parts[0] || "", a: parts[1] || "" };
+        return null;
+      }).filter(Boolean);
+    }
+    function syncMediaInputs() {
+      const form = byId("artist-profile-form");
+      form.photo.value = artistMediaState.photo || "";
+      form.galleryRaw.value = artistMediaState.galleryFiles.map(function (item) { return item.src; }).join(", ");
+      form.videoRaw.value = artistMediaState.videoFiles.map(function (item) { return item.src; }).join(", ");
+      form.audioRaw.value = artistMediaState.audioFiles.map(function (item) { return item.src; }).join(", ");
+    }
+    function hideLegacyArtistPhotoUrlField() {
+      const form = byId("artist-profile-form");
+      if (!form || !form.photo) return;
+      form.photo.type = "hidden";
+      const photoLabel = form.photo.closest("label");
+      if (photoLabel) photoLabel.style.display = "none";
+    }
+    function moveMediaItem(listName, index, direction) {
+      const list = artistMediaState[listName];
+      const next = index + direction;
+      if (!Array.isArray(list) || next < 0 || next >= list.length) return;
+      const item = list[index];
+      list.splice(index, 1);
+      list.splice(next, 0, item);
+      syncMediaInputs();
+      renderMediaPreview();
+    }
+    function reorderMediaItem(listName, fromIndex, toIndex) {
+      const list = artistMediaState[listName];
+      if (!Array.isArray(list) || fromIndex === toIndex || fromIndex < 0 || toIndex < 0 || fromIndex >= list.length || toIndex >= list.length) return;
+      const item = list[fromIndex];
+      list.splice(fromIndex, 1);
+      list.splice(toIndex, 0, item);
+      syncMediaInputs();
+      renderMediaPreview();
+    }
+    function removeMediaItem(listName, index) {
+      const list = artistMediaState[listName];
+      if (!Array.isArray(list) || index < 0 || index >= list.length) return;
+      list.splice(index, 1);
+      syncMediaInputs();
+      renderMediaPreview();
+    }
+    function clearPhoto() {
+      artistMediaState.photo = "";
+      byId("artist-photo-file").value = "";
+      syncMediaInputs();
+      renderMediaPreview();
+    }
+    function mediaCard(kind, src, index, total) {
+      const label = kind === "photo" ? "Фото профиля" : (kind === "gallery" ? "Изображение" : (kind === "video" ? "Видео" : "Аудио"));
+      const listName = kind + "Files";
+      const entry = kind === "photo" ? { src: src, caption: "", poster: "" } : src;
+      const body = kind === "audio"
+        ? '<div class="media-audio-cover"><strong>Аудио</strong><audio controls><source src="' + escapeHtml(mediaSrc(entry)) + '"></audio></div>'
+        : (kind === "video"
+          ? '<video controls preload="none"' + (entry.poster ? ' poster="' + escapeHtml(entry.poster) + '"' : '') + '><source src="' + escapeHtml(mediaSrc(entry)) + '"></video>'
+          : '<img src="' + escapeHtml(mediaSrc(entry)) + '" alt="' + escapeHtml(label) + '">');
+      const actions = kind === "photo"
+        ? '<div class="media-card-actions"><button class="mini-btn danger" type="button" onclick="clearArtistPhoto()">Убрать</button></div>'
+        : '<div class="media-card-actions"><button class="mini-btn" type="button" onclick="artistMediaAction(\'' + listName + '\', ' + index + ', -1)"' + (index === 0 ? ' disabled' : '') + '>←</button><button class="mini-btn" type="button" onclick="artistMediaAction(\'' + listName + '\', ' + index + ', 1)"' + (index === total - 1 ? ' disabled' : '') + '>→</button><button class="mini-btn danger" type="button" onclick="removeArtistMedia(\'' + listName + '\', ' + index + ')">Удалить</button></div>';
+      const captionField = kind === "photo" ? "" : '<label class="media-field">Подпись<input type="text" value="' + escapeHtml(entry.caption || "") + '" oninput="updateArtistMediaMeta(\'' + listName + '\', ' + index + ', \'caption\', this.value)"></label>';
+      const posterField = kind === "video" ? '<label class="media-field">Обложка видео<input type="text" value="' + escapeHtml(entry.poster || "") + '" placeholder="https://poster..." oninput="updateArtistMediaMeta(\'' + listName + '\', ' + index + ', \'poster\', this.value)"></label>' : "";
+      const dragAttrs = kind === "photo" ? "" : ' draggable="true" ondragstart="artistMediaDragStart(\'' + listName + '\', ' + index + ')" ondragover="artistMediaDragOver(event)" ondrop="artistMediaDrop(\'' + listName + '\', ' + index + ')"';
+      return '<div class="media-card media-card-' + kind + '"' + dragAttrs + '><div class="media-card-head"><span class="media-kind">' + label + '</span></div>' + body + '<span>' + escapeHtml(mediaCaption(entry, label + " #" + (index + 1))) + '</span>' + captionField + posterField + actions + '</div>';
+    }
+    function renderPhotoSourcePicker() {
+      const box = byId("artist-photo-source-picker");
+      if (!box) return;
+      const gallery = artistMediaState.galleryFiles || [];
+      if (!gallery.length) {
+        box.innerHTML = '<div class="empty">Сначала добавьте изображения в галерею, тогда здесь появится быстрый выбор.</div>';
+        return;
+      }
+      box.innerHTML = gallery.map(function (item, index) {
+        const isActive = artistMediaState.photo && mediaSrc(item) === artistMediaState.photo;
+        return '<button class="photo-source-option' + (isActive ? ' is-active' : '') + '" type="button" onclick="setArtistPhotoFromGallery(' + index + ')"><img src="' + escapeHtml(mediaSrc(item)) + '" alt="Фото из галереи"><span>' + escapeHtml(item.caption || ('Галерея #' + (index + 1))) + '</span></button>';
+      }).join("");
+    }
+    function renderMediaPreview() {
+      const items = [];
+      if (artistMediaState.photo) items.push(mediaCard("photo", artistMediaState.photo, 0, 1));
+      artistMediaState.galleryFiles.forEach(function (src, index) { items.push(mediaCard("gallery", src, index, artistMediaState.galleryFiles.length)); });
+      artistMediaState.videoFiles.forEach(function (src, index) { items.push(mediaCard("video", src, index, artistMediaState.videoFiles.length)); });
+      artistMediaState.audioFiles.forEach(function (src, index) { items.push(mediaCard("audio", src, index, artistMediaState.audioFiles.length)); });
+      byId("artist-media-preview").innerHTML = items.length ? items.join("") : '<div class="empty">Добавьте фото, изображения, видео или аудио, чтобы собрать сильный публичный профиль.</div>';
+      renderPhotoSourcePicker();
+    }
+    function showArtistMessage(text, kind) { byId("artist-message").innerHTML = text ? '<div class="message ' + kind + '">' + text + '</div>' : ""; }
+    const actionModal = byId("artist-action-modal");
+    const actionForm = byId("artist-action-form");
+    const quoteFields = byId("artist-quote-fields");
+    const actionQuick = byId("artist-action-quick");
+    const artistPresets = {
+      host: {
+        role: "host",
+        title: "Артист и front person для live, content и release support",
+        tagline: "Подача без шума, сильная коммуникация и аккуратная упаковка проекта",
+        priceFrom: "45000",
+        travelRadiusKm: "120",
+        languages: "Русский, Английский",
+        eventFormats: "Релизные кампании, Live-сеты, Бренд-проекты",
+        serviceFeatures: "Creative kickoff, Production roadmap, Cross-team coordination",
+        depositPolicy: "30% для фиксации production-слота",
+        cancellationPolicy: "Бесплатная отмена более чем за 21 день",
+        technicalPolicy: "Нужен доступ к сцене, звуку или студийному сетапу",
+        packagesText: "Profile Launch|14 дней|45000|Позиционирование, упаковка профиля и базовый roadmap\nRelease Support|30 дней|70000|Контент, координация материалов и сервисное сопровождение"
+      },
+      dj: {
+        role: "dj",
+        title: "DJ и музыкальный куратор",
+        tagline: "Современный звук, плотная селекция и уверенный live-поток",
+        priceFrom: "25000",
+        travelRadiusKm: "250",
+        languages: "Русский",
+        eventFormats: "Live-сеты, Студийные сессии, Бренд-контент",
+        serviceFeatures: "Own technical setup, Production roadmap",
+        depositPolicy: "20% для старта сервиса",
+        cancellationPolicy: "Перенос слота по согласованию",
+        technicalPolicy: "Нужен доступ к электропитанию и месту под сетап",
+        packagesText: "DJ Session|4 часа|25000|Сет, базовый свет и музыкальная драматургия\nMusic Direction|6 часов|45000|DJ, звук, подбор плейлистов и live flow"
+      },
+      photographer: {
+        role: "photographer",
+        title: "Visual creator для артистов и релизов",
+        tagline: "Репортаж, backstage и контент с аккуратной коммуникацией",
+        priceFrom: "25000",
+        travelRadiusKm: "120",
+        languages: "Русский",
+        eventFormats: "Контент production, Релизные кампании, Studio backstage",
+        serviceFeatures: "Creative kickoff, Cross-team coordination",
+        depositPolicy: "30% для фиксации production-слота",
+        cancellationPolicy: "Перенос слота по согласованию",
+        technicalPolicy: "Нужен тайминг съёмки и контакт production lead",
+        packagesText: "Content Capture|4 часа|25000|Съёмка и базовая цветокоррекция\nFull Production Day|10 часов|60000|Репортаж, портреты, backstage и анонс в день съёмки"
+      },
+      band: {
+        role: "musicians",
+        title: "Музыкальный проект для live и branded content",
+        tagline: "Живой звук, сильный вокал и гибкий live-production формат",
+        priceFrom: "70000",
+        travelRadiusKm: "250",
+        languages: "Русский, Английский",
+        eventFormats: "Live-сеты, Бренд-проекты, Публичные выступления",
+        serviceFeatures: "Own technical setup, Cross-team coordination",
+        depositPolicy: "30% для фиксации production-слота",
+        cancellationPolicy: "Удержание депозита при позднем переносе",
+        technicalPolicy: "Нужна сцена или ровная площадка и питание линии",
+        packagesText: "Core Live Set|60 минут|70000|Живое выступление, саундчек и согласование программы\nExtended Live Show|90 минут|110000|Два блока, интро, финальный live-блок и production sync"
+      }
+    };
+    function openArtistAction(mode, leadId) {
+      actionForm.reset();
+      actionForm.leadId.value = leadId;
+      actionForm.mode.value = mode;
+      quoteFields.style.display = mode === "quote" ? "grid" : "none";
+      byId("artist-action-title").textContent = mode === "quote" ? "Отправить предложение" : "Быстрый ответ по кейсу";
+      byId("artist-action-subtitle").textContent = mode === "quote" ? "Выберите scope и сумму без ручных prompt-окон." : "Отправьте короткий ответ прямо из artist portal.";
+      actionQuick.innerHTML = mode === "quote"
+        ? '<button class="quick-option" type="button" data-fill-action=\"packageName\" data-fill-value=\"Profile Launch\">Profile Launch</button><button class="quick-option" type="button" data-fill-action=\"packageName\" data-fill-value=\"Release Support\">Release Support</button><button class="quick-option" type="button" data-fill-action=\"text\" data-fill-value=\"В scope входит подготовка, kickoff и работа по согласованному roadmap.\">Описание предложения</button>'
+        : '<button class="quick-option" type="button" data-fill-action=\"text\" data-fill-value=\"Здравствуйте! Посмотрел запрос и готов обсудить детали.\">Приветствие</button><button class="quick-option" type="button" data-fill-action=\"text\" data-fill-value=\"Свободен на ваш слот, могу сегодня прислать предложение и варианты scope.\">Свободный слот</button>';
+      actionModal.classList.add("open");
+    }
+    function closeArtistAction() {
+      actionModal.classList.remove("open");
+    }
+    function applyArtistPreset(name) {
+      const preset = artistPresets[name];
+      if (!preset) return;
+      const form = byId("artist-profile-form");
+      Object.keys(preset).forEach(function (key) {
+        if (form[key]) form[key].value = preset[key];
+      });
+    }
+    function toggleChipValue(fieldName, value) {
+      const form = byId("artist-profile-form");
+      const field = form[fieldName];
+      if (!field) return;
+      const items = parseList(field.value);
+      const next = items.indexOf(value) === -1 ? items.concat(value) : items.filter(function (item) { return item !== value; });
+      field.value = next.join(", ");
+    }
+    function fillSelects() {
+      const dict = MarketplaceStore.getDictionaries();
+      byId("artist-role").innerHTML = dict.categories.map(function (item) { return '<option value="' + item.id + '">' + item.label + '</option>'; }).join("");
+      byId("artist-plan").innerHTML = dict.plans.map(function (item) { return '<option value="' + item.id + '">' + item.label + '</option>'; }).join("");
+    }
+    function fillArtistForm(artist, profile) {
+      const form = byId("artist-profile-form");
+      const source = profile || {};
+      form.role.value = source.role || "host";
+      form.categories.value = (source.categories || [source.role || "host"]).join(", ");
+      form.planId.value = source.planId || "basic";
+      form.name.value = source.name || artist.name || "";
+      form.title.value = source.title || "";
+      form.city.value = source.city || "";
+      form.region.value = source.region || "";
+      form.travelRadiusKm.value = source.travelRadiusKm || 50;
+      form.priceFrom.value = source.priceFrom || "";
+      form.tagline.value = source.tagline || "";
+      form.email.value = source.contact ? (source.contact.email || artist.email) : artist.email;
+      form.phone.value = source.contact ? (source.contact.phone || artist.phone) : artist.phone;
+      form.telegram.value = source.contact ? (source.contact.telegram || artist.telegram || "") : (artist.telegram || "");
+      form.instagram.value = source.socials ? (source.socials.instagram || "") : "";
+      form.youtube.value = source.socials ? (source.socials.youtube || "") : "";
+      form.vk.value = source.socials ? (source.socials.vk || "") : "";
+      form.website.value = source.socials ? (source.socials.website || "") : "";
+      artistMediaState.photo = source.media ? (source.media.photo || "") : "";
+      artistMediaState.galleryFiles = source.media && source.media.gallery ? source.media.gallery.map(function (item, index) { return normalizeMediaEntry(item, "gallery", index); }) : [];
+      artistMediaState.videoFiles = source.media && source.media.video ? source.media.video.map(function (item, index) { return normalizeMediaEntry(item, "video", index); }) : [];
+      artistMediaState.audioFiles = source.media && source.media.audio ? source.media.audio.map(function (item, index) { return normalizeMediaEntry(item, "audio", index); }) : [];
+      syncMediaInputs();
+      form.languages.value = source.languages ? source.languages.join(", ") : "";
+      form.eventFormats.value = source.eventFormats ? source.eventFormats.join(", ") : "";
+      form.serviceFeatures.value = source.serviceFeatures ? source.serviceFeatures.join(", ") : "";
+      form.packagesText.value = (source.packages || []).map(function (item) { return [item.name, item.duration, item.price, item.description].join("|"); }).join("\n");
+      form.addOnsText.value = (source.addOns || []).map(function (item) { return [item.name, "", item.price, item.description].join("|"); }).join("\n");
+      form.availabilityText.value = (source.availability || []).map(function (item) { return [item.date, item.status].join("|"); }).join("\n");
+      form.faqText.value = (source.faq || []).map(function (item) { return [item.q, item.a].join("|"); }).join("\n");
+      form.depositPolicy.value = source.policies ? (source.policies.deposit || "") : "";
+      form.cancellationPolicy.value = source.policies ? (source.policies.cancellation || "") : "";
+      form.technicalPolicy.value = source.policies ? (source.policies.technical || "") : "";
+      form.description.value = source.description || "";
+      form.workStyle.value = source.workStyle || "";
+      byId("artist-photo-file").value = "";
+      byId("artist-gallery-files").value = "";
+      byId("artist-video-files").value = "";
+      byId("artist-audio-files").value = "";
+      renderMediaPreview();
+    }
+    function renderKpis(profile, leads, quotes, artist) {
+      const releases = artist ? MarketplaceStore.getReleasesForArtist(artist.id).length : 0;
+      const balance = artist ? MarketplaceStore.getBalanceForArtist(artist.id) : 0;
+      byId("artist-kpis").innerHTML = [["Профиль", profile ? profile.status : "draft"], ["Лиды", leads.length], ["Квоты", quotes.length], ["Релизы", releases], ["Баланс", Number(balance || 0).toLocaleString("ru-RU") + " ₽"]].map(function (item) {
+        return '<div class="service-kpi"><span>' + item[0] + '</span><strong>' + item[1] + '</strong></div>';
+      }).join("");
+    }
+    function renderArtistExecutive(profile, artist, leads, quotes) {
+      const releases = artist ? MarketplaceStore.getReleasesForArtist(artist.id) : [];
+      const payouts = artist ? MarketplaceStore.getPayoutRequestsForArtist(artist.id) : [];
+      const published = releases.filter(function (item) { return item.status === "published"; }).length;
+      const balance = artist ? MarketplaceStore.getBalanceForArtist(artist.id) : 0;
+      byId("artist-executive-grid").innerHTML = [
+        {
+          eyebrow: "Public Profile",
+          title: profile ? "Профиль опубликован и готов к трафику" : "Профиль ещё не завершён",
+          value: profile ? (profile.city || "Без города") : "Draft",
+          text: profile ? "Карточка уже может работать как public entry point для релизов, live и studio tasks." : "Сначала завершите профиль, чтобы открыть публичную витрину и service intake."
+        },
+        {
+          eyebrow: "Commercial Ops",
+          title: "Входящий спрос и предложения",
+          value: String(leads.length + quotes.length),
+          text: "Следите за запросами, быстрыми ответами и персональными scope-пропозалами из одного окна."
+        },
+        {
+          eyebrow: "Release Flow",
+          title: "Статус релизного контура",
+          value: published + "/" + releases.length,
+          text: releases.length ? "Часть релизов уже продвинута по lifecycle. Ниже есть timeline по каждому элементу." : "Добавьте первый релиз, чтобы собрать release timeline прямо в кабинете."
+        },
+        {
+          eyebrow: "Finance Pulse",
+          title: "Баланс и payout readiness",
+          value: Number(balance || 0).toLocaleString("ru-RU") + " ₽",
+          text: payouts.length ? "Есть запросы на вывод и движение по finance-flow." : "Как только появятся начисления royalty, здесь будет виден payout contour."
+        }
+      ].map(function (item) {
+        return '<article class="portal-summary-card"><span class="eyebrow-note">' + escapeHtml(item.eyebrow) + '</span><strong>' + escapeHtml(item.title) + '</strong><div class="portal-stat-line"><span class="muted">Snapshot</span><span class="value">' + escapeHtml(item.value) + '</span></div><p>' + escapeHtml(item.text) + '</p></article>';
+      }).join("");
+    }
+    function renderArtistStatusRail(artist) {
+      const releases = artist ? MarketplaceStore.getReleasesForArtist(artist.id) : [];
+      const latest = releases[0];
+      const current = latest ? latest.status : "draft";
+      const steps = [
+        { key: "draft", title: "Draft", text: "Материалы и базовый scope собраны." },
+        { key: "review", title: "Review", text: "Профиль и релиз проходят редакторскую проверку." },
+        { key: "scheduled", title: "Scheduled", text: "Слот и дедлайн зафиксированы." },
+        { key: "distributed", title: "Distributed", text: "Материалы отправлены в дистрибуционный contour." },
+        { key: "published", title: "Published", text: "Релиз live, дальше работает reporting layer." }
+      ];
+      const currentIndex = Math.max(steps.findIndex(function (item) { return item.key === current; }), 0);
+      byId("artist-status-rail").innerHTML = steps.map(function (step, index) {
+        const state = index < currentIndex ? " is-complete" : (index === currentIndex ? " is-active" : "");
+        return '<article class="status-step' + state + '"><span class="status-index">' + (index + 1) + '</span><strong>' + escapeHtml(step.title) + '</strong><p>' + escapeHtml(step.text) + '</p></article>';
+      }).join("");
+    }
+    function renderArtistCommandCenter(profile, artist, leads, quotes) {
+      const releases = MarketplaceStore.getReleasesForArtist(artist.id);
+      const payouts = MarketplaceStore.getPayoutRequestsForArtist(artist.id);
+      const studioBookings = MarketplaceStore.getStudioBookingsForCustomer(artist.id);
+      const pendingLeadCount = leads.filter(function (lead) { return lead.status !== "quoted" && lead.status !== "booked"; }).length;
+      const releaseInReview = releases.filter(function (release) { return release.status === "review" || release.status === "scheduled"; }).length;
+      const pendingPayouts = payouts.filter(function (item) { return item.status === "pending"; }).length;
+      byId("artist-command-center").innerHTML = [
+        {
+          title: profile ? "Публичный профиль готов к трафику" : "Сначала соберите публичный профиль",
+          chip: profile ? "Profile live" : "Need setup",
+          chipClass: profile ? " is-positive" : " is-focus",
+          text: profile ? "Следующий шаг: усиливать медиаблок, social links и service packages для intake-конверсии." : "Без профиля витрина, релизный intake и связанный service flow остаются закрыты.",
+          actionHref: "#artist-profile-form",
+          actionLabel: profile ? "Усилить профиль" : "Открыть profile builder"
+        },
+        {
+          title: pendingLeadCount ? "Есть входящие запросы, которые ждут ответа" : "Очередь запросов под контролем",
+          chip: pendingLeadCount ? pendingLeadCount + " open" : "No blockers",
+          chipClass: pendingLeadCount ? " is-hot" : " is-positive",
+          text: pendingLeadCount ? "Откройте Commercial Ops и закройте быстрым reply или персональным proposal." : "Новые запросы будут появляться в этом блоке сразу как только сработает intake.",
+          actionHref: "#artist-ops-hub",
+          actionLabel: "Открыть Commercial Ops"
+        },
+        {
+          title: releaseInReview ? "Релизы требуют coordination" : "Release layer пока спокойный",
+          chip: releaseInReview ? releaseInReview + " in flow" : "Release clear",
+          chipClass: releaseInReview ? " is-focus" : " is-positive",
+          text: releaseInReview ? "Проверьте timeline и доведите материалы до distributed/published state." : "Добавьте релиз или подготовьте assets, чтобы открыть release lifecycle.",
+          actionHref: "#artist-release-hub",
+          actionLabel: "Перейти в Release Flow"
+        },
+        {
+          title: pendingPayouts ? "Finance queue требует внимания" : "Finance contour стабилен",
+          chip: pendingPayouts ? pendingPayouts + " payout" : Number(MarketplaceStore.getBalanceForArtist(artist.id) || 0).toLocaleString("ru-RU") + " ₽",
+          chipClass: pendingPayouts ? " is-hot" : " is-positive",
+          text: pendingPayouts ? "Есть запросы на вывод, которые ещё проходят approval." : (studioBookings.length ? "Можно соединять royalty, balance и studio usage в один рабочий цикл." : "Когда появятся отчёты и брони, блок покажет их как единый flow."),
+          actionHref: "#artist-finance-hub",
+          actionLabel: "Открыть Finance"
+        }
+      ].map(function (item) {
+        return '<article class="ops-item"><div class="ops-item-head"><strong>' + escapeHtml(item.title) + '</strong><span class="ops-chip' + item.chipClass + '">' + escapeHtml(item.chip) + '</span></div><p>' + escapeHtml(item.text) + '</p><div class="ops-actions"><a class="ops-link" href="' + escapeHtml(item.actionHref || "#") + '">' + escapeHtml(item.actionLabel || "Открыть") + '</a></div></article>';
+      }).join("");
+    }
+    function renderArtistFocusStrip(profile, artist, leads) {
+      const releases = MarketplaceStore.getReleasesForArtist(artist.id);
+      const payouts = MarketplaceStore.getPayoutRequestsForArtist(artist.id);
+      const cards = [
+        {
+          state: profile ? "is-positive" : "is-focus",
+          title: profile ? "Profile ready" : "Profile draft",
+          text: profile ? "Профиль уже можно усиливать через кейсы, пакеты и медиа." : "Сначала закройте базовый profile builder и откройте публичную карточку."
+        },
+        {
+          state: leads.length ? "is-hot" : "is-positive",
+          title: leads.length ? "Open requests" : "Lead queue clear",
+          text: leads.length ? "Есть входящие запросы. Самый быстрый рост сейчас — скорость ответа и quality proposal." : "Очередь чистая. Можно сфокусироваться на витрине и release assets."
+        },
+        {
+          state: payouts.filter(function (item) { return item.status === "pending"; }).length || releases.filter(function (item) { return item.status === "review"; }).length ? "is-focus" : "is-positive",
+          title: "Next leverage point",
+          text: payouts.filter(function (item) { return item.status === "pending"; }).length ? "Следите за payout approval и сверяйте finance layer." : (releases.length ? "Проверьте release timeline и доведите релизы до published state." : "Подготовьте первый релиз или studio-booking, чтобы открыть следующий контур роста.")
+        }
+      ];
+      byId("artist-focus-strip").innerHTML = cards.map(function (card) {
+        return '<article class="signal-card ' + card.state + '"><strong>' + escapeHtml(card.title) + '</strong><p>' + escapeHtml(card.text) + '</p></article>';
+      }).join("");
+    }
+    function renderArtistActivityFeed(artist, leads, quotes) {
+      const releases = MarketplaceStore.getReleasesForArtist(artist.id).slice(0, 2).map(function (release) {
+        return { title: "Release update: " + release.title, meta: release.status, text: (release.releaseDate ? "Дата " + release.releaseDate + ". " : "") + (release.description || "Релиз движется по lifecycle внутри кабинета.") };
+      });
+      const report = MarketplaceStore.getRoyaltyReportsForArtist(artist.id)[0];
+      const payout = MarketplaceStore.getPayoutRequestsForArtist(artist.id)[0];
+      const deal = MarketplaceStore.getDealsForArtist(artist.id)[0];
+      const items = [];
+      if (leads[0]) items.push({ title: "Новый service request", meta: leads[0].city || "Lead", text: leads[0].requirements || "Клиент отправил запрос и ждёт response layer." });
+      if (quotes[0]) items.push({ title: "Последний proposal", meta: quotes[0].status, text: "Пакет " + (quotes[0].packageName || "custom") + " на сумму " + Number(quotes[0].amount || 0).toLocaleString("ru-RU") + " ₽." });
+      if (deal) items.push({ title: "Case chat in progress", meta: deal.status, text: "Кейс с " + deal.clientName + " уже находится в chat-based progression." });
+      if (report) items.push({ title: "Royalty period published", meta: report.periodLabel, text: "Net: " + Number(report.netAmount || 0).toLocaleString("ru-RU") + " " + report.currency + "." });
+      if (payout) items.push({ title: "Payout request", meta: payout.status, text: "Запрошено " + Number(payout.amount || 0).toLocaleString("ru-RU") + " " + payout.currency + "." });
+      Array.prototype.push.apply(items, releases);
+      byId("artist-activity-feed").innerHTML = items.slice(0, 5).length ? items.slice(0, 5).map(function (item) {
+        return '<article class="activity-item"><div class="activity-meta"><strong>' + escapeHtml(item.title) + '</strong><span class="ops-chip">' + escapeHtml(item.meta || "Update") + '</span></div><p>' + escapeHtml(item.text) + '</p></article>';
+      }).join("") : '<div class="empty">Когда появятся лиды, релизы и выплаты, здесь будет собираться живая лента действий.</div>';
+    }
+    function renderLeads(artist) {
+      const leads = MarketplaceStore.getLeadsForArtist(artist.id);
+      byId("artist-leads").innerHTML = leads.length ? leads.map(function (lead) { return '<div class="detail-box"><strong>' + escapeHtml(lead.customerName) + '</strong><div class="muted">' + escapeHtml(lead.eventType) + ' · ' + escapeHtml(lead.city) + '</div><div style="margin-top:8px;">' + escapeHtml(lead.requirements || "") + '</div><div class="inline-actions" style="margin-top:12px;"><button class="primary-btn" type="button" onclick="sendQuote(\'' + lead.id + '\')">Отправить предложение</button><button class="ghost-btn" type="button" onclick="respondLead(\'' + lead.id + '\')">Быстрый ответ</button></div></div>'; }).join("") : '<div class="empty">Пока нет входящих сервисных запросов.</div>';
+    }
+    function renderQuotes(artist) {
+      const quotes = MarketplaceStore.getQuotesForArtist(artist.id);
+      byId("artist-quotes").innerHTML = quotes.length ? quotes.map(function (quote) { return '<div class="table-row"><div><strong>' + escapeHtml(quote.packageName) + '</strong></div><div>' + Number(quote.amount || 0).toLocaleString("ru-RU") + ' ₽</div><div><span class="badge gold">' + escapeHtml(quote.status) + '</span></div><div><button class="ghost-btn" type="button" onclick="openLeadChatByLead(\'' + quote.leadId + '\')">Чат</button></div></div>'; }).join("") : '<div class="empty">Пока нет отправленных предложений.</div>';
+    }
+    function renderChats(artist) {
+      const deals = MarketplaceStore.getDealsForArtist(artist.id);
+      byId("artist-chats").innerHTML = deals.length ? deals.map(function (deal) { return '<div class="table-row"><div><strong>' + escapeHtml(deal.clientName) + '</strong></div><div>' + escapeHtml(deal.status) + '</div><div><button class="primary-btn" type="button" onclick="openArtistChat(\'' + deal.id + '\')">Открыть</button></div></div>'; }).join("") : '<div class="empty">Пока нет активных сделок.</div>';
+    }
+    function renderAnalytics(profile) {
+      if (!profile) return byId("artist-analytics").innerHTML = '<div class="empty">Сначала заполните профиль.</div>';
+      const stats = profile.stats || {};
+      byId("artist-analytics").innerHTML = [["Просмотры", stats.profileViews || 0], ["Лиды", stats.leadCount || 0], ["Квоты", stats.quoteCount || 0], ["Заказы", stats.bookingCount || 0]].map(function (item) { return '<div class="metric-card"><span>' + item[0] + '</span><strong>' + item[1] + '</strong></div>'; }).join("");
+    }
+    function renderBoard(artist) {
+      const posts = MarketplaceStore.getBoardPostsForOwner("artist", artist.id);
+      byId("artist-board").innerHTML = posts.length ? posts.map(function (post) { return '<div class="detail-box"><strong>' + escapeHtml(post.title) + '</strong><div class="muted">' + escapeHtml(post.city) + '</div><div style="margin-top:8px;">' + escapeHtml(post.description) + '</div></div>'; }).join("") : '<div class="empty">У вас пока нет объявлений.</div>';
+    }
+    function renderArtistReleases(artist) {
+      const releases = MarketplaceStore.getReleasesForArtist(artist.id);
+      byId("artist-release-list").innerHTML = releases.length ? releases.map(function (release) {
+        return '<div class="table-row"><div><strong>' + escapeHtml(release.title) + '</strong><div class="muted">' + escapeHtml(release.type) + ' · ' + escapeHtml(release.genre || "Жанр не указан") + '</div></div><div>' + escapeHtml(release.releaseDate || "Без даты") + '</div><div><span class="badge accent">' + escapeHtml(release.status) + '</span></div><div>' + escapeHtml(release.language || "—") + '</div><div><button class="ghost-btn" type="button" onclick="advanceArtistReleaseStatus(\'' + release.id + '\')">След. статус</button></div></div>';
+      }).join("") : '<div class="empty">Пока нет релизов. Добавьте первый single, EP или album прямо из кабинета.</div>';
+    }
+    function renderArtistReleaseTimeline(artist) {
+      const releases = MarketplaceStore.getReleasesForArtist(artist.id);
+      byId("artist-release-timeline").innerHTML = releases.length ? releases.slice(0, 4).map(function (release) {
+        return '<article class="timeline-item"><div class="timeline-item-head"><div><span class="timeline-meta">' + escapeHtml(release.type || "release") + '</span><strong>' + escapeHtml(release.title) + '</strong></div><span class="summary-pill">' + escapeHtml(release.status) + '</span></div><p>' + escapeHtml(release.description || "Релиз пока без расширенного описания. Здесь удобно показывать next step и readiness.") + '</p><div class="timeline-pills"><span class="timeline-pill">Date: ' + escapeHtml(release.releaseDate || "TBD") + '</span><span class="timeline-pill">Tracks: ' + escapeHtml(String(release.trackCount || 1)) + '</span><span class="timeline-pill">Language: ' + escapeHtml(release.language || "—") + '</span></div></article>';
+      }).join("") : '<div class="empty">Release timeline появится после создания первого релиза.</div>';
+    }
+    function renderArtistFinance(artist) {
+      const reports = MarketplaceStore.getRoyaltyReportsForArtist(artist.id);
+      const ledger = MarketplaceStore.getLedgerEntriesForArtist(artist.id);
+      const payouts = MarketplaceStore.getPayoutRequestsForArtist(artist.id);
+      const balance = MarketplaceStore.getBalanceForArtist(artist.id);
+      byId("artist-royalty-summary").innerHTML = [["Доступный баланс", Number(balance || 0).toLocaleString("ru-RU") + " ₽"], ["Отчёты", reports.length], ["Проводки", ledger.length], ["Запросы на вывод", payouts.length]].map(function (item) {
+        return '<div class="metric-card"><span>' + item[0] + '</span><strong>' + item[1] + '</strong></div>';
+      }).join("");
+      byId("artist-royalty-list").innerHTML = reports.length ? reports.map(function (report) {
+        return '<div class="table-row"><div><strong>' + escapeHtml(report.periodLabel) + '</strong><div class="muted">' + escapeHtml(report.currency) + ' · ' + escapeHtml(report.status) + '</div></div><div>' + Number(report.grossAmount || 0).toLocaleString("ru-RU") + '</div><div>' + Number(report.netAmount || 0).toLocaleString("ru-RU") + '</div><div>' + escapeHtml(report.createdAt.slice(0, 10)) + '</div><div>' + (report.statementUrl ? '<a class="ghost-btn" href="' + escapeHtml(report.statementUrl) + '" target="_blank" rel="noopener">Файл</a>' : '—') + '</div></div>';
+      }).join("") : '<div class="empty">Royalty-отчётов пока нет. Их сможет публиковать лейбл или администратор.</div>';
+      byId("artist-ledger-list").innerHTML = ledger.length ? ledger.map(function (entry) {
+        return '<div class="table-row"><div><strong>' + escapeHtml(entry.source || "Проводка") + '</strong><div class="muted">' + escapeHtml(entry.note || "") + '</div></div><div>' + (entry.type === "debit" ? "Списание" : "Начисление") + '</div><div>' + Number(entry.amount || 0).toLocaleString("ru-RU") + ' ' + escapeHtml(entry.currency) + '</div><div>' + escapeHtml(entry.createdAt.slice(0, 10)) + '</div><div></div></div>';
+      }).join("") : '<div class="empty">Журнал проводок пока пуст.</div>';
+      byId("artist-payouts").innerHTML = payouts.length ? payouts.map(function (request) {
+        return '<div class="table-row"><div><strong>' + Number(request.amount || 0).toLocaleString("ru-RU") + ' ' + escapeHtml(request.currency) + '</strong><div class="muted">' + escapeHtml(request.note || "Без комментария") + '</div></div><div><span class="badge gold">' + escapeHtml(request.status) + '</span></div><div>' + escapeHtml(request.createdAt.slice(0, 10)) + '</div><div></div><div></div></div>';
+      }).join("") : '<div class="empty">Запросов на вывод пока нет.</div>';
+    }
+    function renderArtistFinanceWidgets(artist) {
+      const reports = MarketplaceStore.getRoyaltyReportsForArtist(artist.id);
+      const payouts = MarketplaceStore.getPayoutRequestsForArtist(artist.id);
+      const balance = MarketplaceStore.getBalanceForArtist(artist.id);
+      const approvedPayouts = payouts.filter(function (item) { return item.status === "approved"; }).reduce(function (sum, item) { return sum + Number(item.amount || 0); }, 0);
+      const gross = reports.reduce(function (sum, item) { return sum + Number(item.grossAmount || 0); }, 0);
+      const net = reports.reduce(function (sum, item) { return sum + Number(item.netAmount || 0); }, 0);
+      const netShare = gross > 0 ? Math.min(100, Math.round((net / gross) * 100)) : 0;
+      const payoutProgress = balance > 0 ? Math.min(100, Math.round((approvedPayouts / Math.max(balance + approvedPayouts, 1)) * 100)) : 0;
+      byId("artist-finance-widgets").innerHTML = [
+        {
+          eyebrow: "Royalty Mix",
+          title: "Net against gross",
+          value: netShare + "%",
+          meter: netShare,
+          rows: [["Gross", Number(gross || 0).toLocaleString("ru-RU") + " ₽"], ["Net", Number(net || 0).toLocaleString("ru-RU") + " ₽"]]
+        },
+        {
+          eyebrow: "Payout Layer",
+          title: "Approved withdrawals",
+          value: Number(approvedPayouts || 0).toLocaleString("ru-RU") + " ₽",
+          meter: payoutProgress,
+          rows: [["Approved", payouts.filter(function (item) { return item.status === "approved"; }).length], ["Pending", payouts.filter(function (item) { return item.status === "pending"; }).length]]
+        }
+      ].map(function (item) {
+        return '<article class="finance-widget"><span class="eyebrow-note">' + escapeHtml(item.eyebrow) + '</span><strong>' + escapeHtml(item.title) + '</strong><div class="portal-stat-line"><span class="muted">Current</span><span class="value">' + escapeHtml(String(item.value)) + '</span></div><div class="finance-meter"><span style="width:' + item.meter + '%;"></span></div><div class="section-stack">' + item.rows.map(function (row) { return '<div class="metric-row"><span>' + escapeHtml(String(row[0])) + '</span><span>' + escapeHtml(String(row[1])) + '</span></div>'; }).join("") + '</div></article>';
+      }).join("");
+    }
+    function renderArtistStudio(artist) {
+      const services = MarketplaceStore.getStudioServices();
+      const bookings = MarketplaceStore.getStudioBookingsForCustomer(artist.id);
+      byId("artist-studio-services").innerHTML = services.length ? services.map(function (service) {
+        return '<div class="table-row"><div><strong>' + escapeHtml(service.name) + '</strong><div class="muted">' + escapeHtml(service.description || "") + '</div></div><div>' + escapeHtml(service.duration || "—") + '</div><div>' + Number(service.priceFrom || 0).toLocaleString("ru-RU") + ' ₽</div><div>' + escapeHtml(service.category || "service") + '</div><div><button class="primary-btn" type="button" onclick="requestArtistStudioBooking(\'' + service.id + '\')">Забронировать</button></div></div>';
+      }).join("") : '<div class="empty">Список студийных услуг пока пуст.</div>';
+      byId("artist-studio-bookings").innerHTML = bookings.length ? bookings.map(function (booking) {
+        const service = MarketplaceStore.getStudioServices().find(function (item) { return item.id === booking.serviceId; });
+        return '<div class="table-row"><div><strong>' + escapeHtml(service ? service.name : "Услуга") + '</strong><div class="muted">' + escapeHtml(booking.note || "Без комментария") + '</div></div><div>' + escapeHtml(booking.date || "Дата не указана") + '</div><div>' + escapeHtml(booking.time || "Время уточняется") + '</div><div><span class="badge accent">' + escapeHtml(booking.status) + '</span></div><div></div></div>';
+      }).join("") : '<div class="empty">Бронирований студии пока нет.</div>';
+    }
+    function renderArtistSupportHub(artist) {
+      const documents = MarketplaceStore.getDocumentsForOwner("artist", artist.id);
+      const tickets = MarketplaceStore.getTicketsForOwner("artist", artist.id);
+      byId("artist-documents").innerHTML = documents.length ? documents.map(function (item) {
+        return '<div class="table-row"><div><strong>' + escapeHtml(item.title) + '</strong><div class="muted">' + escapeHtml(item.kind) + ' · ' + escapeHtml(item.status || "ready") + '</div></div><div>' + escapeHtml(item.summary || "Без описания") + '</div><div>' + escapeHtml((item.createdAt || "").slice(0, 10)) + '</div><div>' + (item.url ? '<a class="ghost-btn" href="' + escapeHtml(item.url) + '" target="_blank" rel="noopener">Открыть</a>' : '—') + '</div></div>';
+      }).join("") : '<div class="empty">Документы появятся автоматически после отчётов и payout requests.</div>';
+      byId("artist-tickets").innerHTML = tickets.length ? tickets.map(function (ticket) {
+        return '<div class="table-row"><div><strong>' + escapeHtml(ticket.subject) + '</strong><div class="muted">' + escapeHtml(ticket.category) + ' · ' + escapeHtml(ticket.priority) + '</div></div><div>' + escapeHtml(ticket.message) + '</div><div><span class="badge gold">' + escapeHtml(ticket.status) + '</span></div><div>' + escapeHtml((ticket.updatedAt || ticket.createdAt || "").slice(0, 10)) + '</div></div>';
+      }).join("") : '<div class="empty">Тикетов пока нет.</div>';
+    }
+    window.artistMediaAction = function (listName, index, direction) { moveMediaItem(listName, index, direction); };
+    window.removeArtistMedia = function (listName, index) { removeMediaItem(listName, index); };
+    window.clearArtistPhoto = function () { clearPhoto(); };
+    window.setArtistPhotoFromGallery = function (index) {
+      const entry = artistMediaState.galleryFiles[index];
+      if (!entry) return;
+      artistMediaState.photo = mediaSrc(entry);
+      syncMediaInputs();
+      renderMediaPreview();
+    };
+    window.updateArtistMediaMeta = function (listName, index, key, value) {
+      const list = artistMediaState[listName];
+      if (!Array.isArray(list) || !list[index]) return;
+      list[index][key] = String(value || "").trim();
+      renderMediaPreview();
+    };
+    window.artistMediaDragStart = function (listName, index) {
+      artistMediaState.drag = { listName: listName, index: index };
+    };
+    window.artistMediaDragOver = function (event) { event.preventDefault(); };
+    window.artistMediaDrop = function (listName, index) {
+      if (!artistMediaState.drag || artistMediaState.drag.listName !== listName) return;
+      reorderMediaItem(listName, artistMediaState.drag.index, index);
+      artistMediaState.drag = null;
+    };
+    window.respondLead = function (leadId) {
+      openArtistAction("reply", leadId);
+    };
+    window.sendQuote = function (leadId) {
+      openArtistAction("quote", leadId);
+    };
+    window.openArtistChat = function (dealId) {
+      const chat = MarketplaceStore.getChatByDealId(dealId);
+      const deal = MarketplaceStore.getDb().deals.find(function (item) { return item.id === dealId; });
+      if (!chat || !deal) return byId("artist-chat-box").innerHTML = '<div class="empty">Чат не найден.</div>';
+      byId("artist-chat-box").innerHTML = '<div class="section-head"><div><h2>Диалог</h2><p class="muted">' + escapeHtml(chat.clientName) + ' · ' + escapeHtml(deal.status) + '</p></div></div><div class="table-list">' + chat.messages.map(function (message) { return '<div class="hero-point"><strong>' + escapeHtml(message.sender) + '</strong><div class="muted">' + escapeHtml(message.createdAt.slice(0, 16).replace("T", " ")) + '</div><div>' + escapeHtml(message.text) + '</div></div>'; }).join("") + '</div><form id="artist-chat-form" class="form-grid one" style="margin-top:12px;"><label>Сообщение<textarea name="text" required></textarea></label><button class="primary-btn" type="submit">Отправить</button></form>';
+      byId("artist-chat-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        MarketplaceStore.addChatMessage(dealId, "artist", new FormData(event.target).get("text"));
+        openArtistChat(dealId);
+      });
+    };
+    window.openLeadChatByLead = function (leadId) { const deal = MarketplaceStore.ensureDealForLead(MarketplaceStore.getLeadById(leadId)); openArtistChat(deal.id); };
+    window.advanceArtistReleaseStatus = function (releaseId) {
+      const release = MarketplaceStore.getDb().releases.find(function (item) { return item.id === releaseId; });
+      if (!release) return;
+      const chain = ["draft", "review", "scheduled", "distributed", "published"];
+      const index = chain.indexOf(release.status);
+      MarketplaceStore.updateReleaseStatus(releaseId, chain[(index + 1 + chain.length) % chain.length]);
+      renderArtistCabinet();
+    };
+    window.requestArtistStudioBooking = function (serviceId) {
+      const artist = MarketplaceStore.getCurrentArtist();
+      if (!artist) return;
+      MarketplaceStore.createStudioBooking({
+        serviceId: serviceId,
+        customerType: "artist",
+        customerId: artist.id,
+        customerName: artist.name,
+        date: new Date().toISOString().slice(0, 10),
+        time: "12:00",
+        duration: "1 слот",
+        status: "requested",
+        note: "Запрос из кабинета артиста"
+      });
+      showArtistMessage("Бронирование создано. Его уже видно в админке и в вашем кабинете.", "success");
+      renderArtistCabinet();
+    };
+    function scrollArtistProfileForm() {
+      const form = byId("artist-profile-form");
+      if (!form) return;
+      form.scrollIntoView({ behavior: "smooth", block: "start" });
+      const focusField = form.querySelector('input[name="name"], input[name="title"], textarea[name="description"]');
+      if (focusField) focusField.focus({ preventScroll: true });
+    }
+    function openArtistProfilePreview() {
+      const artist = MarketplaceStore.getCurrentArtist();
+      if (!artist) return showArtistMessage("Сначала войдите в artist portal, чтобы открыть профиль.", "error");
+      const profile = MarketplaceStore.getArtistProfile(artist.id);
+      if (!profile) return showArtistMessage("Сначала сохраните карточку, чтобы открыть публичный предпросмотр.", "error");
+      localStorage.setItem("palanart_preview_profile_id", profile.id);
+      window.location.href = "index.html#profile-detail";
+    }
+    function syncArtistCabinetActions(profile) {
+      const editButton = byId("artist-edit-card");
+      const previewButton = byId("artist-preview-card");
+      const storefrontLink = byId("artist-open-storefront");
+      const deleteButton = byId("artist-delete-card");
+      if (editButton) editButton.disabled = false;
+      if (previewButton) {
+        previewButton.disabled = false;
+        previewButton.title = profile ? "" : "Сначала сохраните публичный профиль.";
+      }
+      if (storefrontLink) {
+        storefrontLink.href = profile ? "index.html#profile-detail" : "index.html#catalog";
+        storefrontLink.title = profile ? "Открыть публичный профиль." : "Пока откроется общий каталог, потому что профиль ещё не сохранён.";
+      }
+      if (deleteButton) {
+        deleteButton.disabled = false;
+        deleteButton.title = profile ? "" : "Сначала сохраните публичный профиль, чтобы удалить его.";
+      }
+    }
+    function ensureArtistDeleteButton() {
+      const actionRow = document.querySelector(".cabinet-action-row");
+      if (!actionRow) return;
+      const existing = byId("artist-delete-card");
+      if (existing) {
+        existing.onclick = openArtistDeletePanel;
+        return;
+      }
+      const button = document.createElement("button");
+      button.id = "artist-delete-card";
+      button.className = "danger-btn";
+      button.type = "button";
+      button.textContent = "Удалить карточку";
+      button.addEventListener("click", openArtistDeletePanel);
+      actionRow.appendChild(button);
+    }
+    function closeArtistDeletePanel() {
+      const panel = byId("artist-delete-panel");
+      if (panel) {
+        panel.hidden = true;
+        panel.style.display = "none";
+      }
+    }
+    function openArtistDeletePanel() {
+      const artist = MarketplaceStore.getCurrentArtist();
+      const profile = artist ? MarketplaceStore.getArtistProfile(artist.id) : null;
+      const titleNode = byId("artist-delete-title");
+      const textNode = byId("artist-delete-text");
+      const confirmButton = byId("artist-delete-confirm");
+      if (titleNode) {
+        titleNode.textContent = profile ? "Удаление карточки" : "Карточка ещё не создана";
+      }
+      if (textNode) {
+        textNode.textContent = profile
+          ? "Публичный профиль, запросы, предложения, кейсы и чаты будут удалены. Сам artist account останется, и профиль можно будет создать заново."
+          : "Сейчас удалять нечего: профиль ещё не сохранён. Сначала заполните и сохраните карточку, если хотите управлять ей дальше.";
+      }
+      if (confirmButton) {
+        confirmButton.disabled = !profile;
+        confirmButton.textContent = profile ? "Подтвердить удаление" : "Нечего удалять";
+      }
+      const panel = byId("artist-delete-panel");
+      if (panel) {
+        panel.hidden = false;
+        panel.style.display = "grid";
+        panel.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      if (!profile) {
+        showArtistMessage("Карточка ещё не сохранена. Сначала создайте профиль, потом его можно будет удалить отсюда.", "error");
+        return;
+      }
+    }
+    function deleteArtistCard() {
+      const artist = MarketplaceStore.getCurrentArtist();
+      const profile = artist ? MarketplaceStore.getArtistProfile(artist.id) : null;
+      if (!artist || !profile) return showArtistMessage("Не удалось найти карточку для удаления.", "error");
+      MarketplaceStore.deleteProfile(profile.id);
+      closeArtistDeletePanel();
+      renderArtistCabinet();
+      showArtistMessage("Карточка удалена. При необходимости можно создать новую.", "success");
+      scrollArtistProfileForm();
+    }
+    function formatCabinetIdentity(email, fallbackLabel) {
+      const raw = String(email || "").trim();
+      if (!raw) return fallbackLabel || "";
+      if (/@auth\.(palanart|dvizhart)\.local$/i.test(raw)) {
+        if (/^telegram_/i.test(raw)) return "Telegram user";
+        if (/^vk_/i.test(raw)) return "VK user";
+        if (/^google_/i.test(raw)) return "Google user";
+        return fallbackLabel || "Соцвход";
+      }
+      return raw;
+    }
+    function renderArtistCabinet() {
+      const artist = MarketplaceStore.getCurrentArtist();
+      byId("artist-auth-view").style.display = artist ? "none" : "grid";
+      byId("artist-cabinet-view").style.display = artist ? "grid" : "none";
+      if (!artist) return;
+      hideLegacyArtistPhotoUrlField();
+      ensureArtistDeleteButton();
+      const profile = MarketplaceStore.getArtistProfile(artist.id);
+      const leads = MarketplaceStore.getLeadsForArtist(artist.id);
+      const quotes = MarketplaceStore.getQuotesForArtist(artist.id);
+      byId("artist-summary").textContent = artist.name + " · " + formatCabinetIdentity(artist.email, "Исполнитель") + " · " + (profile ? ("статус профиля: " + profile.status) : "профиль еще не заполнен");
+      renderKpis(profile, leads, quotes, artist);
+      renderArtistExecutive(profile, artist, leads, quotes);
+      renderArtistStatusRail(artist);
+      renderArtistCommandCenter(profile, artist, leads, quotes);
+      renderArtistActivityFeed(artist, leads, quotes);
+      renderArtistFocusStrip(profile, artist, leads);
+      fillArtistForm(artist, profile);
+      renderLeads(artist);
+      renderQuotes(artist);
+      renderChats(artist);
+      renderAnalytics(profile);
+      renderBoard(artist);
+      renderArtistReleases(artist);
+      renderArtistReleaseTimeline(artist);
+      renderArtistFinance(artist);
+      renderArtistFinanceWidgets(artist);
+      renderArtistStudio(artist);
+      renderArtistSupportHub(artist);
+      syncArtistCabinetActions(profile);
+      if (!profile) closeArtistDeletePanel();
+      byId("artist-chat-box").innerHTML = '<div class="empty">Выберите кейс, чтобы открыть переписку.</div>';
+    }
+    function renderArtistAuthMode() {
+      const mode = window.PalanartAuthBridge ? window.PalanartAuthBridge.getMode() : "local";
+      let modeNode = byId("artist-auth-mode");
+      if (!modeNode) {
+        const welcome = document.querySelector(".auth-welcome-card");
+        if (welcome) {
+          modeNode = document.createElement("div");
+          modeNode.id = "artist-auth-mode";
+          modeNode.className = "muted auth-mode-note";
+          const socialsNode = welcome.querySelector(".auth-socials");
+          if (socialsNode && socialsNode.parentNode === welcome) {
+            welcome.insertBefore(modeNode, socialsNode);
+          } else {
+            welcome.appendChild(modeNode);
+          }
+        }
+      }
+      if (modeNode) {
+        modeNode.textContent = mode === "supabase"
+          ? "Сервисный вход включён. Рабочий способ входа сейчас: e-mail и пароль через Supabase. Google добивается внешней OAuth-настройкой, VK ID и Telegram подключаются через отдельный auth-слой."
+          : "Работает локальный режим. E-mail вход доступен сразу, а Google, VK ID и Telegram создают локальный social account артиста внутри платформы без внешнего редиректа.";
+      } else {
+        byId("artist-auth-mode").innerHTML = mode === "supabase"
+          ? "Сервисный вход включён. Рабочий способ входа сейчас: e-mail и пароль через Supabase. Google добивается внешней OAuth-настройкой, VK ID и Telegram подключаются через отдельный auth-слой."
+          : "Работает локальный режим. E-mail вход доступен сразу, а Google, VK ID и Telegram создают локальный social account артиста внутри платформы без внешнего редиректа.";
+      }
+      document.querySelectorAll("[data-artist-social]").forEach(function (button) {
+        const available = window.PalanartAuthBridge && window.PalanartAuthBridge.canUseProvider(button.dataset.artistSocial);
+        button.disabled = !available;
+        button.hidden = !available;
+        button.classList.toggle("is-unavailable", !available);
+        button.title = available ? "" : "Этот соцвход сейчас недоступен.";
+      });
+    }
+    async function reverseLookupArtistCity(latitude, longitude) {
+      const endpoint = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=" + encodeURIComponent(latitude) + "&lon=" + encodeURIComponent(longitude) + "&accept-language=ru";
+      const response = await fetch(endpoint, { headers: { "Accept": "application/json" } });
+      if (!response.ok) throw new Error("Сервис геолокации не ответил.");
+      const data = await response.json();
+      const address = data.address || {};
+      return {
+        city: address.city || address.town || address.village || address.municipality || address.state || "",
+        region: address.state || address.region || address.county || ""
+      };
+    }
+    function applyArtistGeoResult(result) {
+      const registerForm = byId("artist-register-form");
+      const profileForm = byId("artist-profile-form");
+      if (registerForm && registerForm.city && result.city) registerForm.city.value = result.city;
+      if (profileForm && profileForm.city && result.city) profileForm.city.value = result.city;
+      if (profileForm && profileForm.region && result.region) profileForm.region.value = result.region;
+      showArtistMessage(result.city ? "Город определён: " + result.city : "Координаты получены, но город не распознан. Можно вписать вручную.", result.city ? "success" : "error");
+    }
+    function detectArtistCity(buttonId) {
+      if (!navigator.geolocation) return showArtistMessage("Ваш браузер не поддерживает геолокацию.", "error");
+      const button = byId(buttonId);
+      if (!button) return;
+      button.disabled = true;
+      button.textContent = "Определяем...";
+      navigator.geolocation.getCurrentPosition(async function (position) {
+        try {
+          const result = await reverseLookupArtistCity(position.coords.latitude, position.coords.longitude);
+          applyArtistGeoResult(result);
+        } catch (error) {
+          showArtistMessage(error.message || "Не удалось определить город.", "error");
+        } finally {
+          button.disabled = false;
+          button.textContent = "Определить город по геолокации";
+        }
+      }, function () {
+        button.disabled = false;
+        button.textContent = "Определить город по геолокации";
+        showArtistMessage("Не удалось получить геолокацию. Проверьте разрешение браузера.", "error");
+      }, { enableHighAccuracy: true, timeout: 12000, maximumAge: 0 });
+    }
+    function setupArtistProfileQuickMode() {
+      const form = byId("artist-profile-form");
+      if (!form || form.dataset.quickModeReady) return;
+      form.dataset.quickModeReady = "1";
+      const toolbar = document.createElement("div");
+      toolbar.className = "profile-form-toolbar";
+      toolbar.innerHTML = '<div><strong>Быстрый запуск карточки</strong><p class="muted">Разбили анкету на короткие шаги. Сначала основное, потом наполнение, медиа и условия.</p></div><button class="ghost-btn profile-form-toggle" type="button">Показать все шаги</button>';
+      const presetBox = form.querySelector(".preset-box");
+      if (presetBox) {
+        presetBox.insertAdjacentElement("afterend", toolbar);
+      } else {
+        form.insertAdjacentElement("afterbegin", toolbar);
+      }
+
+      const submitButton = form.querySelector('button[type="submit"]');
+      const stepsHost = document.createElement("div");
+      stepsHost.className = "profile-step-host";
+      const nav = document.createElement("div");
+      nav.className = "profile-step-nav";
+      const content = document.createElement("div");
+      content.className = "profile-step-content";
+      stepsHost.appendChild(nav);
+      stepsHost.appendChild(content);
+      toolbar.insertAdjacentElement("afterend", stepsHost);
+
+      const sectionDefs = [
+        { key: "basic", title: "1. Основное", hint: "Кто вы, где работаете и как вас находят." },
+        { key: "content", title: "2. Услуги", hint: "Форматы, пакеты, описание и преимущества." },
+        { key: "media", title: "3. Медиа", hint: "Фото, видео, аудио и ссылки на площадки." },
+        { key: "policy", title: "4. Условия", hint: "FAQ, занятость, отмена и техтребования." }
+      ];
+      const fieldGroups = {
+        basic: { role: 1, categories: 1, planId: 1, name: 1, title: 1, city: 1, region: 1, travelRadiusKm: 1, priceFrom: 1, tagline: 1, email: 1, phone: 1, telegram: 1 },
+        content: { languages: 1, eventFormats: 1, serviceFeatures: 1, packagesText: 1, addOnsText: 1, description: 1, workStyle: 1 },
+        media: { instagram: 1, youtube: 1, vk: 1, website: 1, photo: 1, "artist-photo-file": 1, galleryRaw: 1, "artist-gallery-files": 1, videoRaw: 1, "artist-video-files": 1, audioRaw: 1, "artist-audio-files": 1 },
+        policy: { availabilityText: 1, faqText: 1, depositPolicy: 1, cancellationPolicy: 1, technicalPolicy: 1 }
+      };
+      const sectionMap = {};
+      sectionDefs.forEach(function (section, index) {
+        const button = document.createElement("button");
+        button.className = "ghost-btn profile-step-tab" + (index === 0 ? " is-active" : "");
+        button.type = "button";
+        button.textContent = section.title;
+        nav.appendChild(button);
+
+        const panel = document.createElement("section");
+        panel.className = "profile-step" + (index === 0 ? " is-active" : "");
+        panel.dataset.step = section.key;
+        panel.innerHTML = '<div class="profile-step-head"><strong>' + section.title + '</strong><p class="muted">' + section.hint + '</p></div><div class="profile-step-grid"></div>';
+        content.appendChild(panel);
+        sectionMap[section.key] = { button: button, panel: panel, grid: panel.querySelector(".profile-step-grid") };
+
+        button.addEventListener("click", function () {
+          Object.keys(sectionMap).forEach(function (key) {
+            sectionMap[key].button.classList.toggle("is-active", key === section.key);
+            sectionMap[key].panel.classList.toggle("is-active", key === section.key);
+          });
+        });
+      });
+
+      function groupForNode(node) {
+        if (node.classList && node.classList.contains("detail-box")) return "media";
+        if (node.classList && node.classList.contains("quick-options")) {
+          const fill = node.querySelector("[data-fill-textarea]");
+          const fieldName = node.dataset.chipTarget || (fill ? fill.dataset.fillTextarea : "");
+          return groupForField(fieldName);
+        }
+        if (node.tagName === "LABEL") {
+          const field = node.querySelector("input, select, textarea");
+          return groupForField(field ? (field.name || field.id || "") : "");
+        }
+        return "content";
+      }
+
+      function groupForField(fieldName) {
+        if (fieldGroups.basic[fieldName]) return "basic";
+        if (fieldGroups.content[fieldName]) return "content";
+        if (fieldGroups.media[fieldName]) return "media";
+        if (fieldGroups.policy[fieldName]) return "policy";
+        return "content";
+      }
+
+      Array.from(form.children).forEach(function (child) {
+        if (child === presetBox || child === toolbar || child === stepsHost || child === submitButton) return;
+        if (!(child.classList && (child.classList.contains("form-grid") || child.classList.contains("detail-box")))) return;
+        Array.from(child.children).forEach(function (node) {
+          const group = groupForNode(node);
+          sectionMap[group].grid.appendChild(node);
+        });
+        child.remove();
+      });
+
+      content.insertAdjacentElement("afterend", submitButton);
+      form.classList.add("profile-form-collapsed");
+      const toggle = toolbar.querySelector(".profile-form-toggle");
+      toggle.addEventListener("click", function () {
+        form.classList.toggle("profile-form-collapsed");
+        toggle.textContent = form.classList.contains("profile-form-collapsed") ? "Показать все шаги" : "Показать всё сразу";
+      });
+    }
+    let artistRegisterPhotoData = "";
+    function renderArtistRegisterPhotoPreview() {
+      const box = byId("artist-register-photo-preview");
+      if (!box) return;
+      box.innerHTML = artistRegisterPhotoData
+        ? '<div class="photo-source-option is-active"><img src="' + escapeHtml(artistRegisterPhotoData) + '" alt="Фото профиля"><span>Фото будет использовано при создании кабинета</span></div>'
+        : '<div class="empty">Загрузите фото, если хотите сразу собрать аккуратный публичный профиль.</div>';
+    }
+    byId("artist-register-photo-file").addEventListener("change", async function (event) {
+      const files = await collectFiles(event.target);
+      artistRegisterPhotoData = files[0] || "";
+      renderArtistRegisterPhotoPreview();
+    });
+    byId("artist-register-form").addEventListener("submit", async function (event) {
+      event.preventDefault();
+      const payload = Object.fromEntries(new FormData(event.target).entries());
+      payload.photo = artistRegisterPhotoData;
+      const result = window.PalanartAuthBridge && window.PalanartAuthBridge.getMode() === "supabase"
+        ? await window.PalanartAuthBridge.signUpWithEmail("artist", payload)
+        : MarketplaceStore.registerArtistAccount(payload);
+      if (!result.ok) return showArtistMessage(result.message, "error");
+      if (result.artist) {
+        const preset = artistPresets[payload.role || "host"] || {};
+        MarketplaceStore.createOrUpdateArtistProfile(result.artist.id, {
+          role: payload.role || "host",
+          name: payload.name || "",
+          city: payload.city || "",
+          region: payload.city || "",
+          email: payload.email || "",
+          phone: payload.phone || "",
+          telegram: payload.telegram || "",
+          photo: payload.photo || "",
+          title: preset.title || "",
+          tagline: preset.tagline || "",
+          description: preset.tagline || "",
+          workStyle: "",
+          categories: [],
+          languages: parseList(preset.languages || ""),
+          eventFormats: parseList(preset.eventFormats || ""),
+          serviceFeatures: parseList(preset.serviceFeatures || ""),
+          packages: parseRows(preset.packagesText || "", "package"),
+          addOns: [],
+          availability: [],
+          faq: [],
+          policies: {
+            deposit: preset.depositPolicy || "",
+            cancellation: preset.cancellationPolicy || "",
+            technical: preset.technicalPolicy || ""
+          },
+          priceFrom: preset.priceFrom || "",
+          travelRadiusKm: preset.travelRadiusKm || "50"
+        });
+      }
+      renderArtistCabinet();
+    });
+    byId("artist-login-form").addEventListener("submit", async function (event) {
+      event.preventDefault();
+      const payload = Object.fromEntries(new FormData(event.target).entries());
+      const result = window.PalanartAuthBridge && window.PalanartAuthBridge.getMode() === "supabase"
+        ? await window.PalanartAuthBridge.signInWithEmail("artist", payload)
+        : MarketplaceStore.loginArtist(payload.email, payload.password);
+      if (!result.ok) return showArtistMessage(result.message, "error");
+      renderArtistCabinet();
+    });
+    byId("artist-profile-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const artist = MarketplaceStore.getCurrentArtist();
+      if (!artist) return;
+      const payload = Object.fromEntries(new FormData(event.target).entries());
+      payload.categories = parseList(payload.categories);
+      payload.languages = parseList(payload.languages);
+      payload.eventFormats = parseList(payload.eventFormats);
+      payload.serviceFeatures = parseList(payload.serviceFeatures);
+      payload.photo = artistMediaState.photo;
+      payload.galleryFiles = artistMediaState.galleryFiles.slice();
+      payload.videoFiles = artistMediaState.videoFiles.slice();
+      payload.audioFiles = artistMediaState.audioFiles.slice();
+      payload.packages = parseRows(payload.packagesText, "package");
+      payload.addOns = parseRows(payload.addOnsText, "package");
+      payload.availability = parseRows(payload.availabilityText, "availability");
+      payload.faq = parseRows(payload.faqText, "faq");
+      payload.policies = { deposit: payload.depositPolicy, cancellation: payload.cancellationPolicy, technical: payload.technicalPolicy };
+      const result = MarketplaceStore.createOrUpdateArtistProfile(artist.id, payload);
+      if (!result.ok) return showArtistMessage(result.message, "error");
+      const mode = MarketplaceStore.getSettings().moderationMode || "auto";
+      showArtistMessage(mode === "auto" ? "Профиль сохранен и опубликован." : "Профиль сохранен и отправлен на модерацию.", "success");
+      renderArtistCabinet();
+    });
+    byId("artist-release-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const artist = MarketplaceStore.getCurrentArtist();
+      if (!artist) return;
+      const payload = Object.fromEntries(new FormData(event.target).entries());
+      MarketplaceStore.createRelease({
+        artistId: artist.id,
+        title: payload.title,
+        type: payload.type,
+        genre: payload.genre,
+        releaseDate: payload.releaseDate,
+        language: payload.language,
+        trackCount: Number(payload.trackCount || 1),
+        description: payload.description,
+        status: "draft"
+      });
+      event.target.reset();
+      showArtistMessage("Релиз добавлен в кабинет артиста.", "success");
+      renderArtistCabinet();
+    });
+    byId("artist-payout-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const artist = MarketplaceStore.getCurrentArtist();
+      if (!artist) return;
+      const payload = Object.fromEntries(new FormData(event.target).entries());
+      const amount = Number(payload.amount || 0);
+      const balance = MarketplaceStore.getBalanceForArtist(artist.id);
+      if (amount <= 0) return showArtistMessage("Укажите сумму вывода больше нуля.", "error");
+      if (amount > balance) return showArtistMessage("Сумма вывода больше доступного баланса.", "error");
+      MarketplaceStore.createPayoutRequest({
+        artistId: artist.id,
+        amount: amount,
+        currency: payload.currency,
+        note: payload.note,
+        status: "pending"
+      });
+      event.target.reset();
+      showArtistMessage("Запрос на вывод создан и отправлен в админку.", "success");
+      renderArtistCabinet();
+    });
+    byId("artist-ticket-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const artist = MarketplaceStore.getCurrentArtist();
+      if (!artist) return;
+      const payload = Object.fromEntries(new FormData(event.target).entries());
+      MarketplaceStore.createTicket({
+        ownerType: "artist",
+        ownerId: artist.id,
+        subject: payload.subject,
+        category: payload.category,
+        priority: payload.priority,
+        message: payload.message
+      });
+      event.target.reset();
+      showArtistMessage("Support ticket создан и отправлен в ops-команду.", "success");
+      renderArtistCabinet();
+    });
+    actionForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const artist = MarketplaceStore.getCurrentArtist();
+      const payload = Object.fromEntries(new FormData(event.target).entries());
+      if (!artist) return;
+      if (payload.mode === "quote") {
+        const result = MarketplaceStore.createQuote({
+          leadId: payload.leadId,
+          packageName: payload.packageName,
+          amount: Number(payload.amount),
+          includes: payload.text || "",
+          comment: payload.text || ""
+        });
+        if (!result.ok) return showArtistMessage(result.message, "error");
+        closeArtistAction();
+        showArtistMessage("Предложение отправлено в client services.", "success");
+        renderArtistCabinet();
+        openArtistChat(result.deal.id);
+        return;
+      }
+      const result = MarketplaceStore.respondToOrder(payload.leadId, artist.id, payload.text);
+      if (!result.ok) return showArtistMessage(result.message, "error");
+      closeArtistAction();
+      showArtistMessage("Клиенту отправлен ответ.", "success");
+      renderArtistCabinet();
+      openArtistChat(result.deal.id);
+    });
+    byId("artist-action-close").addEventListener("click", closeArtistAction);
+    byId("artist-action-cancel").addEventListener("click", closeArtistAction);
+    actionModal.addEventListener("click", function (event) {
+      if (event.target === actionModal) closeArtistAction();
+    });
+    byId("artist-profile-form").photo.addEventListener("input", function (event) { artistMediaState.photo = (event.target.value || "").trim(); renderMediaPreview(); });
+    byId("artist-profile-form").galleryRaw.addEventListener("input", function (event) { artistMediaState.galleryFiles = parseMediaList(event.target.value, "gallery"); renderMediaPreview(); });
+    byId("artist-profile-form").videoRaw.addEventListener("input", function (event) { artistMediaState.videoFiles = parseMediaList(event.target.value, "video"); renderMediaPreview(); });
+    byId("artist-profile-form").audioRaw.addEventListener("input", function (event) { artistMediaState.audioFiles = parseMediaList(event.target.value, "audio"); renderMediaPreview(); });
+    byId("artist-photo-file").addEventListener("change", async function (event) {
+      const files = await collectFiles(event.target);
+      artistMediaState.photo = files[0] || artistMediaState.photo;
+      event.target.value = "";
+      syncMediaInputs();
+      renderMediaPreview();
+    });
+    byId("artist-gallery-files").addEventListener("change", async function (event) {
+      artistMediaState.galleryFiles = artistMediaState.galleryFiles.concat((await collectFiles(event.target)).map(function (src) { return createMediaEntry("gallery", src); }));
+      event.target.value = "";
+      syncMediaInputs();
+      renderMediaPreview();
+    });
+    byId("artist-video-files").addEventListener("change", async function (event) {
+      artistMediaState.videoFiles = artistMediaState.videoFiles.concat((await collectFiles(event.target)).map(function (src) { return createMediaEntry("video", src); }));
+      event.target.value = "";
+      syncMediaInputs();
+      renderMediaPreview();
+    });
+    byId("artist-audio-files").addEventListener("change", async function (event) {
+      artistMediaState.audioFiles = artistMediaState.audioFiles.concat((await collectFiles(event.target)).map(function (src) { return createMediaEntry("audio", src); }));
+      event.target.value = "";
+      syncMediaInputs();
+      renderMediaPreview();
+    });
+    document.querySelectorAll("[data-profile-preset]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        applyArtistPreset(button.dataset.profilePreset);
+      });
+    });
+    document.querySelectorAll("[data-register-role]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const form = byId("artist-register-form");
+        const roleField = byId("artist-register-role");
+        if (roleField) roleField.value = button.dataset.registerRole;
+        if (form && form.name && !form.name.value) {
+          const defaults = {
+            host: "Ведущий Palanart",
+            dj: "DJ Palanart",
+            photographer: "Фотограф Palanart",
+            band: "Группа Palanart"
+          };
+          form.name.value = defaults[button.dataset.registerRole] || "";
+        }
+      });
+    });
+    document.querySelectorAll("[data-fill-register]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const field = byId("artist-register-form")[button.dataset.fillRegister];
+        if (field) field.value = button.dataset.fillValue || "";
+      });
+    });
+    byId("detect-artist-register-city").addEventListener("click", function () {
+      detectArtistCity("detect-artist-register-city");
+    });
+    document.querySelectorAll("[data-chip-target] .quick-option").forEach(function (button) {
+      button.addEventListener("click", function () {
+        toggleChipValue(button.parentElement.dataset.chipTarget, button.dataset.chipValue);
+      });
+    });
+    document.querySelectorAll("[data-fill-textarea]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const field = byId("artist-profile-form")[button.dataset.fillTextarea];
+        if (field) field.value = button.dataset.fillBlock || "";
+      });
+    });
+    actionQuick.addEventListener("click", function (event) {
+      const button = event.target.closest("[data-fill-action]");
+      if (!button) return;
+      const field = actionForm[button.dataset.fillAction];
+      if (field) field.value = button.dataset.fillValue || "";
+    });
+    byId("artist-logout").addEventListener("click", async function () {
+      if (window.PalanartAuthBridge) {
+        await window.PalanartAuthBridge.logout();
+      } else {
+        MarketplaceStore.logout();
+      }
+      renderArtistCabinet();
+    });
+    byId("artist-edit-card").addEventListener("click", function () {
+      scrollArtistProfileForm();
+    });
+    byId("artist-preview-card").addEventListener("click", function () {
+      openArtistProfilePreview();
+    });
+    byId("artist-open-storefront").addEventListener("click", function (event) {
+      const artist = MarketplaceStore.getCurrentArtist();
+      const profile = artist ? MarketplaceStore.getArtistProfile(artist.id) : null;
+      if (!profile) {
+        event.preventDefault();
+        showArtistMessage("Сначала сохраните карточку, чтобы открыть её на витрине.", "error");
+        return;
+      }
+      event.preventDefault();
+      localStorage.setItem("palanart_preview_profile_id", profile.id);
+      window.location.href = "index.html#profile-detail";
+    });
+    byId("artist-delete-cancel").addEventListener("click", function () {
+      closeArtistDeletePanel();
+    });
+    byId("artist-delete-card").addEventListener("click", function () {
+      openArtistDeletePanel();
+    });
+    byId("artist-delete-confirm").addEventListener("click", function () {
+      deleteArtistCard();
+    });
+    window.artistOpenDeletePanel = openArtistDeletePanel;
+    window.artistScrollProfileForm = scrollArtistProfileForm;
+    window.artistPreviewProfile = openArtistProfilePreview;
+    window.artistOpenStorefront = function (event) {
+      const artist = MarketplaceStore.getCurrentArtist();
+      const profile = artist ? MarketplaceStore.getArtistProfile(artist.id) : null;
+      if (!profile) {
+        if (event) event.preventDefault();
+        showArtistMessage("Сначала сохраните карточку, чтобы открыть её на витрине.", "error");
+        return false;
+      }
+      if (event) event.preventDefault();
+      localStorage.setItem("palanart_preview_profile_id", profile.id);
+      window.location.href = "index.html#profile-detail";
+      return false;
+    };
+    document.querySelectorAll("[data-artist-social]").forEach(function (button) {
+      button.addEventListener("click", async function () {
+        if (!window.PalanartAuthBridge) return;
+        const result = await window.PalanartAuthBridge.signInWithSocial("artist", button.dataset.artistSocial);
+        if (!result.ok) showArtistMessage(result.message, "error");
+      });
+    });
+    renderArtistRegisterPhotoPreview();
+    if (byId("artist-register-form").name) {
+      byId("artist-register-form").name.setAttribute("list", "artist-name-options");
+    }
+    if (byId("artist-register-form").telegram) {
+      byId("artist-register-form").telegram.setAttribute("placeholder", "@username");
+    }
+    (function initPortalScenes() {
+      const sections = Array.from(document.querySelectorAll("[data-scene]"));
+      if (!sections.length) return;
+      let activeScene = "hero";
+      function setScene(scene) {
+        if (!scene || activeScene === scene) return;
+        activeScene = scene;
+        document.body.setAttribute("data-scene", scene);
+      }
+      setScene(sections[0].dataset.scene || "hero");
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(function (entries) {
+          const visible = entries.filter(function (entry) { return entry.isIntersecting; })
+            .sort(function (a, b) { return b.intersectionRatio - a.intersectionRatio; });
+          if (!visible.length) return;
+          setScene(visible[0].target.dataset.scene);
+        }, { threshold: [0.2, 0.35, 0.55, 0.75] });
+        sections.forEach(function (section) { observer.observe(section); });
+      }
+    })();
+    setupArtistProfileQuickMode();
+    fillSelects();
+    renderArtistAuthMode();
+    if (window.PalanartAuthBridge) {
+      window.PalanartAuthBridge.init({
+        role: "artist",
+        onSession: function () {
+          renderArtistCabinet();
+        }
+      }).then(function () {
+        renderArtistAuthMode();
+        renderArtistCabinet();
+      });
+    } else {
+      renderArtistCabinet();
+    }
+  </script>
+</body>
+</html>
+

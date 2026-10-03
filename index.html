@@ -1,0 +1,1129 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6c453">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Palanart">
+  <title>Palanart | Маркетплейс исполнителей для мероприятий</title>
+  <link rel="stylesheet" href="marketplace.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+</head>
+<body class="page-home">
+  <div class="music-atmosphere" aria-hidden="true">
+    <span class="music-beam music-beam--left"></span>
+    <span class="music-beam music-beam--right"></span>
+    <span class="music-vinyl"></span>
+    <span class="music-wave"></span>
+    <span class="music-piano"></span>
+    <span class="music-staff"></span>
+    <span class="music-silhouette music-silhouette--mic"></span>
+    <span class="music-silhouette music-silhouette--guitar"></span>
+    <span class="music-trails music-trails--primary"></span>
+    <span class="music-trails music-trails--secondary"></span>
+    <span class="music-eq">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </span>
+    <span class="music-particles">
+      <i></i><i></i><i></i><i></i><i></i><i></i>
+    </span>
+    <span class="music-note music-note--a">♪</span>
+    <span class="music-note music-note--b">♬</span>
+    <span class="music-note music-note--c">♫</span>
+  </div>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand">
+        <strong>Palanart</strong>
+        <span>Маркетплейс ведущих и исполнителей для мероприятий</span>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Открыть меню">☰</button>
+      <nav class="nav">
+        <a href="#catalog">Каталог</a>
+        <a href="#workflow">Как это работает</a>
+        <a href="vedushie.html">Ведущие</a>
+        <a href="user.html">Заказчику</a>
+        <a href="artist.html">Исполнителю</a>
+        <a href="partner.html">Партнёрам</a>
+        <button id="theme-toggle" class="ghost-btn theme-toggle" type="button">Светлая тема</button>
+      </nav>
+    </div>
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  </header>
+
+  <main class="shell">
+    <div id="site-message"></div>
+    <section class="hero" data-scene="hero">
+      <div class="hero-grid">
+        <article class="hero-card">
+          <div class="highlight">Palanart — всё для праздника и события в одном месте</div>
+          <h1>Найдите ведущего, DJ, фотографа, музыканта или организатора для вашего мероприятия</h1>
+          <p>Сравнивайте исполнителей по цене, городу, формату работы, отзывам и портфолио. Оставляйте заявку и получайте предложения напрямую от специалистов.</p>
+          <div class="hero-points">
+            <div class="hero-point">Ведущие, DJ, фотографы, видеографы, музыканты, аниматоры и организаторы.</div>
+            <div class="hero-point">Карточки с ценой, портфолио, отзывами, городом и радиусом выезда.</div>
+            <div class="hero-point">Заказчик оставляет заявку и получает предложения от подходящих исполнителей.</div>
+            <div class="hero-point">Исполнитель ведёт профиль, получает заявки и отвечает клиентам в одном кабинете.</div>
+          </div>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#catalog">Найти исполнителя</a>
+            <a class="ghost-btn" href="zayavka.html">Оставить заявку</a>
+            <a class="ghost-btn" href="add-host.html">Добавить свой профиль</a>
+          </div>
+          <div class="hero-meta-grid">
+            <div class="hero-meta-card">
+              <span>Каталог</span>
+              <strong>Исполнители по категориям, городу и бюджету</strong>
+            </div>
+            <div class="hero-meta-card">
+              <span>Заявки</span>
+              <strong>Один запрос — несколько подходящих предложений</strong>
+            </div>
+            <div class="hero-meta-card">
+              <span>Профиль</span>
+              <strong>Портфолио, цены, отзывы и прямой контакт</strong>
+            </div>
+          </div>
+        </article>
+        <aside class="panel hero-visual-panel">
+          <div class="anime-stage" aria-hidden="true">
+            <img class="anime-stage-people" src="assets/hero-people-anime-stage.png" alt="Музыканты на сцене">
+            <div class="stage-glow"></div>
+            <div class="stage-spotlight"></div>
+            <div class="stage-grid"></div>
+            <div class="orbit-chip orbit-chip--guitar">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M15.5 3.5a2 2 0 0 1 2.8 0l2.2 2.2a2 2 0 0 1 0 2.8l-2.1 2.1-1.8-1.8-2 2-1.4-1.4 2-2-1.8-1.8 2.1-2.1Z" stroke="currentColor" stroke-width="1.6"/><path d="m12.8 10.2-5.6 5.6a2.8 2.8 0 1 1-4-4l5.6-5.6" stroke="currentColor" stroke-width="1.6"/></svg>
+              <span><strong>Guitar</strong><small>live set</small></span>
+            </div>
+            <div class="orbit-chip orbit-chip--mic">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="9" y="3.5" width="6" height="10" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M6 11.5a6 6 0 1 0 12 0M12 17.5v3m-3 0h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <span><strong>Vocal</strong><small>mic line</small></span>
+            </div>
+            <div class="orbit-chip orbit-chip--drums">
+              <svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="14.5" rx="5.5" ry="3.5" stroke="currentColor" stroke-width="1.6"/><path d="M6.5 14.5V9m11 5.5V9M9 7.5h6M5 6l3 2.5M19 6l-3 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <span><strong>Drums</strong><small>show energy</small></span>
+            </div>
+            <div class="orbit-chip orbit-chip--piano">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 9v6M12 9v6M16 9v6M6 12h12" stroke="currentColor" stroke-width="1.4"/></svg>
+              <span><strong>Keys</strong><small>studio tone</small></span>
+            </div>
+            <div class="anime-singer">
+              <div class="hair"></div>
+              <div class="head"></div>
+              <div class="body"></div>
+              <div class="arm left"></div>
+              <div class="arm right"></div>
+              <div class="leg left"></div>
+              <div class="leg right"></div>
+              <div class="mic-stand"></div>
+              <div class="mic-head"></div>
+            </div>
+          </div>
+          <div class="section-head">
+            <div>
+              <h2>Живые исполнители для настоящих событий</h2>
+              <p>Ведущие, DJ, музыканты и другие специалисты собираются в одном каталоге — от локального праздника до большого события.</p>
+            </div>
+          </div>
+          <div id="hero-stats" class="stats-row"></div>
+          <div class="visual-meta-strip">
+            <span class="summary-pill">свадьбы</span>
+            <span class="summary-pill">юбилеи</span>
+            <span class="summary-pill">корпоративы</span>
+          </div>
+          <div class="info-list">
+            <div class="info-item">Старт каталога: Чебоксары, Новочебоксарск, Чувашия и ближайшие регионы.</div>
+            <div class="info-item">Следующий этап: расширение каталога исполнителей по всей России.</div>
+            <div class="info-item">Исполнитель может добавить профиль, портфолио, цену и условия работы.</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="promo-ribbon" aria-label="Категории Palanart">
+      <div class="promo-track">
+        <span class="promo-chip"><strong>Ведущие</strong> свадьбы, юбилеи, корпоративы</span>
+        <span class="promo-chip"><strong>DJ</strong> музыка и танцевальная программа</span>
+        <span class="promo-chip"><strong>Фотографы</strong> репортаж и постановочная съёмка</span>
+        <span class="promo-chip"><strong>Видеографы</strong> клипы и фильмы о событии</span>
+        <span class="promo-chip"><strong>Музыканты</strong> живой звук и шоу</span>
+        <span class="promo-chip"><strong>Организаторы</strong> событие под ключ</span>
+        <span class="promo-chip"><strong>Ведущие</strong> свадьбы, юбилеи, корпоративы</span>
+        <span class="promo-chip"><strong>DJ</strong> музыка и танцевальная программа</span>
+        <span class="promo-chip"><strong>Фотографы</strong> репортаж и постановочная съёмка</span>
+        <span class="promo-chip"><strong>Видеографы</strong> клипы и фильмы о событии</span>
+        <span class="promo-chip"><strong>Музыканты</strong> живой звук и шоу</span>
+        <span class="promo-chip"><strong>Организаторы</strong> событие под ключ</span>
+      </div>
+    </section>
+
+    <section class="people-showcase" data-scene="studio">
+      <article class="people-card people-card--tall people-card--home-main">
+        <img class="people-image people-image--home-main" src="assets/hero-people-anime-stage.png" alt="Живые музыканты на сцене">
+        <div class="people-card-copy">
+          <div class="eyebrow">Праздник начинается с людей</div>
+          <h3>Выбирайте исполнителя по стилю, опыту и портфолио</h3>
+          <p>Palanart помогает быстро собрать команду для события и сразу понять, кто подходит по формату и бюджету.</p>
+        </div>
+      </article>
+      <div class="people-showcase-stack">
+        <article class="people-card people-card--home-studio">
+          <img class="people-image people-image--home-studio" src="assets/studio-artist-scene.png" alt="Артист в студии">
+          <div class="people-card-copy">
+            <div class="eyebrow">Портфолио</div>
+            <h3>Фото, видео и примеры работы</h3>
+            <p>Клиент видит стиль исполнителя до первого звонка и быстрее принимает решение.</p>
+          </div>
+        </article>
+        <article class="people-card people-card--home-team">
+          <img class="people-image people-image--home-team" src="assets/partner-release-desk-scene.png" alt="Команда за release desk">
+          <div class="people-card-copy">
+            <div class="eyebrow">Заявка</div>
+            <h3>Клиент описывает событие один раз</h3>
+            <p>Подходящие исполнители получают запрос и могут предложить условия напрямую.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="platform-matrix" data-scene="label">
+      <div class="section-head">
+        <div>
+          <h2>Как работает Palanart</h2>
+          <p>Один сервис соединяет заказчиков мероприятий и исполнителей: поиск, профиль, заявка, предложение и контакт.</p>
+        </div>
+      </div>
+      <div class="platform-matrix">
+        <article class="matrix-card matrix-card--wide">
+          <div class="matrix-kicker">Каталог</div>
+          <h3>Все специалисты для события в одном месте</h3>
+          <p>Ведущие, DJ, музыканты, фотографы, видеографы, аниматоры, декораторы, организаторы и кейтеринг.</p>
+          <div class="matrix-tags">
+            <span>Портфолио</span>
+            <span>Цена</span>
+            <span>Отзывы</span>
+            <span>Город</span>
+          </div>
+        </article>
+        <article class="matrix-card">
+          <div class="matrix-kicker">Исполнитель</div>
+          <h3>Свой профиль и новые заявки</h3>
+          <p>Исполнитель управляет описанием, услугами, портфолио, ценами и отвечает на запросы клиентов.</p>
+        </article>
+        <article class="matrix-card">
+          <div class="matrix-kicker">Заказчик</div>
+          <h3>Поиск без десятков звонков</h3>
+          <p>Можно сохранить понравившихся специалистов, сравнить варианты и отправить заявку подходящим исполнителям.</p>
+        </article>
+        <article class="matrix-card">
+          <div class="matrix-kicker">Модерация</div>
+          <h3>Порядок и доверие в каталоге</h3>
+          <p>Администратор проверяет профили, управляет публикацией, заявками и отзывами.</p>
+        </article>
+        <article class="matrix-card">
+          <div class="matrix-kicker">Рост</div>
+          <h3>От Чувашии к каталогу по всей России</h3>
+          <p>Стартуем с локального рынка, затем расширяем географию и категории без смены основной модели продукта.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" data-scene="partner">
+      <div class="ops-showcase">
+        <div class="ops-showcase-copy">
+          <div class="eyebrow">От идеи до исполнителя</div>
+          <h2>Простой путь от заявки до договорённости</h2>
+          <p>Заказчик описывает событие, выбирает категорию и бюджет. Исполнители получают подходящие запросы, отправляют предложения и продолжают общение напрямую.</p>
+          <div class="ops-showcase-list">
+            <div class="ops-showcase-item"><strong>1. Найти</strong><span>Каталог по категории, городу, цене и формату мероприятия.</span></div>
+            <div class="ops-showcase-item"><strong>2. Сравнить</strong><span>Портфолио, отзывы, услуги, условия и стоимость в одном формате.</span></div>
+            <div class="ops-showcase-item"><strong>3. Связаться</strong><span>Заявка, отклик и дальнейшая коммуникация с исполнителем.</span></div>
+          </div>
+        </div>
+        <div class="ops-showcase-panel">
+          <div class="ops-window">
+            <div class="ops-window-head">
+              <span class="ops-dot"></span>
+              <span class="ops-dot"></span>
+              <span class="ops-dot"></span>
+              <strong>Palanart Marketplace</strong>
+            </div>
+            <div class="ops-window-grid">
+              <div class="ops-window-card">
+                <span>Исполнители</span>
+                <strong>Профили и портфолио</strong>
+              </div>
+              <div class="ops-window-card">
+                <span>Клиенты</span>
+                <strong>Поиск и заявки</strong>
+              </div>
+              <div class="ops-window-card">
+                <span>Сделка</span>
+                <strong>Предложение → контакт</strong>
+              </div>
+              <div class="ops-window-card">
+                <span>География</span>
+                <strong>Чувашия → Россия</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-scene="label">
+      <div class="section-head">
+        <div>
+          <h2>Что есть в Palanart</h2>
+          <p>Основные функции маркетплейса для заказчика, исполнителя и администратора.</p>
+        </div>
+      </div>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+        <div class="summary-card"><strong>Каталог</strong><p class="muted">Профили исполнителей с фото, видео, ценами, услугами и условиями работы.</p></div>
+        <div class="summary-card"><strong>Поиск и сравнение</strong><p class="muted">Фильтры по категории, городу и бюджету, избранное и сравнение карточек.</p></div>
+        <div class="summary-card"><strong>Заявки</strong><p class="muted">Клиент описывает событие, а подходящие специалисты могут отправить предложение.</p></div>
+        <div class="summary-card"><strong>Модерация</strong><p class="muted">Проверка профилей, управление отзывами, заявками и публикацией каталога.</p></div>
+      </div>
+    </section>
+
+    <section class="section" data-scene="label">
+      <div class="section-head">
+        <div>
+          <h2>Для каких событий</h2>
+          <p>Palanart рассчитан на частные и корпоративные мероприятия разного масштаба.</p>
+        </div>
+      </div>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+        <div class="summary-card"><strong>Свадьбы</strong><p class="muted">Ведущий, DJ, фотограф, видеограф, декор и организация.</p></div>
+        <div class="summary-card"><strong>Юбилеи и дни рождения</strong><p class="muted">Ведущие, музыка, шоу-программа, аниматоры и дополнительные услуги.</p></div>
+        <div class="summary-card"><strong>Корпоративы</strong><p class="muted">Командные события, ведущие, музыкальное сопровождение и продакшн.</p></div>
+        <div class="summary-card"><strong>Детские и семейные</strong><p class="muted">Аниматоры, программы, фотографы, оформление и кейтеринг.</p></div>
+      </div>
+    </section>
+
+    <section class="section" data-scene="studio">
+      <div class="section-head">
+        <div>
+          <h2>Категории исполнителей</h2>
+          <p>Начинаем с самых востребованных услуг и постепенно расширяем каталог.</p>
+        </div>
+      </div>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+        <div class="summary-card"><strong>Ведущие и DJ</strong><p class="muted">Свадьбы, юбилеи, корпоративы и частные праздники.</p></div>
+        <div class="summary-card"><strong>Фото и видео</strong><p class="muted">Фотографы, видеографы, репортаж и контент по итогам события.</p></div>
+        <div class="summary-card"><strong>Музыка и шоу</strong><p class="muted">Музыканты, группы, вокалисты, аниматоры и шоу-программы.</p></div>
+        <div class="summary-card"><strong>Организация</strong><p class="muted">Декораторы, организаторы, площадки и кейтеринг.</p></div>
+      </div>
+      <div class="scene-banner" style="margin-top:18px;">
+        <img src="assets/studio-artist-scene.png" alt="Исполнитель за работой">
+        <div class="scene-banner-copy">
+          <div class="eyebrow">Профиль исполнителя</div>
+          <h3>Портфолио должно продавать ещё до первого сообщения</h3>
+          <p>Фото, видео, описание формата работы, услуги и цена помогают клиенту быстрее выбрать подходящего специалиста.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-scene="release">
+      <div class="section-head">
+        <div>
+          <h2>Как проходит заказ</h2>
+          <p>От первого запроса до прямой договорённости с исполнителем — без лишних промежуточных шагов.</p>
+        </div>
+      </div>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        <div class="summary-card"><strong>1. Заявка</strong><p class="muted">Клиент указывает тип события, дату, город, бюджет и пожелания.</p></div>
+        <div class="summary-card"><strong>2. Подбор</strong><p class="muted">Система показывает подходящих специалистов и сохраняет интересные варианты.</p></div>
+        <div class="summary-card"><strong>3. Предложения</strong><p class="muted">Исполнители отвечают на запрос и уточняют условия работы.</p></div>
+        <div class="summary-card"><strong>4. Сравнение</strong><p class="muted">Клиент сравнивает цену, портфолио, отзывы и формат работы.</p></div>
+        <div class="summary-card"><strong>5. Договорённость</strong><p class="muted">Стороны переходят к прямому контакту и фиксируют детали события.</p></div>
+      </div>
+    </section>
+
+    <section class="section" data-scene="partner">
+      <div class="section-head">
+        <div>
+          <h2>Для агентств и организаторов</h2>
+          <p>Партнёрский сценарий для тех, кто регулярно подбирает исполнителей под мероприятия клиентов.</p>
+        </div>
+      </div>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+        <div class="summary-card"><strong>Быстрый подбор</strong><p class="muted">Собирайте short-list специалистов под конкретную дату, город и бюджет.</p></div>
+        <div class="summary-card"><strong>Сравнение</strong><p class="muted">Сводите цены, форматы работы и портфолио в одном месте.</p></div>
+        <div class="summary-card"><strong>Повторные заказы</strong><p class="muted">Сохраняйте проверенных исполнителей и возвращайтесь к ним для новых событий.</p></div>
+        <div class="summary-card"><strong>Командная работа</strong><p class="muted">Партнёрский кабинет можно развить для работы нескольких менеджеров.</p></div>
+      </div>
+      <div class="scene-banner" style="margin-top:18px;">
+        <img src="assets/partner-release-desk-scene.png" alt="Команда организаторов">
+        <div class="scene-banner-copy">
+          <div class="eyebrow">Партнёрский сценарий</div>
+          <h3>Организатору нужен быстрый доступ к проверенным специалистам</h3>
+          <p>Palanart становится рабочим каталогом для агентств, менеджеров площадок и event-команд.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="label-platform" data-scene="label">
+      <div class="section-head">
+        <div>
+          <h2>Почему исполнителю выгодно быть в Palanart</h2>
+          <p>Профиль работает как отдельная продающая страница и одновременно даёт доступ к новым заявкам.</p>
+        </div>
+      </div>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+        <div class="summary-card"><strong>Личная витрина</strong><p class="muted">Фото, видео, услуги, цена, условия, FAQ и отзывы в одном профиле.</p></div>
+        <div class="summary-card"><strong>Новые клиенты</strong><p class="muted">Исполнитель получает заявки именно по своему городу и формату работы.</p></div>
+        <div class="summary-card"><strong>Доверие</strong><p class="muted">Подтверждённый профиль, история отзывов и прозрачное описание услуг.</p></div>
+        <div class="summary-card"><strong>Прямой контакт</strong><p class="muted">После отклика можно быстро перейти к обсуждению деталей с заказчиком.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="workflow" data-scene="release">
+      <div class="section-head">
+        <div>
+          <h2>Как работает Palanart</h2>
+          <p>Два простых сценария: заказчик ищет специалиста, исполнитель получает клиента.</p>
+        </div>
+      </div>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        <div class="summary-card"><strong>1. Создать профиль</strong><p class="muted">Исполнитель добавляет услуги, город, цену, портфолио и контакты.</p></div>
+        <div class="summary-card"><strong>2. Найти специалиста</strong><p class="muted">Заказчик фильтрует каталог и сохраняет понравившиеся варианты.</p></div>
+        <div class="summary-card"><strong>3. Оставить заявку</strong><p class="muted">Клиент описывает мероприятие и условия, которые для него важны.</p></div>
+        <div class="summary-card"><strong>4. Получить отклики</strong><p class="muted">Подходящие исполнители отправляют предложения.</p></div>
+        <div class="summary-card"><strong>5. Договориться</strong><p class="muted">Клиент выбирает исполнителя и продолжает общение напрямую.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="catalog" data-scene="catalog">
+      <div class="section-head">
+        <div>
+          <h2>Каталог исполнителей</h2>
+          <p>Выбирайте специалистов по категории, городу, бюджету, языку и формату мероприятия.</p>
+        </div>
+      </div>
+      <div class="filters">
+        <label>Категория
+          <select id="filter-category"></select>
+        </label>
+        <label>Город
+          <input id="filter-city" type="text" placeholder="Чебоксары">
+        </label>
+        <label>Бюджет до
+          <input id="filter-price" type="number" min="0" placeholder="80000">
+        </label>
+        <label>Язык
+          <input id="filter-language" type="text" placeholder="Русский">
+        </label>
+        <label>Поиск
+          <input id="filter-search" type="text" placeholder="формат, стиль, категория">
+        </label>
+        <label>Сортировка
+          <select id="filter-sort">
+            <option value="relevance">По релевантности</option>
+            <option value="rating">По рейтингу</option>
+            <option value="price_asc">Сначала дешевле</option>
+            <option value="price_desc">Сначала дороже</option>
+            <option value="reviews">По отзывам</option>
+            <option value="popular">По популярности</option>
+          </select>
+        </label>
+      </div>
+      <div class="inline-actions" style="margin-bottom:16px;">
+        <label class="summary-pill"><input id="filter-video" type="checkbox"> Только с видео</label>
+        <button class="ghost-btn" type="button" id="clear-filters">Сбросить фильтры</button>
+      </div>
+      <div id="catalog-grid" class="cards-grid"></div>
+    </section>
+
+    <section class="section" data-scene="catalog">
+      <div class="section-head">
+        <div>
+          <h2>Выбранный профиль</h2>
+          <p>Расширенная структура публичного профиля артиста с медиа, условиями, FAQ и сервисными блоками.</p>
+        </div>
+      </div>
+      <div id="profile-detail" class="panel"></div>
+    </section>
+
+    <section class="section" data-scene="catalog">
+      <div class="section-head">
+        <div>
+          <h2>Сравнение артистов и проектов</h2>
+          <p>Удобно для A&R, отбора артистов, внешних запросов и сервисного short-list внутри платформы.</p>
+        </div>
+      </div>
+      <div id="compare-box" class="comparison-table"></div>
+    </section>
+
+    <section class="section" id="board" data-scene="board">
+      <div class="section-head">
+        <div>
+          <h2>Открытые запросы и сервисные предложения</h2>
+          <p>Заказчики, артисты и партнёры могут публиковать запросы на услуги, релизное сопровождение, сотрудничество и студийные задачи.</p>
+        </div>
+      </div>
+      <div class="split">
+        <form id="board-form" class="panel">
+          <div id="board-message"></div>
+          <div class="form-grid">
+            <label>Кто публикует
+              <select name="authorType" required>
+                <option value="client">Заказчик</option>
+                <option value="artist">Артист</option>
+              </select>
+            </label>
+            <label>Тип объявления
+              <select name="postType" required>
+                <option value="request">Нужен сервис или артист</option>
+                <option value="offer">Предлагаю услугу или проект</option>
+              </select>
+            </label>
+            <label>Заголовок
+              <input name="title" type="text" required>
+            </label>
+            <label>Категория
+              <input name="category" type="text" placeholder="Артист, студия, релиз, продакшн">
+            </label>
+            <label>Город
+              <input name="city" type="text" placeholder="Чебоксары" required>
+            </label>
+            <label>Бюджет / цена
+              <input name="budget" type="text" placeholder="бюджет или ставка">
+            </label>
+            <label>Контактное имя
+              <input name="contactName" type="text" required>
+            </label>
+            <label>Контакт
+              <input name="contactInfo" type="text" value="Через платформу" required>
+            </label>
+          </div>
+          <div class="form-grid one">
+            <label>Описание
+              <textarea name="description" required></textarea>
+            </label>
+          </div>
+          <button class="primary-btn" type="submit">Опубликовать сервисный запрос</button>
+        </form>
+        <div class="panel">
+          <div class="section-head">
+            <div>
+              <h2>Для чего это нужно</h2>
+              <p>Service board помогает быстро собирать отклики на артистов, релизы, студийные услуги и коллаборации.</p>
+            </div>
+          </div>
+          <div class="info-list">
+            <div class="info-item">Заказчик может описать задачу под локальный рынок, всю Россию или международный контур.</div>
+            <div class="info-item">Артист или партнёр могут показать готовые сервисные пакеты, релизные сценарии и доступность студии.</div>
+            <div class="info-item">Все ответы и согласования остаются внутри платформы до перехода к сделке или сервисному контракту.</div>
+          </div>
+        </div>
+      </div>
+      <div class="split" style="margin-top:18px;">
+        <div class="panel">
+          <h3>Запросы заказчиков</h3>
+          <div id="requests-grid" class="table-list"></div>
+        </div>
+        <div class="panel">
+          <h3>Предложения артистов и партнёров</h3>
+          <div id="offers-grid" class="table-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews" data-scene="trust">
+      <div class="section-head">
+        <div>
+          <h2>Отзывы и доверие</h2>
+          <p>После завершения сервиса, проекта или сделки заказчик может оставить рейтинг и отзыв в публичном профиле артиста.</p>
+        </div>
+      </div>
+      <div id="reviews-grid" class="grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));"></div>
+    </section>
+
+    <section class="section" data-scene="partner">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <h2>Три стороны Palanart</h2>
+            <p class="muted">У каждого участника свой понятный сценарий — без лишней сложности.</p>
+          </div>
+        </div>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+          <div class="summary-card"><strong>Заказчик</strong><p class="muted">Ищет, сравнивает, сохраняет избранное и оставляет заявку.</p></div>
+          <div class="summary-card"><strong>Исполнитель</strong><p class="muted">Оформляет профиль, показывает портфолио и отвечает на заявки.</p></div>
+          <div class="summary-card"><strong>Партнёр</strong><p class="muted">Подбирает специалистов для клиентов и собирает рабочий short-list.</p></div>
+          <div class="summary-card"><strong>Администратор</strong><p class="muted">Модерирует профили, отзывы, категории и публикации.</p></div>
+        </div>
+        <div class="hero-actions" style="margin-top:18px;">
+          <a class="primary-btn" href="artist.html">Кабинет исполнителя</a>
+          <a class="ghost-btn" href="user.html">Кабинет заказчика</a>
+          <a class="ghost-btn" href="admin.html">Админка</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="shell section" data-scene="hero">
+    <div class="cta-band">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Palanart</div>
+          <h2>Найдите людей, которые сделают ваше событие</h2>
+          <p>Соберите ведущего, музыку, фото, видео и другие услуги в одном месте. Исполнителям — новые клиенты, заказчикам — понятный выбор.</p>
+        </div>
+      </div>
+      <div class="metric-ribbon">
+        <span class="summary-pill">Ведущие</span>
+        <span class="summary-pill">DJ</span>
+        <span class="summary-pill">Фото и видео</span>
+        <span class="summary-pill">Музыканты</span>
+        <span class="summary-pill">Организаторы</span>
+        <span class="summary-pill">Аниматоры</span>
+      </div>
+      <div class="hero-actions">
+        <a class="primary-btn" href="#catalog">Смотреть каталог</a>
+        <a class="ghost-btn" href="zayavka.html">Оставить заявку</a>
+        <a class="ghost-btn" href="add-host.html">Добавить профиль</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="social-dock" aria-label="Быстрые ссылки Palanart">
+    <a class="social-fab" href="artist.html"><span><strong>Исполнителю</strong><small>профиль и заявки</small></span></a>
+    <a class="social-fab" href="user.html"><span><strong>Заказчику</strong><small>поиск и избранное</small></span></a>
+    <a class="social-fab" href="zayavka.html"><span><strong>Заявка</strong><small>найти специалиста</small></span></a>
+    <a class="social-fab" href="add-host.html"><span><strong>Добавить профиль</strong><small>быстрый старт</small></span></a>
+  </div>
+
+  <div class="app-modal" id="request-modal">
+    <div class="app-modal-card">
+      <div class="app-modal-head">
+        <div>
+          <h3 id="request-modal-title">Новый сервисный запрос</h3>
+          <p id="request-modal-subtitle" class="muted">Быстро заполните несколько полей без лишней бюрократии и системных окон.</p>
+        </div>
+        <button class="app-modal-close" id="request-modal-close" type="button">×</button>
+      </div>
+      <form id="request-form" class="section-stack">
+        <input type="hidden" name="profileId">
+        <input type="hidden" name="mode" value="lead">
+        <div class="form-grid">
+          <label>Имя заказчика<input name="customerName" type="text" required></label>
+          <label>Телефон<input name="customerPhone" type="tel" required></label>
+          <label>E-mail<input name="customerEmail" type="email"></label>
+          <label>Город<input name="city" type="text" list="city-options" required></label>
+          <label>Проект / площадка<input name="venue" type="text" list="venue-options"></label>
+          <label>Тип задачи
+            <select name="eventType">
+              <option value="Артист на событие">Артист на событие</option>
+              <option value="Релизное сопровождение">Релизное сопровождение</option>
+              <option value="Студийная запись">Студийная запись</option>
+              <option value="Сведение и мастеринг">Сведение и мастеринг</option>
+              <option value="Продюсерский пакет">Продюсерский пакет</option>
+              <option value="Партнёрская коллаборация">Партнёрская коллаборация</option>
+            </select>
+          </label>
+          <label>Масштаб
+            <select name="guestCount">
+              <option value="1">Индивидуально</option>
+              <option value="5" selected>Малый проект</option>
+              <option value="20">Команда / серия задач</option>
+              <option value="100">Крупный production</option>
+            </select>
+          </label>
+          <label>Дата<input name="eventDate" type="date"></label>
+          <label>Время<input name="eventTime" type="time" value="17:00"></label>
+          <label>Бюджет
+            <select name="budget">
+              <option value="30000">До 30 000 ₽</option>
+              <option value="60000" selected>До 60 000 ₽</option>
+              <option value="100000">До 100 000 ₽</option>
+              <option value="150000">150 000 ₽ и выше</option>
+            </select>
+          </label>
+          <label>Язык
+            <select name="language">
+              <option value="Русский" selected>Русский</option>
+              <option value="Русский и английский">Русский и английский</option>
+              <option value="Чувашский и русский">Чувашский и русский</option>
+            </select>
+          </label>
+        </div>
+          <label>Что важно<textarea name="requirements" required></textarea></label>
+        <div class="quick-options">
+          <button class="quick-option" type="button" data-fill-target="requirements" data-fill-value="Нужен сильный локальный опыт и понятное сопровождение по этапам.">Локальный опыт</button>
+          <button class="quick-option" type="button" data-fill-target="requirements" data-fill-value="Нужен спокойный сервисный процесс, понятный тайминг и минимум хаоса.">Сервисный формат</button>
+          <button class="quick-option" type="button" data-fill-target="requirements" data-fill-value="Важно наличие собственного production-процесса, студийных возможностей и быстрой коммуникации.">Production-ready</button>
+        </div>
+        <div class="inline-actions">
+          <button class="primary-btn" type="submit">Отправить запрос</button>
+          <button class="ghost-btn" id="request-modal-cancel" type="button">Отмена</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="app-modal" id="reply-modal">
+    <div class="app-modal-card">
+      <div class="app-modal-head">
+        <div>
+          <h3>Отклик на сервисный запрос</h3>
+          <p class="muted">Оставьте короткий и внятный ответ без системных окон.</p>
+        </div>
+        <button class="app-modal-close" id="reply-modal-close" type="button">×</button>
+      </div>
+      <form id="reply-form" class="section-stack">
+        <input type="hidden" name="postId">
+        <label>Ваше имя<input name="authorName" type="text" required></label>
+        <label>Отклик<textarea name="message" required></textarea></label>
+        <div class="quick-options">
+          <button class="quick-option" type="button" data-fill-target="message" data-fill-value="Готов обсудить детали и быстро прислать предложение.">Быстрый отклик</button>
+          <button class="quick-option" type="button" data-fill-target="message" data-fill-value="Работаю в вашем городе, могу прислать варианты пакетов и свободные даты сегодня.">Есть локальный выезд</button>
+        </div>
+        <div class="inline-actions">
+          <button class="primary-btn" type="submit">Отправить отклик</button>
+          <button class="ghost-btn" id="reply-modal-cancel" type="button">Отмена</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <datalist id="city-options">
+    <option value="Чебоксары"></option>
+    <option value="Новочебоксарск"></option>
+    <option value="Казань"></option>
+    <option value="Москва"></option>
+    <option value="Санкт-Петербург"></option>
+  </datalist>
+  <datalist id="venue-options">
+    <option value="Ресторан"></option>
+    <option value="Банкетный зал"></option>
+    <option value="Загородная площадка"></option>
+    <option value="Отель"></option>
+    <option value="Частный дом"></option>
+  </datalist>
+
+  <footer class="shell footer">
+    <div class="brand-footer">
+      <div>
+        <div class="brand">
+          <strong>Palanart</strong>
+          <span>Маркетплейс исполнителей и услуг для мероприятий</span>
+        </div>
+        <p>Ищите специалистов, сравнивайте условия, оставляйте заявку и договаривайтесь напрямую.</p>
+      </div>
+      <div class="footer-links">
+        <a class="social-icon-link" href="artist.html"><span><strong>Исполнителю</strong><small>профиль, портфолио, заявки</small></span></a>
+        <a class="social-icon-link" href="user.html"><span><strong>Заказчику</strong><small>поиск, избранное, заявки</small></span></a>
+        <a class="social-icon-link" href="zayavka.html"><span><strong>Оставить заявку</strong><small>расскажите о своём событии</small></span></a>
+        <a class="social-icon-link" href="add-host.html"><span><strong>Добавить профиль</strong><small>быстрый вход для исполнителя</small></span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="marketplace-core.js"></script>
+  <script src="visual-motion.js"></script>
+  <script>
+    (function () {
+      const key = "palan_theme_mode";
+      const saved = localStorage.getItem(key) || "dark";
+      document.body.setAttribute("data-theme", saved);
+      const button = document.getElementById("theme-toggle");
+      const menuToggle = document.getElementById("menu-toggle");
+      const backdrop = document.getElementById("mobile-nav-backdrop");
+      const nav = document.querySelector(".nav");
+      function sync() {
+        const theme = document.body.getAttribute("data-theme") || "dark";
+        button.textContent = theme === "dark" ? "Светлая тема" : "Тёмная тема";
+      }
+      function closeNav() {
+        document.body.classList.remove("nav-open");
+      }
+      button.addEventListener("click", function () {
+        const next = (document.body.getAttribute("data-theme") || "dark") === "dark" ? "light" : "dark";
+        document.body.setAttribute("data-theme", next);
+        localStorage.setItem(key, next);
+        sync();
+      });
+      menuToggle.addEventListener("click", function () {
+        document.body.classList.toggle("nav-open");
+      });
+      backdrop.addEventListener("click", closeNav);
+      nav.querySelectorAll("a, button").forEach(function (node) {
+        node.addEventListener("click", function () {
+          if (window.innerWidth <= 720 && node !== menuToggle) closeNav();
+        });
+      });
+      sync();
+    })();
+
+    const catalogState = { selectedProfileId: null, previewRequested: false };
+    function byId(id) { return document.getElementById(id); }
+    function escapeHtml(value) {
+      return String(value || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    }
+    function currentUser() { return MarketplaceStore.getCurrentUser(); }
+    const requestModal = byId("request-modal");
+    const replyModal = byId("reply-modal");
+    const requestForm = byId("request-form");
+    const replyForm = byId("reply-form");
+    function showSiteMessage(text, kind) {
+      byId("site-message").innerHTML = text ? '<div class="message ' + kind + '">' + text + '</div>' : "";
+    }
+    function openModal(modal) { modal.classList.add("open"); }
+    function closeModal(modal) { modal.classList.remove("open"); }
+    function fillRequestForm(profile, mode) {
+      const user = currentUser();
+      requestForm.reset();
+      requestForm.profileId.value = profile ? profile.id : "";
+      requestForm.mode.value = mode;
+      requestForm.customerName.value = user ? user.name : "";
+      requestForm.customerPhone.value = user ? user.phone : "";
+      requestForm.customerEmail.value = user ? user.email : "";
+      requestForm.city.value = profile ? (profile.city || "Чебоксары") : "Чебоксары";
+      requestForm.venue.value = "";
+      requestForm.eventType.value = mode === "chat" ? "Партнёрская коллаборация" : "Артист на событие";
+      requestForm.guestCount.value = "50";
+      requestForm.eventTime.value = "17:00";
+      requestForm.budget.value = profile ? String(Number(profile.priceFrom || 0)) : "60000";
+      requestForm.language.value = "Русский";
+      requestForm.requirements.value = mode === "chat"
+        ? "Хочу уточнить пакет, свободную дату и как лучше собрать программу."
+        : "Нужен сильный локальный опыт и аккуратная коммуникация с гостями.";
+      byId("request-modal-title").textContent = mode === "chat" ? "Открыть сервисный чат" : "Запросить предложение";
+      byId("request-modal-subtitle").textContent = profile ? ("Профиль: " + profile.name + ". Заполните только главное.") : "Заполните только главное.";
+    }
+    function profileRating(profileId) {
+      const meta = MarketplaceStore.getProfileRating(profileId);
+      return meta.count ? (meta.average.toFixed(1) + " / 5") : "Нет отзывов";
+    }
+    function normalizeSocialLink(type, value) {
+      const raw = String(value || "").trim();
+      if (!raw) return "";
+      if (type === "telegram") {
+        if (/^https?:\/\//i.test(raw)) return raw;
+        return "https://t.me/" + raw.replace(/^@+/, "");
+      }
+      if (/^https?:\/\//i.test(raw)) return raw;
+      return "https://" + raw.replace(/^\/+/, "");
+    }
+    function socialIcon(type) {
+      const icons = {
+        telegram: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.4 4.6 3.8 11.1c-1.1.4-1.1 2 .1 2.4l4.2 1.3 1.6 5c.3 1 1.6 1.1 2.1.2l2.2-3.2 4.6 3.4c.8.6 1.9.2 2.1-.9L23 6.3c.2-1.2-1-2.2-2.1-1.7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m8.2 14.8 8.6-6.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+        instagram: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.8" stroke="currentColor" stroke-width="1.6"/><circle cx="17.4" cy="6.8" r="1" fill="currentColor"/></svg>',
+        youtube: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 8.2a3 3 0 0 0-2.1-2.1C17.1 5.5 12 5.5 12 5.5s-5.1 0-6.9.6A3 3 0 0 0 3 8.2 31 31 0 0 0 2.5 12c0 1.3.2 2.5.5 3.8a3 3 0 0 0 2.1 2.1c1.8.6 6.9.6 6.9.6s5.1 0 6.9-.6a3 3 0 0 0 2.1-2.1c.3-1.3.5-2.5.5-3.8 0-1.3-.2-2.5-.5-3.8Z" stroke="currentColor" stroke-width="1.6"/><path d="m10 9.5 5 2.5-5 2.5v-5Z" fill="currentColor"/></svg>',
+        vk: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.5 7.5h2.1c.4 0 .8.3 1 .7.9 2.2 1.9 4 3 4.8.4.3.6.2.6-.3v-3.4c0-1.1.3-1.8 1.9-1.8h.6c.5 0 .9.4.9.9v1.8c0 .6.3.7.7.4.9-.7 1.9-2 2.7-3 .2-.3.6-.5 1-.5h2.2c.7 0 .9.4.6 1l-2.3 3.2c-.3.4-.2.7 0 1l2.5 3.1c.4.5.2 1.1-.5 1.1h-2.4c-.4 0-.8-.2-1-.5l-1.6-2c-.3-.3-.5-.3-.8-.2-.2.2-.2.4-.2.7v1.2c0 .5-.4.8-.9.8H13c-1.8 0-3.8-1.6-5.6-4.5-1.3-2.1-2.1-4.2-2.1-4.8 0-.3.2-.7.6-.7Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>',
+        website: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M3.8 12h16.4M12 3.8c2.2 2.3 3.5 5.2 3.5 8.2 0 3-1.3 5.9-3.5 8.2-2.2-2.3-3.5-5.2-3.5-8.2 0-3 1.3-5.9 3.5-8.2Z" stroke="currentColor" stroke-width="1.6"/></svg>',
+        phone: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3.5 4.8 5.1c-.7.5-.9 1.4-.6 2.2 2 5 5.5 8.5 10.5 10.5.8.3 1.7.1 2.2-.6l1.6-2.2c.4-.6.3-1.4-.3-1.8l-2.6-1.8c-.6-.4-1.3-.3-1.8.2l-1.2 1.2a13 13 0 0 1-5.4-5.4l1.2-1.2c.5-.5.6-1.2.2-1.8L8.8 3.8c-.4-.6-1.2-.7-1.8-.3Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        email: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="m5 7 7 5 7-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+      };
+      return icons[type] || icons.website;
+    }
+    function renderSocialLinks(profile, compact) {
+      const items = [];
+      const socials = profile && profile.socials ? profile.socials : {};
+      const telegram = profile && profile.contact ? profile.contact.telegram : "";
+      const phone = profile && profile.contact ? profile.contact.phone : "";
+      const email = profile && profile.contact ? profile.contact.email : "";
+      [
+        ["telegram", telegram, "Telegram"],
+        ["instagram", socials.instagram, "Instagram"],
+        ["youtube", socials.youtube, "YouTube"],
+        ["vk", socials.vk, "VK"],
+        ["website", socials.rutube, "RUTUBE"],
+        ["website", socials.appleMusic, "Apple Music"],
+        ["website", socials.website, "Сайт"]
+      ].forEach(function (item) {
+        const href = normalizeSocialLink(item[0], item[1]);
+        if (!href) return;
+        items.push('<a class="social-icon-link" href="' + escapeHtml(href) + '" target="_blank" rel="noopener">' + socialIcon(item[0]) + '<span><strong>' + escapeHtml(item[2]) + '</strong>' + (compact ? '' : '<small>Открыть канал или страницу</small>') + '</span></a>');
+      });
+      if (phone) items.push('<a class="social-icon-link" href="tel:+' + escapeHtml(String(phone).replace(/\D/g, "")) + '">' + socialIcon("phone") + '<span><strong>' + escapeHtml(phone) + '</strong>' + (compact ? '' : '<small>Позвонить</small>') + '</span></a>');
+      if (email) items.push('<a class="social-icon-link" href="mailto:' + escapeHtml(email) + '">' + socialIcon("email") + '<span><strong>' + escapeHtml(email) + '</strong>' + (compact ? '' : '<small>Написать на почту</small>') + '</span></a>');
+      if (!items.length) return compact ? "" : '<div class="muted">Пока нет публичных ссылок на соцсети и сайт.</div>';
+      return '<div class="' + (compact ? "card-social-row" : "detail-socials") + '">' + items.join("") + '</div>';
+    }
+    function renderHeroStats() {
+      const stats = MarketplaceStore.getStats();
+      byId("hero-stats").innerHTML = [
+        "Активных профилей: " + stats.approvedProfiles,
+        "Новых лидов: " + stats.newLeads,
+        "Квот отправлено: " + stats.quotes,
+        "Открытых чатов: " + stats.chats
+      ].map(function (item) {
+        return '<span class="summary-pill">' + item + '</span>';
+      }).join("");
+    }
+    function renderCategoryFilter() {
+      const categories = MarketplaceStore.getDictionaries().categories;
+      byId("filter-category").innerHTML = '<option value="">Все категории</option>' + categories.map(function (category) {
+        return '<option value="' + category.id + '">' + category.label + '</option>';
+      }).join("");
+    }
+    function getFilters() {
+      return {
+        category: byId("filter-category").value,
+        city: byId("filter-city").value,
+        maxPrice: byId("filter-price").value,
+        language: byId("filter-language").value,
+        search: byId("filter-search").value,
+        sortBy: byId("filter-sort").value,
+        hasVideo: byId("filter-video").checked
+      };
+    }
+    function selectedProfileFromList(profiles) {
+      return profiles.find(function (profile) { return profile.id === catalogState.selectedProfileId; }) || profiles[0] || null;
+    }
+    function applyPendingProfilePreview(profiles) {
+      const previewId = localStorage.getItem("palanart_preview_profile_id");
+      if (!previewId) return;
+      const previewProfile = profiles.find(function (profile) { return profile.id === previewId; });
+      localStorage.removeItem("palanart_preview_profile_id");
+      if (!previewProfile) return;
+      catalogState.selectedProfileId = previewProfile.id;
+      catalogState.previewRequested = true;
+    }
+    function renderCatalog() {
+      const user = currentUser();
+      const profiles = MarketplaceStore.getProfiles(getFilters());
+      applyPendingProfilePreview(profiles);
+      const favorites = user ? MarketplaceStore.getFavoriteProfiles(user.id).map(function (profile) { return profile.id; }) : [];
+      const compare = user ? MarketplaceStore.getCompareProfiles(user.id).map(function (profile) { return profile.id; }) : [];
+      const grid = byId("catalog-grid");
+      if (!profiles.length) {
+        catalogState.selectedProfileId = null;
+        grid.innerHTML = '<div class="empty">Пока нет опубликованных артистов и проектов. Зарегистрируйте первого артиста и заполните профиль, чтобы запустить публичную витрину платформы.</div>';
+        renderProfileDetail(null);
+        return;
+      }
+      const selected = selectedProfileFromList(profiles);
+      catalogState.selectedProfileId = selected.id;
+      grid.innerHTML = profiles.map(function (profile) {
+        const rating = MarketplaceStore.getProfileRating(profile.id);
+        const isFavorite = favorites.indexOf(profile.id) !== -1;
+        const isCompare = compare.indexOf(profile.id) !== -1;
+        return '<article class="card"><div class="card-top"><img class="avatar" src="' + escapeHtml(profile.media.photo) + '" alt="' + escapeHtml(profile.name) + '"><div><div class="badge-row"><span class="badge accent">' + escapeHtml(MarketplaceStore.categoryLabel(profile.categories[0])) + '</span>' + (profile.vip ? '<span class="badge gold">VIP</span>' : (profile.featured ? '<span class="badge gold">Витрина</span>' : '')) + (profile.verified ? '<span class="badge">Проверен</span>' : '') + '</div><h3>' + escapeHtml(profile.name) + '</h3><div class="muted">' + escapeHtml(profile.title || profile.tagline) + '</div></div></div><div class="summary-strip"><span class="summary-pill">' + escapeHtml(profile.city) + '</span><span class="summary-pill">' + (rating.count ? ("Рейтинг " + rating.average.toFixed(1)) : "Новый профиль") + '</span><span class="summary-pill">Отзывы ' + rating.count + '</span></div><div class="muted" style="font-size:0.84rem; text-transform:uppercase; letter-spacing:0.08em;">Принимает заявки на мероприятия</div><div class="price">от ' + Number(profile.priceFrom || 0).toLocaleString("ru-RU") + ' ₽</div><div>' + escapeHtml(profile.tagline || profile.description) + '</div>' + renderSocialLinks(profile, true) + '<div class="skills">' + profile.categories.map(function (category) { return '<span class="skill">' + escapeHtml(MarketplaceStore.categoryLabel(category)) + '</span>'; }).join("") + '</div><div class="inline-actions"><button class="primary-btn" type="button" onclick="selectProfile(\'' + profile.id + '\')">Подробнее</button><button class="ghost-btn" type="button" onclick="startLead(\'' + profile.id + '\')">Запросить предложение</button><button class="ghost-btn" type="button" onclick="toggleFavorite(\'' + profile.id + '\')">' + (isFavorite ? 'Убрать из избранного' : 'В избранное') + '</button><button class="ghost-btn" type="button" onclick="toggleCompare(\'' + profile.id + '\')">' + (isCompare ? 'Убрать из сравнения' : 'Сравнить') + '</button></div></article>';
+      }).join("");
+      renderProfileDetail(selected);
+      if (catalogState.previewRequested) {
+        catalogState.previewRequested = false;
+        setTimeout(function () {
+          const detail = byId("profile-detail");
+          if (detail) detail.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 40);
+      }
+      renderCompareBox();
+    }
+    function renderPackages(title, items) {
+      if (!items || !items.length) return '<div class="muted">Не добавлено.</div>';
+      return '<div><strong>' + title + '</strong><div class="detail-stack">' + items.map(function (item) { return '<div class="detail-box"><strong>' + escapeHtml(item.name) + '</strong><div class="muted">' + escapeHtml(item.duration || "") + ' · ' + Number(item.price || 0).toLocaleString("ru-RU") + ' ₽</div><div>' + escapeHtml(item.description || "") + '</div></div>'; }).join("") + '</div></div>';
+    }
+    function mediaSrc(item) { return escapeHtml(item && item.src ? item.src : item); }
+    function mediaCaption(item, fallback) { return escapeHtml(item && item.caption ? item.caption : fallback); }
+    function mediaPoster(item) { return item && item.poster ? ' poster="' + escapeHtml(item.poster) + '"' : ""; }
+    function renderProfileDetail(profile) {
+      const host = byId("profile-detail");
+      if (!profile) {
+        host.innerHTML = '<div class="empty">Когда в каталоге появится первый артист, здесь откроется его публичный профиль с медиа, условиями, сервисными пакетами и отзывами.</div>';
+        return;
+      }
+      const reviews = MarketplaceStore.getReviewsForProfile(profile.id);
+      const featuredReviews = reviews.filter(function (review) { return review.featured; }).slice(0, 3);
+      host.innerHTML = '<div class="detail-grid"><div class="detail-hero"><img src="' + escapeHtml(profile.media.photo) + '" alt="' + escapeHtml(profile.name) + '"><div class="summary-strip"><span class="summary-pill">' + escapeHtml(profile.region) + '</span><span class="summary-pill">' + (Number(profile.travelRadiusKm || 0) ? ("Радиус " + Number(profile.travelRadiusKm) + " км") : "Выезд по договорённости") + '</span><span class="summary-pill">' + (profile.vip ? 'VIP-профиль' : ('Тариф ' + escapeHtml(MarketplaceStore.getPlan(profile.planId).label))) + '</span></div><div class="detail-box"><strong>Позиционирование</strong><p class="muted">' + escapeHtml(profile.tagline) + '</p><div>' + escapeHtml(profile.description) + '</div></div></div><div class="stack"><div class="detail-box"><strong>' + escapeHtml(profile.name) + '</strong><div class="muted">' + escapeHtml(profile.title) + '</div><div style="margin-top:10px;">Рейтинг: ' + profileRating(profile.id) + ' · Отзывов: ' + reviews.length + '</div>' + renderSocialLinks(profile, false) + '</div><div class="detail-box"><strong>Сценарии работы</strong><div class="skills" style="margin-top:12px;">' + profile.eventFormats.map(function (item) { return '<span class="skill">' + escapeHtml(item) + '</span>'; }).join("") + '</div></div><div class="detail-box"><strong>Языки и сервис</strong><div class="skills" style="margin-top:12px;">' + profile.languages.concat(profile.serviceFeatures).map(function (item) { return '<span class="skill">' + escapeHtml(item) + '</span>'; }).join("") + '</div></div><div class="detail-box"><strong>Подход к работе</strong><div>' + escapeHtml(profile.workStyle || "Артист пока не добавил этот блок.") + '</div></div><div class="inline-actions"><button class="primary-btn" type="button" onclick="startLead(\'' + profile.id + '\')">Отправить запрос</button><button class="ghost-btn" type="button" onclick="startChatForProfile(\'' + profile.id + '\')">Открыть чат</button></div></div></div><div class="detail-grid" style="margin-top:18px;"><div class="stack">' + renderPackages("Сервисные пакеты", profile.packages) + renderPackages("Дополнительные сервисы", profile.addOns) + '</div><div class="stack"><div class="detail-box"><strong>Условия сотрудничества</strong><div class="detail-stack"><div>Депозит: ' + escapeHtml(profile.policies.deposit) + '</div><div>Отмена: ' + escapeHtml(profile.policies.cancellation) + '</div><div>Технические условия: ' + escapeHtml(profile.policies.technical) + '</div></div></div><div class="detail-box"><strong>FAQ</strong><div class="faq-list">' + profile.faq.map(function (item) { return '<div class="faq-item"><strong>' + escapeHtml(item.q) + '</strong><div>' + escapeHtml(item.a) + '</div></div>'; }).join("") + '</div></div></div></div><div class="detail-grid" style="margin-top:18px;"><div class="detail-box"><strong>Медиа</strong><div class="gallery-grid" style="margin-top:12px;">' + (((profile.media.gallery || []).map(function (item, index) { return '<div class="gallery-item"><img src="' + mediaSrc(item) + '" alt="' + mediaCaption(item, 'Фото ' + (index + 1)) + '"><span>' + mediaCaption(item, 'Фото #' + (index + 1)) + '</span></div>'; }).join("")) || "") + (((profile.media.video || []).map(function (item, index) { return '<div class="gallery-item"><video controls preload="none"' + mediaPoster(item) + '><source src="' + mediaSrc(item) + '"></video><span>' + mediaCaption(item, 'Видео #' + (index + 1)) + '</span></div>'; }).join("")) || "") + (((profile.media.audio || []).map(function (item, index) { return '<div class="gallery-item"><audio controls><source src="' + mediaSrc(item) + '"></audio><span>' + mediaCaption(item, 'Аудио #' + (index + 1)) + '</span></div>'; }).join("")) || "") + ((!((profile.media.gallery || []).length || (profile.media.video || []).length || (profile.media.audio || []).length)) ? '<div class="empty">Артист пока не добавил медиафайлы.</div>' : '') + '</div></div><div class="detail-box"><strong>Выделенные отзывы</strong><div class="detail-stack" style="margin-top:12px;">' + (featuredReviews.length ? featuredReviews.map(function (review) { return '<div class="hero-point"><strong>' + escapeHtml(review.authorName) + '</strong><div class="muted">' + review.rating + ' / 5</div><div>' + escapeHtml(review.text) + '</div></div>'; }).join("") : '<div class="muted">Пока нет выделенных отзывов.</div>') + '</div></div></div>';
+    }
+    function renderCompareBox() {
+      const user = currentUser();
+      const host = byId("compare-box");
+      if (!user) {
+        host.innerHTML = '<div class="empty">Сравнение сохраняется в client services. Войдите как заказчик услуг, чтобы собирать short-list и быстро сверять условия.</div>';
+        return;
+      }
+      const profiles = MarketplaceStore.getCompareProfiles(user.id);
+      if (!profiles.length) {
+        host.innerHTML = '<div class="empty">Добавьте в сравнение 2-3 карточки из каталога, чтобы увидеть цену, формат и языки на одном экране.</div>';
+        return;
+      }
+      const rows = [["Категории", function (profile) { return profile.categories.map(MarketplaceStore.categoryLabel).join(", "); }], ["Город", function (profile) { return profile.city + " · " + (Number(profile.travelRadiusKm || 0) ? (profile.travelRadiusKm + " км") : "выезд по договорённости"); }], ["Цена от", function (profile) { return Number(profile.priceFrom || 0).toLocaleString("ru-RU") + " ₽"; }], ["Рейтинг", function (profile) { return profileRating(profile.id); }], ["Языки", function (profile) { return profile.languages.join(", ") || "Не указано"; }], ["Сценарии работы", function (profile) { return profile.eventFormats.join(", ") || "Не указано"; }]];
+      host.innerHTML = '<table><thead><tr><th>Параметр</th>' + profiles.map(function (profile) { return '<th>' + escapeHtml(profile.name) + '</th>'; }).join("") + '</tr></thead><tbody>' + rows.map(function (row) { return '<tr><th>' + row[0] + '</th>' + profiles.map(function (profile) { return '<td>' + escapeHtml(row[1](profile)) + '</td>'; }).join("") + '</tr>'; }).join("") + '</tbody></table>';
+    }
+    function renderBoard() {
+      const requests = MarketplaceStore.getBoardPosts({ postType: "request" });
+      const offers = MarketplaceStore.getBoardPosts({ postType: "offer" });
+      function draw(items, targetId, emptyText) {
+      byId(targetId).innerHTML = items.length ? items.map(function (post) { return '<div class="table-row"><div><strong>' + escapeHtml(post.title) + '</strong><div class="muted">' + escapeHtml(post.city) + ' · ' + escapeHtml(post.category || "Категория не указана") + '</div></div><div>' + escapeHtml(post.budget || "По договоренности") + '</div><div>' + escapeHtml(post.contactName) + '</div><div>' + (post.replies ? post.replies.length : 0) + ' откликов</div><div><button class="ghost-btn" type="button" onclick="replyToPost(\'' + post.id + '\')">Откликнуться</button></div></div>'; }).join("") : '<div class="empty">' + emptyText + '</div>';
+      }
+      draw(requests, "requests-grid", "Пока нет открытых запросов заказчиков.");
+      draw(offers, "offers-grid", "Пока нет публичных предложений от артистов и партнёров.");
+    }
+    function renderReviews() {
+      const reviews = MarketplaceStore.getDb().reviews || [];
+      byId("reviews-grid").innerHTML = reviews.length ? reviews.slice(0, 8).map(function (review) { const profile = MarketplaceStore.getProfileById(review.profileId); return '<div class="hero-point"><strong>' + escapeHtml(review.authorName) + '</strong><div class="muted">' + escapeHtml(profile ? profile.name : "Артист") + ' · ' + review.rating + ' / 5</div><div>' + escapeHtml(review.text) + '</div></div>'; }).join("") : '<div class="empty">После первых завершённых сервисов и проектов здесь появятся реальные отзывы заказчиков.</div>';
+    }
+    window.selectProfile = function (profileId) { catalogState.selectedProfileId = profileId; renderCatalog(); byId("profile-detail").scrollIntoView({ behavior: "smooth", block: "start" }); };
+    window.toggleFavorite = function (profileId) {
+      const user = currentUser();
+      if (!user) return showSiteMessage('Сначала войдите как заказчик в <a href="user.html">client services</a>, и тогда short-list будет работать нормально.', "error");
+      MarketplaceStore.toggleFavoriteProfile(user.id, profileId);
+      showSiteMessage("Избранное обновлено.", "success");
+      renderCatalog();
+    };
+    window.toggleCompare = function (profileId) {
+      const user = currentUser();
+      if (!user) return showSiteMessage('Сравнение доступно после входа в <a href="user.html">client services</a>.', "error");
+      MarketplaceStore.toggleCompareProfile(user.id, profileId);
+      showSiteMessage("Сравнение обновлено.", "success");
+      renderCatalog();
+    };
+    window.startLead = function (profileId) {
+      const profile = MarketplaceStore.getProfileById(profileId);
+      fillRequestForm(profile, "lead");
+      openModal(requestModal);
+    };
+    window.startChatForProfile = function (profileId) {
+      const profile = MarketplaceStore.getProfileById(profileId);
+      fillRequestForm(profile, "chat");
+      openModal(requestModal);
+    };
+    window.replyToPost = function (postId) {
+      const user = currentUser();
+      const artist = MarketplaceStore.getCurrentArtist();
+      replyForm.reset();
+      replyForm.postId.value = postId;
+      replyForm.authorName.value = artist ? artist.name : (user ? user.name : "");
+      replyForm.message.value = "Готов обсудить детали и прислать предложение.";
+      openModal(replyModal);
+    };
+    byId("board-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const payload = Object.fromEntries(new FormData(event.target).entries());
+      const user = currentUser();
+      const artist = MarketplaceStore.getCurrentArtist();
+      payload.authorId = payload.authorType === "artist" ? (artist ? artist.id : null) : (user ? user.id : null);
+      MarketplaceStore.createBoardPost(payload);
+      byId("board-message").innerHTML = '<div class="message success">Объявление опубликовано.</div>';
+      event.target.reset();
+      renderBoard();
+    });
+    requestForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const payload = Object.fromEntries(new FormData(event.target).entries());
+      const user = currentUser();
+      const profile = payload.profileId ? MarketplaceStore.getProfileById(payload.profileId) : null;
+      payload.userId = user ? user.id : null;
+      payload.profileId = payload.profileId || null;
+      payload.guestCount = Number(payload.guestCount || 0);
+      payload.budget = Number(payload.budget || 0);
+      if (payload.mode === "chat") {
+        const deal = MarketplaceStore.createOrOpenChat({
+          userId: payload.userId,
+          profileId: payload.profileId,
+          profileName: profile ? profile.name : "",
+          customerName: payload.customerName,
+          customerPhone: payload.customerPhone,
+          customerEmail: payload.customerEmail,
+          city: payload.city,
+          venue: payload.venue,
+          eventType: payload.eventType,
+          guestCount: payload.guestCount,
+          eventDate: payload.eventDate,
+          eventTime: payload.eventTime,
+          budget: payload.budget,
+          language: payload.language,
+          requirements: payload.requirements
+        });
+        closeModal(requestModal);
+        showSiteMessage('Чат открыт. Продолжить можно в <a href="user.html">client services</a>. Сделка: ' + deal.id, "success");
+      } else {
+        MarketplaceStore.createLead(payload);
+        closeModal(requestModal);
+        showSiteMessage("Запрос отправлен в платформу. Артист или команда лейбла увидят его в кабинете и смогут прислать предложение.", "success");
+        renderHeroStats();
+      }
+    });
+    replyForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const payload = Object.fromEntries(new FormData(event.target).entries());
+      const user = currentUser();
+      const artist = MarketplaceStore.getCurrentArtist();
+      MarketplaceStore.replyToBoardPost(payload.postId, {
+        authorType: artist ? "artist" : "client",
+        authorId: artist ? artist.id : (user ? user.id : null),
+        authorName: payload.authorName,
+        contactInfo: artist ? "Через artist portal" : "Через client services",
+        message: payload.message
+      });
+      closeModal(replyModal);
+      showSiteMessage("Отклик отправлен.", "success");
+      renderBoard();
+    });
+    byId("request-modal-close").addEventListener("click", function () { closeModal(requestModal); });
+    byId("request-modal-cancel").addEventListener("click", function () { closeModal(requestModal); });
+    byId("reply-modal-close").addEventListener("click", function () { closeModal(replyModal); });
+    byId("reply-modal-cancel").addEventListener("click", function () { closeModal(replyModal); });
+    [requestModal, replyModal].forEach(function (modal) {
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) closeModal(modal);
+      });
+    });
+    document.querySelectorAll("[data-fill-target]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const field = button.form ? button.form.querySelector('[name="' + button.dataset.fillTarget + '"]') : null;
+        if (!field) return;
+        field.value = button.dataset.fillValue || "";
+      });
+    });
+    byId("clear-filters").addEventListener("click", function () {
+      ["filter-category", "filter-city", "filter-price", "filter-language", "filter-search", "filter-sort"].forEach(function (id) {
+        byId(id).value = id === "filter-sort" ? "relevance" : "";
+      });
+      byId("filter-video").checked = false;
+      renderCatalog();
+    });
+    ["filter-category", "filter-city", "filter-price", "filter-language", "filter-search", "filter-sort", "filter-video"].forEach(function (id) {
+      byId(id).addEventListener("input", renderCatalog);
+      byId(id).addEventListener("change", renderCatalog);
+    });
+    (function initScrollScenes() {
+      const sections = Array.from(document.querySelectorAll("[data-scene]"));
+      if (!sections.length) return;
+      let activeScene = "hero";
+      function setScene(scene) {
+        if (!scene || activeScene === scene) return;
+        activeScene = scene;
+        document.body.setAttribute("data-scene", scene);
+      }
+      setScene(sections[0].dataset.scene || "hero");
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(function (entries) {
+          const visible = entries.filter(function (entry) { return entry.isIntersecting; })
+            .sort(function (a, b) { return b.intersectionRatio - a.intersectionRatio; });
+          if (!visible.length) return;
+          setScene(visible[0].target.dataset.scene);
+        }, { threshold: [0.2, 0.35, 0.55, 0.75] });
+        sections.forEach(function (section) { observer.observe(section); });
+      } else {
+        window.addEventListener("scroll", function () {
+          let candidate = sections[0];
+          const pivot = window.scrollY + window.innerHeight * 0.35;
+          sections.forEach(function (section) {
+            if (section.offsetTop <= pivot) candidate = section;
+          });
+          setScene(candidate.dataset.scene);
+        }, { passive: true });
+      }
+    })();
+    renderCategoryFilter();
+    renderHeroStats();
+    renderCatalog();
+    renderBoard();
+    renderReviews();
+    if ("serviceWorker" in navigator) navigator.serviceWorker.register("service-worker.js?v=7").then(function (registration) {
+      if (registration && registration.update) registration.update();
+    }).catch(function () {});
+  </script>
+</body>
+</html>
+
