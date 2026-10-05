@@ -20,48 +20,33 @@
   </header>
   <main class="shell section">
     <div class="section-head"><div><h2 id="page-title"></h2><p id="page-description"></p></div></div>
-    <div class="card-actions" style="margin-bottom:18px">
-      <a class="ghost-btn" href="vedushie.html">Все города</a>
-      <a class="ghost-btn" href="vedushie.html?city=Чебоксары">Чебоксары</a>
-      <a class="ghost-btn" href="vedushie.html?city=Новочебоксарск">Новочебоксарск</a>
-      <a class="ghost-btn" href="vedushie.html?city=Йошкар-Ола">Йошкар-Ола</a>
-      <a class="ghost-btn" href="vedushie.html?city=Саранск">Саранск</a>
-      <a class="ghost-btn" href="vedushie.html?city=Казань">Казань</a>
-      <a class="ghost-btn" href="vedushie.html?city=Ульяновск">Ульяновск</a>
-      <a class="ghost-btn" href="vedushie.html?city=Нижний Новгород">Нижний Новгород</a>
-      <a class="ghost-btn" href="vedushie.html?city=Киров">Киров</a>
-      <a class="ghost-btn" href="vedushie.html?city=Ижевск">Ижевск</a>
-      <a class="ghost-btn" href="vedushie.html?city=Набережные Челны">Набережные Челны</a>
-      <a class="ghost-btn" href="vedushie.html?city=Уфа">Уфа</a>
-      <a class="ghost-btn" href="vedushie.html?city=Самара">Самара</a>
-      <a class="ghost-btn" href="vedushie.html?city=Тольятти">Тольятти</a>
-      <a class="ghost-btn" href="vedushie.html?city=Пенза">Пенза</a>
-      <a class="ghost-btn" href="vedushie.html?city=Саратов">Саратов</a>
-      <a class="ghost-btn" href="vedushie.html?city=Волгоград">Волгоград</a>
-      <a class="ghost-btn" href="vedushie.html?city=Пермь">Пермь</a>
-      <a class="ghost-btn" href="vedushie.html?city=Екатеринбург">Екатеринбург</a>
-      <a class="ghost-btn" href="vedushie.html?city=Оренбург">Оренбург</a>
-      <a class="ghost-btn" href="vedushie.html?city=Москва">Москва</a>
-      <a class="ghost-btn" href="vedushie.html?city=Санкт-Петербург">Санкт-Петербург</a>
-      <a class="ghost-btn" href="vedushie.html?city=Ярославль">Ярославль</a>
-      <a class="ghost-btn" href="vedushie.html?city=Владимир">Владимир</a>
-      <a class="ghost-btn" href="vedushie.html?city=Рязань">Рязань</a>
-      <a class="ghost-btn" href="vedushie.html?city=Тула">Тула</a>
-      <a class="ghost-btn" href="vedushie.html?city=Воронеж">Воронеж</a>
-      <a class="ghost-btn" href="vedushie.html?city=Ростов-на-Дону">Ростов-на-Дону</a>
-      <a class="ghost-btn" href="vedushie.html?city=Краснодар">Краснодар</a>
-      <a class="ghost-btn" href="vedushie.html?city=Сочи">Сочи</a>
-      <a class="ghost-btn" href="vedushie.html?city=Новосибирск">Новосибирск</a>
-      <a class="ghost-btn" href="vedushie.html?city=Красноярск">Красноярск</a>
-      <a class="ghost-btn" href="vedushie.html?city=Омск">Омск</a>
-      <a class="ghost-btn" href="vedushie.html?city=Тюмень">Тюмень</a>
-    </div>
+    <details class="city-picker" style="margin-bottom:18px;max-width:360px">
+      <summary class="ghost-btn" style="cursor:pointer;list-style:none;display:inline-flex">Города ▾</summary>
+      <div style="margin-top:10px;padding:12px;background:#10232e;border:1px solid rgba(255,255,255,.14);border-radius:16px">
+        <input id="city-search" type="search" placeholder="Введите город…" autocomplete="off" style="width:100%;box-sizing:border-box;padding:12px 14px;margin-bottom:10px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:#0b1b24;color:#fff;font:inherit">
+        <div id="city-list" style="max-height:330px;overflow-y:auto;display:grid;gap:6px"></div>
+        <div id="city-empty" style="display:none;padding:10px;color:#aebbc3">Город не найден</div>
+      </div>
+    </details>
     <div id="cards" class="cards-grid"></div>
   </main>
   <script src="marketplace-core.js"></script>
   <script src="category-template.js"></script>
   <script>
     (function () { const key="palan_theme_mode"; const saved=localStorage.getItem(key)||"dark"; document.body.setAttribute("data-theme",saved); const button=document.getElementById("theme-toggle"); function sync(){button.textContent=(document.body.getAttribute("data-theme")||"dark")==="dark"?"Светлая тема":"Тёмная тема";} button.addEventListener("click",function(){const next=(document.body.getAttribute("data-theme")||"dark")==="dark"?"light":"dark"; document.body.setAttribute("data-theme",next); localStorage.setItem(key,next); sync();}); sync(); })();
+    (function () {
+      const cities=["Чебоксары","Новочебоксарск","Йошкар-Ола","Саранск","Казань","Ульяновск","Нижний Новгород","Киров","Ижевск","Набережные Челны","Уфа","Самара","Тольятти","Пенза","Саратов","Волгоград","Пермь","Екатеринбург","Оренбург","Москва","Санкт-Петербург","Ярославль","Владимир","Рязань","Тула","Воронеж","Ростов-на-Дону","Краснодар","Сочи","Новосибирск","Красноярск","Омск","Тюмень"];
+      const input=document.getElementById("city-search"), list=document.getElementById("city-list"), empty=document.getElementById("city-empty");
+      function draw(q){
+        const needle=(q||"").trim().toLocaleLowerCase("ru-RU");
+        const found=cities.filter(c=>c.toLocaleLowerCase("ru-RU").includes(needle));
+        list.innerHTML="";
+        const all=document.createElement("a"); all.className="ghost-btn"; all.href="vedushie.html"; all.textContent="Все города"; all.style.textAlign="left"; list.appendChild(all);
+        found.forEach(c=>{const a=document.createElement("a");a.className="ghost-btn";a.href="vedushie.html?city="+encodeURIComponent(c);a.textContent=c;a.style.textAlign="left";list.appendChild(a);});
+        empty.style.display=found.length?"none":"block";
+      }
+      input.addEventListener("input",()=>draw(input.value)); draw("");
+    })();
     renderCategoryPage("host", "Ведущие", "Актуальные профили ведущих и MC для свадеб, корпоративов и частных событий.", "cards");
   </script>
 </body>
