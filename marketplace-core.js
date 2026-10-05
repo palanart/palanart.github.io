@@ -155,7 +155,7 @@
           rutube: "https://rutube.ru/channel/5760878/"
         },
         contact: {
-          phone: "",
+          phone: "+7 (999) 199-07-21",
           email: "",
           telegram: "https://t.me/bogatyr_21"
         },
@@ -186,14 +186,7 @@
         categories: CATEGORY_OPTIONS,
         plans: PLAN_OPTIONS
       },
-      admins: [
-        {
-          id: "admin-main",
-          email: "admin@palan.market",
-          password: "admin12345",
-          name: "Главный администратор"
-        }
-      ],
+      admins: [],
       users: [],
       artists: [],
       partners: [],
@@ -473,6 +466,7 @@
         parsed.users = Array.isArray(parsed.users) ? parsed.users.map(normalizeUser) : [];
         parsed.artists = Array.isArray(parsed.artists) ? parsed.artists : [];
         parsed.partners = Array.isArray(parsed.partners) ? parsed.partners : [];
+        parsed.admins = [];
         parsed.profiles = Array.isArray(parsed.profiles) ? parsed.profiles.map(normalizeProfile) : [];
         createSeed().profiles.forEach(function (seedProfile) {
           const seedIndex = parsed.profiles.findIndex(function (profile) { return profile.id === seedProfile.id; });
