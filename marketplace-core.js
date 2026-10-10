@@ -16,6 +16,66 @@
     { id: "catering", label: "Кейтеринг", group: "Сервис" }
   ];
 
+  const CITY_OPTIONS = [
+    "Чебоксары",
+    "Новочебоксарск",
+    "Йошкар-Ола",
+    "Саранск",
+    "Казань",
+    "Нижний Новгород",
+    "Ульяновск",
+    "Киров",
+    "Ижевск",
+    "Набережные Челны",
+    "Уфа",
+    "Самара",
+    "Тольятти",
+    "Пенза",
+    "Саратов",
+    "Волгоград",
+    "Пермь",
+    "Екатеринбург",
+    "Оренбург",
+    "Москва",
+    "Санкт-Петербург",
+    "Ярославль",
+    "Владимир",
+    "Рязань",
+    "Тула",
+    "Воронеж",
+    "Ростов-на-Дону",
+    "Краснодар",
+    "Сочи",
+    "Новосибирск",
+    "Красноярск",
+    "Омск",
+    "Тюмень"
+  ];
+
+  function mergeCityOptions(savedCities) {
+    const seen = {};
+    const result = [];
+    function add(city) {
+      const value = String(city || "").trim();
+      const key = value.toLowerCase();
+      if (!value || seen[key]) return;
+      seen[key] = true;
+      result.push(value);
+    }
+    CITY_OPTIONS.forEach(add);
+    (Array.isArray(savedCities) ? savedCities : []).forEach(add);
+    return result;
+  }
+
+  function normalizeDictionaries(dictionaries) {
+    const source = dictionaries || {};
+    return Object.assign({ categories: CATEGORY_OPTIONS, plans: PLAN_OPTIONS }, source, {
+      categories: Array.isArray(source.categories) && source.categories.length ? source.categories : CATEGORY_OPTIONS,
+      plans: Array.isArray(source.plans) && source.plans.length ? source.plans : PLAN_OPTIONS,
+      cities: mergeCityOptions(source.cities)
+    });
+  }
+
   const PLAN_OPTIONS = [
         { id: "basic", label: "Старт", categoriesLimit: 2, featured: false, featuredReviews: 0 },
         { id: "pro", label: "Про", categoriesLimit: 6, featured: false, featuredReviews: 2 },
@@ -155,7 +215,7 @@
           rutube: "https://rutube.ru/channel/5760878/"
         },
         contact: {
-          phone: "+7 (999) 199-07-21",
+          phone: "",
           email: "",
           telegram: "https://t.me/bogatyr_21"
         },
@@ -182,10 +242,7 @@
         defaultDepositPercent: 30,
         leadResponseHours: 2
       },
-      dictionaries: {
-        categories: CATEGORY_OPTIONS,
-        plans: PLAN_OPTIONS
-      },
+      dictionaries: normalizeDictionaries(),
       admins: [],
       users: [],
       artists: [],
@@ -461,12 +518,14 @@
         const parsed = JSON.parse(raw);
         parsed.meta = parsed.meta || {};
         parsed.meta.schemaVersion = 6;
-        parsed.dictionaries = parsed.dictionaries || { categories: CATEGORY_OPTIONS, plans: PLAN_OPTIONS };
+        parsed.dictionaries = normalizeDictionaries(parsed.dictionaries);
         parsed.settings = Object.assign({}, createSeed().settings, parsed.settings || {});
+        parsed.admins = Array.isArray(parsed.admins) ? parsed.admins.filter(function (admin) {
+          return String(admin.email || "").trim().toLowerCase() !== "admin@palan.market";
+        }) : [];
         parsed.users = Array.isArray(parsed.users) ? parsed.users.map(normalizeUser) : [];
         parsed.artists = Array.isArray(parsed.artists) ? parsed.artists : [];
         parsed.partners = Array.isArray(parsed.partners) ? parsed.partners : [];
-        parsed.admins = [];
         parsed.profiles = Array.isArray(parsed.profiles) ? parsed.profiles.map(normalizeProfile) : [];
         createSeed().profiles.forEach(function (seedProfile) {
           const seedIndex = parsed.profiles.findIndex(function (profile) { return profile.id === seedProfile.id; });
@@ -502,7 +561,7 @@
     data.meta = data.meta || {};
     data.meta.updatedAt = new Date().toISOString();
     data.meta.schemaVersion = 6;
-    data.dictionaries = data.dictionaries || { categories: CATEGORY_OPTIONS, plans: PLAN_OPTIONS };
+    data.dictionaries = normalizeDictionaries(data.dictionaries);
     localStorage.setItem(DB_KEY, JSON.stringify(data));
     return data;
   }
@@ -543,6 +602,12 @@
     const session = getSession();
     if (!session || session.type !== "admin") return null;
     return getDb().admins.find(function (admin) { return admin.id === session.id; }) || null;
+  }
+
+  function isOwnerAdminOrigin() {
+    if (typeof location === "undefined") return true;
+    const host = String(location.hostname || "").toLowerCase();
+    return !host || host === "localhost" || host === "127.0.0.1" || host === "::1" || host === "palanart.github.io";
   }
 
   function getCurrentPartner() {
@@ -628,10 +693,45 @@
   }
 
   function loginAdmin(email, password) {
-    const admin = getDb().admins.find(function (item) {
+    if (!isOwnerAdminOrigin()) {
+      return { ok: false, message: "Админка доступна только владельцу в закрытой локальной сборке." };
+    }
+    const admins = (getDb().admins || []).filter(function (item) {
+      return String(item.email || "").trim().toLowerCase() !== "admin@palan.market";
+    });
+    if (!admins.length) return { ok: false, message: "Админ-доступ ещё не создан. Сначала настройте кабинет владельца." };
+    const admin = admins.find(function (item) {
       return item.email === (email || "").trim().toLowerCase() && item.password === password;
     });
     if (!admin) return { ok: false, message: "Неверный логин администратора." };
+    setSession({ type: "admin", id: admin.id });
+    return { ok: true, admin: admin };
+  }
+
+  function createOwnerAdmin(payload) {
+    if (!isOwnerAdminOrigin()) {
+      return { ok: false, message: "Создание админ-доступа доступно только в закрытой локальной сборке владельца." };
+    }
+    const db = getDb();
+    db.admins = Array.isArray(db.admins) ? db.admins.filter(function (admin) {
+      return String(admin.email || "").trim().toLowerCase() !== "admin@palan.market";
+    }) : [];
+    if (db.admins.length) return { ok: false, message: "Админ-доступ уже создан." };
+    const email = String(payload.email || "").trim().toLowerCase();
+    const password = String(payload.password || "");
+    const name = String(payload.name || "Владелец Palanart").trim();
+    if (!email || !password || password.length < 8) {
+      return { ok: false, message: "Укажите e-mail и пароль не короче 8 символов." };
+    }
+    const admin = {
+      id: "admin-owner",
+      email: email,
+      password: password,
+      name: name,
+      createdAt: new Date().toISOString()
+    };
+    db.admins.push(admin);
+    saveDb(db);
     setSession({ type: "admin", id: admin.id });
     return { ok: true, admin: admin };
   }
@@ -1382,9 +1482,9 @@
       ownerType: payload.artistId ? "artist" : (payload.partnerId ? "partner" : "shared"),
       ownerId: payload.artistId || payload.partnerId || null,
       kind: "royalty_report",
-      title: "Royalty report · " + ((payload.periodLabel || "").trim() || "Period"),
+      title: "Финансовый отчёт · " + ((payload.periodLabel || "").trim() || "Период"),
       status: report.status || "published",
-      summary: "Gross " + numeric(payload.grossAmount, 0) + " / Net " + numeric(payload.netAmount, 0) + " " + (payload.currency || "RUB"),
+      summary: "Всего " + numeric(payload.grossAmount, 0) + " / к начислению " + numeric(payload.netAmount, 0) + " " + (payload.currency || "RUB"),
       url: (payload.statementUrl || "").trim(),
       createdAt: report.createdAt
     });
@@ -1456,9 +1556,9 @@
       ownerType: payload.artistId ? "artist" : (payload.partnerId ? "partner" : "shared"),
       ownerId: payload.artistId || payload.partnerId || null,
       kind: "payout_request",
-      title: "Payout request · " + numeric(payload.amount, 0) + " " + ((payload.currency || "RUB").trim()),
+      title: "Заявка на вывод · " + numeric(payload.amount, 0) + " " + ((payload.currency || "RUB").trim()),
       status: request.status,
-      summary: (payload.note || "").trim() || "Withdrawal request created in finance layer.",
+      summary: (payload.note || "").trim() || "Заявка на выплату создана в финансовом разделе.",
       url: "",
       createdAt: request.createdAt
     });
@@ -1600,7 +1700,25 @@
 
   function getDictionaries() {
     const db = getDb();
-    return db.dictionaries || { categories: CATEGORY_OPTIONS, plans: PLAN_OPTIONS };
+    return normalizeDictionaries(db.dictionaries);
+  }
+
+  function getCities() {
+    const db = getDb();
+    const seen = {};
+    const result = [];
+    function addCity(city) {
+      const value = String(city || "").trim();
+      const key = value.toLowerCase();
+      if (!value || seen[key]) return;
+      seen[key] = true;
+      result.push(value);
+    }
+    (getDictionaries().cities || CITY_OPTIONS).forEach(addCity);
+    (db.profiles || []).forEach(function (profile) { addCity(profile.city); });
+    (db.leads || []).forEach(function (lead) { addCity(lead.city); });
+    (db.boardPosts || []).forEach(function (post) { addCity(post.city); });
+    return result;
   }
 
   function getOrdersForArtist(artistId) {
@@ -1626,7 +1744,12 @@
   }
 
   function resetDb() {
+    const current = getDb();
+    const ownerAdmins = (current.admins || []).filter(function (admin) {
+      return String(admin.email || "").trim().toLowerCase() !== "admin@palan.market";
+    });
     const fresh = createSeed();
+    fresh.admins = ownerAdmins;
     localStorage.setItem(DB_KEY, JSON.stringify(fresh));
     clearSession();
     return clone(fresh);
@@ -1644,9 +1767,12 @@
     getCurrentArtist: getCurrentArtist,
     getCurrentPartner: getCurrentPartner,
     getCurrentAdmin: getCurrentAdmin,
+    canUseAdmin: isOwnerAdminOrigin,
+    createOwnerAdmin: createOwnerAdmin,
     getSettings: getSettings,
     updateSettings: updateSettings,
     getDictionaries: getDictionaries,
+    getCities: getCities,
     registerUser: registerUser,
     loginUser: loginUser,
     registerArtistAccount: registerArtistAccount,

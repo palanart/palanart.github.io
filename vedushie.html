@@ -12,43 +12,36 @@
       <div class="brand"><strong>Palanart</strong><span>Категория: ведущие</span></div>
       <nav class="nav">
         <a href="index.html">Витрина</a>
-        <a href="user.html">Клиент</a>
-        <a href="artist.html">Исполнитель</a>
+        <a href="user.html">Заказчику</a>
+        <a href="artist.html">Исполнителю</a>
         <button id="theme-toggle" class="ghost-btn theme-toggle" type="button">Светлая тема</button>
       </nav>
     </div>
   </header>
   <main class="shell section">
     <div class="section-head"><div><h2 id="page-title"></h2><p id="page-description"></p></div></div>
-    <details class="city-picker" style="margin-bottom:18px;max-width:360px">
-      <summary class="ghost-btn" style="cursor:pointer;list-style:none;display:inline-flex">Города ▾</summary>
-      <div style="margin-top:10px;padding:12px;background:#10232e;border:1px solid rgba(255,255,255,.14);border-radius:16px">
-        <input id="city-search" type="search" placeholder="Введите город…" autocomplete="off" style="width:100%;box-sizing:border-box;padding:12px 14px;margin-bottom:10px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:#0b1b24;color:#fff;font:inherit">
-        <div id="city-list" style="max-height:330px;overflow-y:auto;display:grid;gap:6px"></div>
-        <div id="city-empty" style="display:none;padding:10px;color:#aebbc3">Город не найден</div>
-      </div>
-    </details>
     <div id="cards" class="cards-grid"></div>
   </main>
   <script src="marketplace-core.js"></script>
   <script src="category-template.js"></script>
   <script>
-    (function () { const key="palan_theme_mode"; const saved=localStorage.getItem(key)||"dark"; document.body.setAttribute("data-theme",saved); const button=document.getElementById("theme-toggle"); function sync(){button.textContent=(document.body.getAttribute("data-theme")||"dark")==="dark"?"Светлая тема":"Тёмная тема";} button.addEventListener("click",function(){const next=(document.body.getAttribute("data-theme")||"dark")==="dark"?"light":"dark"; document.body.setAttribute("data-theme",next); localStorage.setItem(key,next); sync();}); sync(); })();
     (function () {
-      const cities=["Чебоксары","Новочебоксарск","Йошкар-Ола","Саранск","Казань","Ульяновск","Нижний Новгород","Киров","Ижевск","Набережные Челны","Уфа","Самара","Тольятти","Пенза","Саратов","Волгоград","Пермь","Екатеринбург","Оренбург","Москва","Санкт-Петербург","Ярославль","Владимир","Рязань","Тула","Воронеж","Ростов-на-Дону","Краснодар","Сочи","Новосибирск","Красноярск","Омск","Тюмень"];
-      const input=document.getElementById("city-search"), list=document.getElementById("city-list"), empty=document.getElementById("city-empty");
-      function draw(q){
-        const needle=(q||"").trim().toLocaleLowerCase("ru-RU");
-        const found=cities.filter(c=>c.toLocaleLowerCase("ru-RU").includes(needle));
-        list.innerHTML="";
-        const all=document.createElement("a"); all.className="ghost-btn"; all.href="vedushie.html"; all.textContent="Все города"; all.style.textAlign="left"; list.appendChild(all);
-        found.forEach(c=>{const a=document.createElement("a");a.className="ghost-btn";a.href="vedushie.html?city="+encodeURIComponent(c);a.textContent=c;a.style.textAlign="left";list.appendChild(a);});
-        empty.style.display=found.length?"none":"block";
+      const key = "palan_theme_mode";
+      const saved = localStorage.getItem(key) || "dark";
+      document.body.setAttribute("data-theme", saved);
+      const button = document.getElementById("theme-toggle");
+      function sync() {
+        button.textContent = (document.body.getAttribute("data-theme") || "dark") === "dark" ? "Светлая тема" : "Тёмная тема";
       }
-      input.addEventListener("input",()=>draw(input.value)); draw("");
+      button.addEventListener("click", function () {
+        const next = (document.body.getAttribute("data-theme") || "dark") === "dark" ? "light" : "dark";
+        document.body.setAttribute("data-theme", next);
+        localStorage.setItem(key, next);
+        sync();
+      });
+      sync();
     })();
     renderCategoryPage("host", "Ведущие", "Актуальные профили ведущих и MC для свадеб, корпоративов и частных событий.", "cards");
   </script>
 </body>
 </html>
-
